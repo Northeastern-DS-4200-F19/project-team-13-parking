@@ -120,7 +120,6 @@ function renderAreaVis(data) {
     });
 }
 
-
 d3.csv('./data/parking.csv').then(data => {
     renderMapVis(data);
     renderHeatmapVis(data);
