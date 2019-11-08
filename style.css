@@ -82,3 +82,12 @@ h1, h2, h3 {
 	stroke-width: 3px;
 	fill: none;
 }
+
+#area-container {
+	text-align: center;
+}
+
+#heatmap-container {
+	margin: 0 50px;
+	overflow-x: scroll;
+}

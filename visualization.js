@@ -1,4 +1,4 @@
-REGULATION_COLORS = {
+const REGULATION_COLORS = {
     'Resident Only': 'red',
     'Unrestricted': 'blue',
     'Metered': 'green',
@@ -6,6 +6,47 @@ REGULATION_COLORS = {
     'Visitor': 'purple',
     'Visitor Parking': 'pink',
 }
+
+const TIMES = [
+  "6:00 AM",
+  "7:00 AM",
+  "8:00 AM",
+  "9:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "1:00 PM",
+  "2:00 PM",
+  "3:00 PM",
+  "4:00 PM",
+  "5:00 PM",
+  "6:00 PM",
+  "7:00 PM",
+  "8:00 PM"
+]
+
+function addTitle(el, title, x=0, y=0) {
+  el.append("text")
+    .attr("x", x)
+    .attr("y", y)
+    .attr("text-anchor", "left")
+    .style("font-size", "22px")
+    .style('fill', 'black')
+    .text(title);
+}
+
+function addLabels(el, keys, color_map={}, x=0, start_y=0, y_offset=15) {
+  const labelGroup = el.append('g')
+    .attr('transform','translate(' + x +',' + y + ')');
+  
+  keys.forEach((key, idx) => {
+    labelY = idx * y_offset;
+
+    labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black');
+    labelGroup.append("text").attr("x", 20).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
+  });
+}
+
 
 function utilizationRateByGroup(data) {
     let grouped_data = {};
@@ -63,29 +104,31 @@ function renderHeatmapVis(data) {
 function renderAreaVis(data) {
     data = utilizationRateByGroup(data)
 
-    const width  = 600;
+    const width  = 900;
     const height = 500;
     const margin = {
-        top: 30,
-        bottom: 30,
-        left: 30,
-        right: 30
+        top: 40,
+        bottom: 40,
+        left: 60,
+        right: 120
     };
 
-    const svg = d3.select('.vis-holder')
+    const svg = d3.select('#area-container')
         .append('svg')
-            .attr('width', width)
-            .attr('height', height)
-            .style('background', '#efefef');
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top);
 
+    addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=25);
+    addLabels(svg, Object.keys(data), REGULATION_COLORS, width - margin.right, margin.top);
+        
     const chartGroup = svg
         .append('g')
             .attr('transform','translate(' + margin.left +',' + margin.top + ')');
 
-    const xScale = d3.scaleLinear()
-        .domain([6, 20])
-        .range([0, width - margin.left * 2]);
-    
+    const xScale = d3.scaleBand()
+      .range([0, width - margin.right - margin.left])
+      .domain(TIMES)
+      .padding(0.05);
     const yScale = d3.scaleLinear()
         .domain([0, 1])
         .range([height - margin.bottom - margin.top, 0]);
@@ -95,6 +138,12 @@ function renderAreaVis(data) {
         .attr('class', 'x axis')
         .attr('transform', 'translate(0, ' + (height - margin.bottom - margin.top) + ')')
         .call(xAxis);
+    
+    svg.append("text")             
+        .attr("transform",
+              "translate(" + (width / 2)+ " ," + (height) + ")")
+        .style("text-anchor", "middle")
+        .text("Time of Day");
 
     const yAxis = d3.axisLeft(yScale);
     chartGroup.append('g')
@@ -102,14 +151,22 @@ function renderAreaVis(data) {
         .attr('transform', 'translate(0, 0)')
         .call(yAxis);
     
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 10)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Utilization Rate");    
+    
     function hourToInt(hour) {
-        hourInt = parseInt(hour.substring(0, hour.indexOf(':')))
-        isPm = hour.substring(hour.length - 2, hour.length - 1) == 'P'
-        return hourInt + (isPm && hourInt != 12 ? 12 : 0)
+        hourInt = parseInt(hour.substring(0, hour.indexOf(':')));
+        isPm = hour.substring(hour.length - 2, hour.length - 1) == 'P';
+        return hourInt + (isPm && hourInt != 12 ? 12 : 0);
     }
     
     const line = d3.line()
-        .x(d => xScale(hourToInt(d.time)))
+        .x(d => xScale(d.time))
         .y(d => yScale(d.util_rate));
 
     Object.keys(data).forEach(key => {
@@ -129,19 +186,23 @@ d3.csv('./data/parking.csv').then(data => {
 /*
  ------------------------------Below is the code for heat map----------------------------------
 */
+
+// TODO: It's probably gonna be best to source everything from one csv once we get to
+// brushing and linking.
+
 // set the dimensions and margins of the graph
-var margin = {top: 80, right: 25, bottom: 30, left: 50},
+var margin = {top: 80, right: 25, bottom: 30, left: 75},
   width = 4500 - margin.left - margin.right,
   height = 450 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#heatmap")
-.append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-.append("g")
-  .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+var svg = d3.select("#heatmap-container")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
 d3.csv("./data/Heat-Map-Data.csv").then(data => {
@@ -150,32 +211,9 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
     myGroups.push(i.toString())
   }
 
-
-
-  var myVars = [
-    "6:00 AM",
-    "7:00 AM",
-    "8:00 AM",
-    "9:00 AM",
-    "10:00 AM",
-    "11:00 AM",
-    "12:00 PM",
-    "1:00 PM",
-    "2:00 PM",
-    "3:00 PM",
-    "4:00 PM",
-    "5:00 PM",
-    "6:00 PM",
-    "7:00 PM",
-    "8:00 PM"
-  ]
-
-  // console.log(myGroups)
-  // console.log(myVars)
-
   // Build X scales and axis:
   var x = d3.scaleBand()
-    .range([ 0, width ])
+    .range([0, width])
     .domain(myGroups)
     .padding(0.05);
   svg.append("g")
@@ -187,7 +225,7 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
   // Build Y scales and axis:
   var y = d3.scaleBand()
     .range([ height, 0 ])
-    .domain(myVars)
+    .domain(TIMES)
     .padding(0.05);
   svg.append("g")
     .style("font-size", 15)
@@ -195,12 +233,12 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
     .select(".domain").remove()
 
   // Build color scale
-  var myColor = d3.scaleSequential()
+  var color = d3.scaleSequential()
     .interpolator(d3.interpolateInferno)
     .domain([1,100])
 
   // create a tooltip
-  var tooltip = d3.select("#heatmap")
+  var tooltip = d3.select("#heatmap-container")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -220,7 +258,7 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
   }
   var mousemove = function(d) {
     tooltip
-      .html("The exact value of<br>this cell is: " + d.occupied)
+      .html(d.occupied || 'Unoccupied')
       .style("left", (d3.mouse(this)[0]+70) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -243,7 +281,7 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
       .attr("ry", 4)
       .attr("width", x.bandwidth() )
       .attr("height", y.bandwidth() )
-      .style("fill", function(d) { return myColor(d.occID)} )
+      .style("fill", function(d) { return color(d.occID)} )
       .style("stroke-width", 4)
       .style("stroke", "none")
       .style("opacity", 0.8)
@@ -252,21 +290,4 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
     .on("mouseleave", mouseleave)
 })
 
-// Add title to graph
-svg.append("text")
-        .attr("x", 0)
-        .attr("y", -50)
-        .attr("text-anchor", "left")
-        .style("font-size", "22px")
-        .text("Chester Square Parking");
-
-// Add subtitle to graph
-svg.append("text")
-        .attr("x", 0)
-        .attr("y", -20)
-        .attr("text-anchor", "left")
-        .style("font-size", "14px")
-        .style("fill", "grey")
-        .style("max-width", 400)
-        .text("Yilang Wan");
-
+addTitle(svg, 'Chester Square Parking', 0, -10);
