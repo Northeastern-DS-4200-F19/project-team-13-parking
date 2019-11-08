@@ -25,6 +25,14 @@ const TIMES = [
   "8:00 PM"
 ]
 
+/**
+ * Adds the given title to the element at the given x and y.
+ * 
+ * @param {*} el 
+ * @param {String} title 
+ * @param {number} x 
+ * @param {number} y 
+ */
 function addTitle(el, title, x=0, y=0) {
   el.append("text")
     .attr("x", x)
@@ -35,7 +43,18 @@ function addTitle(el, title, x=0, y=0) {
     .text(title);
 }
 
-function addLabels(el, keys, color_map={}, x=0, start_y=0, y_offset=15) {
+/**
+ * Adds a label to the given element given keys, their colors, and
+ * positioning.
+ * 
+ * @param {*} el 
+ * @param {Array<String>} keys 
+ * @param {object} color_map 
+ * @param {number} x 
+ * @param {number} y 
+ * @param {number} y_offset 
+ */
+function addLegend(el, keys, color_map={}, x=0, y=0, y_offset=15) {
   const labelGroup = el.append('g')
     .attr('transform','translate(' + x +',' + y + ')');
   
@@ -47,7 +66,10 @@ function addLabels(el, keys, color_map={}, x=0, start_y=0, y_offset=15) {
   });
 }
 
-
+/**
+ * Processes the data into a map from regulation to a list of utilization rates during
+ * each recorded time of the day.
+ */
 function utilizationRateByGroup(data) {
     let grouped_data = {};
     const excluded = ['Construction', 'Blocked', '']
@@ -101,6 +123,11 @@ function renderHeatmapVis(data) {
 
 }
 
+/**
+ * Adds the area chart svg.
+ * 
+ * @param {*} data 
+ */
 function renderAreaVis(data) {
     data = utilizationRateByGroup(data)
 
@@ -119,12 +146,13 @@ function renderAreaVis(data) {
           .attr("height", height + margin.top);
 
     addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=25);
-    addLabels(svg, Object.keys(data), REGULATION_COLORS, width - margin.right, margin.top);
+    addLegend(svg, Object.keys(data), REGULATION_COLORS, width - margin.right, margin.top);
         
     const chartGroup = svg
         .append('g')
             .attr('transform','translate(' + margin.left +',' + margin.top + ')');
 
+    // Create x,y axis with axis labels
     const xScale = d3.scaleBand()
       .range([0, width - margin.right - margin.left])
       .domain(TIMES)
@@ -159,6 +187,7 @@ function renderAreaVis(data) {
         .style("text-anchor", "middle")
         .text("Utilization Rate");    
     
+    // Converts an hour (e.g. '6:00 AM') into an integer for sorting.
     function hourToInt(hour) {
         hourInt = parseInt(hour.substring(0, hour.indexOf(':')));
         isPm = hour.substring(hour.length - 2, hour.length - 1) == 'P';
@@ -169,6 +198,7 @@ function renderAreaVis(data) {
         .x(d => xScale(d.time))
         .y(d => yScale(d.util_rate));
 
+    // Create lines for each regulation
     Object.keys(data).forEach(key => {
         chartGroup.append('path')
             .attr('d', line(data[key].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time))))
