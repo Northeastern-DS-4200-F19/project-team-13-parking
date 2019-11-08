@@ -1,10 +1,9 @@
 const REGULATION_COLORS = {
-    'Resident Only': 'red',
-    'Unrestricted': 'blue',
-    'Metered': 'green',
-    'Handicapped': 'black',
-    'Visitor': 'purple',
-    'Visitor Parking': 'pink',
+    'Resident Only': 'green',
+    'Unrestricted': 'orange',
+    'Metered': 'red',
+    'Handicapped': 'cyan',
+    'Visitor Parking': 'purple',
 }
 
 const TIMES = [
@@ -106,7 +105,7 @@ function utilizationRateByGroup(data) {
                 occupied_spots = grouped_data[regulation][time]['occupied_spots'];
 
                 util_rate = occupied_spots / total_spots;
-                data_by_regulation[regulation].push({'time': time, 'util_rate': util_rate});
+                data_by_regulation[regulation].push({'time': time, 'util_rate': util_rate, 'occupied_spots': occupied_spots});
             }
         });
     });
@@ -155,17 +154,20 @@ function renderAreaVis(data) {
     // Create x,y axis with axis labels
     const xScale = d3.scaleBand()
       .range([0, width - margin.right - margin.left])
-      .domain(TIMES)
-      .padding(0.05);
-    const yScale = d3.scaleLinear()
-        .domain([0, 1])
-        .range([height - margin.bottom - margin.top, 0]);
+      .domain(TIMES);
+  const yScale = d3.scaleLinear()
+      .domain([0, 1])
+      .range([height - margin.bottom - margin.top, 0]);
     
     const xAxis = d3.axisBottom(xScale);
     chartGroup.append('g')
         .attr('class', 'x axis')
         .attr('transform', 'translate(0, ' + (height - margin.bottom - margin.top) + ')')
-        .call(xAxis);
+        .call(xAxis)
+        .selectAll('.tick')
+          .attr('transform', function() {
+            return this.getAttribute('transform') + ' translate(-24, 0)'
+          });
     
     svg.append("text")             
         .attr("transform",
@@ -194,12 +196,24 @@ function renderAreaVis(data) {
         return hourInt + (isPm && hourInt != 12 ? 12 : 0);
     }
     
+    const area = d3.area()
+      .curve(d3.curveNatural)
+      .x(d => xScale(d.time))
+      .y0(d => yScale(d.util_rate) - d.occupied_spots / 2)
+      .y1(d => yScale(d.util_rate) + d.occupied_spots / 2);
     const line = d3.line()
-        .x(d => xScale(d.time))
-        .y(d => yScale(d.util_rate));
+      .curve(d3.curveNatural)
+      .x(d => xScale(d.time))
+      .y(d => yScale(d.util_rate));
 
     // Create lines for each regulation
     Object.keys(data).forEach(key => {
+        chartGroup.append('path')
+            .attr('d', area(data[key].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time))))
+            .attr('stroke', REGULATION_COLORS[key])
+            .attr('stroke-opacity', 0.5)
+            .attr('fill', REGULATION_COLORS[key])
+            .attr('fill-opacity', 0.5);
         chartGroup.append('path')
             .attr('d', line(data[key].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time))))
             .attr('class', 'dataLine')
