@@ -236,7 +236,7 @@ d3.csv('./data/parking.csv').then(data => {
 
 // set the dimensions and margins of the graph
 var margin = {top: 80, right: 25, bottom: 30, left: 75},
-  width = 4500 - margin.left - margin.right,
+  width = 6000 - margin.left - margin.right,
   height = 450 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -276,10 +276,10 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
     .call(d3.axisLeft(y).tickSize(0))
     .select(".domain").remove()
 
-  // Build color scale
-  var color = d3.scaleSequential()
-    .interpolator(d3.interpolateInferno)
-    .domain([1,100])
+  // // Build color scale
+  // var color = d3.scaleSequential()
+  //   .interpolator(d3.interpolateInferno)
+  //   .domain([1,100])
 
   // create a tooltip
   var tooltip = d3.select("#heatmap-container")
@@ -303,8 +303,9 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
   var mousemove = function(d) {
     tooltip
       .html(d.occupied || 'Unoccupied')
-      .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("position", "absolute")
+      .style("left", (d3.mouse(this)[10]+70) + "px")
+      .style("top", (d3.mouse(this)[10]) + "px")
   }
   var mouseleave = function(d) {
     tooltip
@@ -325,7 +326,17 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
       .attr("ry", 4)
       .attr("width", x.bandwidth() )
       .attr("height", y.bandwidth() )
-      .style("fill", function(d) { return color(d.occID)} )
+      .style("fill", function(d) { 
+        if (d.occupied === '') {
+          return '#000004'
+        }
+        else if (d.occupied === 'Construction' ) {
+          return 'grey'
+        }
+        else {
+          return '#b93556'
+        }
+       } )
       .style("stroke-width", 4)
       .style("stroke", "none")
       .style("opacity", 0.8)
