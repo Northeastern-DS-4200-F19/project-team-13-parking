@@ -336,7 +336,7 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
         if (d.occupied === '') {
           return '#000004'
         }
-        else if (d.occupied === 'Construction' ) {
+        else if (d.occupied === 'Construction' || d.occupied == 'Blocked' ) {
           return 'grey'
         }
         else {
@@ -352,5 +352,5 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
 })
 
 addTitle(svg, 'Chester Square Parking', 0, -10);
-addLegend(svg, ['Occupied', 'Unoccupied'], {'Occupied': 'red', 'Unoccupied': 'black'}, false, 250, -15, 90);
+addLegend(svg, ['Occupied', 'Unoccupied', 'Blocked'], {'Occupied': 'red', 'Unoccupied': 'black', 'Blocked': 'grey'}, false, 250, -15, 120);
 
