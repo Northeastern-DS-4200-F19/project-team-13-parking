@@ -43,7 +43,7 @@ function addTitle(el, title, x=0, y=0) {
 }
 
 /**
- * Adds a label to the given element given keys, their colors, and
+ * Adds a legend to the given element given keys, their colors, and
  * positioning.
  * 
  * @param {*} el 
@@ -53,15 +53,22 @@ function addTitle(el, title, x=0, y=0) {
  * @param {number} y 
  * @param {number} y_offset 
  */
-function addLegend(el, keys, color_map={}, x=0, y=0, y_offset=15) {
+function addLegend(el, keys, color_map={}, vertical=true, x=0, y=0, offset=15) {
   const labelGroup = el.append('g')
     .attr('transform','translate(' + x +',' + y + ')');
   
   keys.forEach((key, idx) => {
-    labelY = idx * y_offset;
+    if (vertical) {
+      labelY = idx * offset;
 
-    labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black');
-    labelGroup.append("text").attr("x", 20).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
+      labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black');
+      labelGroup.append("text").attr("x", 15).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
+    } else {
+      labelX = idx * offset
+
+      labelGroup.append("circle").attr("cx", labelX).attr("cy", 0).attr("r", 6).style("fill", color_map[key] || 'black');
+      labelGroup.append("text").attr("x", labelX + 10).attr("y", 0).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
+    }
   });
 }
 
@@ -144,8 +151,8 @@ function renderAreaVis(data) {
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top);
 
-    addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=25);
-    addLegend(svg, Object.keys(data), REGULATION_COLORS, width - margin.right, margin.top);
+    addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=17);
+    addLegend(svg, Object.keys(data), REGULATION_COLORS, true, width - margin.right, margin.top);
         
     const chartGroup = svg
         .append('g')
@@ -155,7 +162,7 @@ function renderAreaVis(data) {
     const xScale = d3.scaleBand()
       .range([0, width - margin.right - margin.left])
       .domain(TIMES);
-  const yScale = d3.scaleLinear()
+    const yScale = d3.scaleLinear()
       .domain([0, 1])
       .range([height - margin.bottom - margin.top, 0]);
     
@@ -196,6 +203,7 @@ function renderAreaVis(data) {
         return hourInt + (isPm && hourInt != 12 ? 12 : 0);
     }
     
+    // Define our areas and lines
     const area = d3.area()
       .curve(d3.curveNatural)
       .x(d => xScale(d.time))
@@ -321,8 +329,6 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
     .append("rect")
       .attr("x", function(d) { return x(d.spot) })
       .attr("y", function(d) { return y(d.time) })
-      .attr("rx", 4)
-      .attr("ry", 4)
       .attr("width", x.bandwidth() )
       .attr("height", y.bandwidth() )
       .style("fill", function(d) { return color(d.occID)} )
@@ -335,3 +341,5 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
 })
 
 addTitle(svg, 'Chester Square Parking', 0, -10);
+addLegend(svg, ['Occupied', 'Unoccupied'], {'Occupied': 'red', 'Unoccupied': 'black'}, false, 250, -15, 90);
+
