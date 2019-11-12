@@ -312,8 +312,6 @@ d3.csv("./data/Heat-Map-Data.csv").then(data => {
     tooltip
       .html(d.occupied || 'Unoccupied')
       .style("position", "absolute")
-      .style("left", (d3.mouse(this)[10]+70) + "px")
-      .style("top", (d3.mouse(this)[10]) + "px")
   }
   var mouseleave = function(d) {
     tooltip
