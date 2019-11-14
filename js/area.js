@@ -10,16 +10,16 @@ function areachart() {
       left: 50,
       right: 30,
       bottom: 50
-      },
-      width = 600 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom,
-      xValue = d => d[0],
-      yValue = d => d[1],
-      xLabelText = "",
-      yLabelText = "",
-      yLabelOffsetPx = 0,
-      xScale = d3.scalePoint(),
-      yScale = d3.scaleLinear()
+    },
+    width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom,
+    xValue = d => d[0],
+    yValue = d => d[1],
+    xLabelText = "",
+    yLabelText = "",
+    yLabelOffsetPx = 0,
+    xScale = d3.scalePoint(),
+    yScale = d3.scaleLinear();
   
   // Create the chart by adding an svg to the div with the id 
   // specified by the selector using the given data

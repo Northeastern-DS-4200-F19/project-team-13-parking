@@ -73,6 +73,16 @@ function addLegend(el, keys, color_map={}, vertical=true, x=0, y=0, offset=15) {
 }
 
 /**
+ * Converts an hour (e.g. '6:00 AM') into an integer for sorting.
+ */
+function hourToInt(hour) {
+  hourInt = parseInt(hour.substring(0, hour.indexOf(':')));
+  isPm = hour.substring(hour.length - 2, hour.length - 1) == 'P';
+  return hourInt + (isPm && hourInt != 12 ? 12 : 0);
+}
+
+
+/**
  * Processes the data into a map from regulation to a list of utilization rates during
  * each recorded time of the day.
  */
@@ -120,9 +130,19 @@ function utilizationRateByGroup(data) {
     return data_by_regulation
 }
 
-// Converts an hour (e.g. '6:00 AM') into an integer for sorting.
-function hourToInt(hour) {
-  hourInt = parseInt(hour.substring(0, hour.indexOf(':')));
-  isPm = hour.substring(hour.length - 2, hour.length - 1) == 'P';
-  return hourInt + (isPm && hourInt != 12 ? 12 : 0);
+function parkingSpotTimeData(data) {
+  parking_spot_time_data = []
+  for (row of data) {
+    Object.keys(row).forEach(time => {
+      if (time.includes('AM') || time.includes('PM')) {
+        parking_spot_time_data.push({
+          'spot': row['Absolute Spot Number'],
+          'time': time,
+          'occupied': row[time]
+        });
+      }
+    });
+  }
+
+  return parking_spot_time_data;
 }

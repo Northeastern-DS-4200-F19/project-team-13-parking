@@ -96,6 +96,6 @@ h1, h2, h3 {
 
 #heatmap-container {
   flex: 1;
-	/* margin: 0 50px;
-	overflow-x: scroll; */
+	/* margin: 0 50px; */
+	overflow-x: scroll;
 }
