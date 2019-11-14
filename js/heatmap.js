@@ -18,8 +18,8 @@ function heatmap() {
     xLabelText = "",
     yLabelText = "",
     yLabelOffsetPx = 0,
-    xScale = d3.scalePoint(),
-    yScale = d3.scaleLinear();
+    xScale = d3.scaleBand(),
+    yScale = d3.scaleBand();
   
   // Create the chart by adding an svg to the div with the id 
   // specified by the selector using the given data
@@ -38,30 +38,31 @@ function heatmap() {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // Build X scales and axis:
-    var x = d3.scaleBand()
+    xScale
       .range([0, width])
       .domain(d3.map(data, xValue).keys())
       .padding(0.05);
-    svg.append("g")
-      .style("font-size", 15)
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).tickSize(0))
-      .select(".domain").remove()
+    // svg.append("g")
+    //   .style("font-size", 15)
+    //   .attr("transform", "translate(0," + height + ")")
+    //   .call(d3.axisBottom(xScale).tickSize(0))
+    //   .select(".domain").remove()
 
     // Build Y scales and axis:
-    var y = d3.scaleBand()
+    yScale
       .range([height - margin.top - margin.bottom, 0])
       .domain(d3.map(data, yValue).keys())
       .padding(0.05);
-    svg.append("g")
-      .style("font-size", 15)
-      .call(d3.axisLeft(y).tickSize(0))
-      .select(".domain").remove()
+    // svg.append("g")
+    //   .style("font-size", 15)
+    //   .call(d3.axisLeft(yScale).tickSize(0))
+    //   .select(".domain").remove()
     
     // X axis
     const xAxis = svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(xScale));
+        .attr("transform", "translate(0," + (height - margin.bottom - margin.top) + ")")
+        .call(d3.axisBottom(xScale).tickSize(0))
+        .select(".domain").remove();
         
     // X axis label
     xAxis.append("text")        
@@ -71,7 +72,8 @@ function heatmap() {
     
     // Y axis and label
     const yAxis = svg.append("g")
-        .call(d3.axisLeft(yScale))
+        .call(d3.axisLeft(yScale).tickSize(0))
+        .select(".domain").remove()
         .append("text")
           .attr("class", "axisLabel")
           .attr("transform", "translate(" + yLabelOffsetPx + ", -12)")
@@ -89,19 +91,21 @@ function heatmap() {
       .style("padding", "5px")
 
     // Three function that change the tooltip when user hover / move / leave a cell
-    var mouseover = function(d) {
+    function mouseover(d) {
       tooltip
         .style("opacity", 1)
       d3.select(this)
         .style("stroke", "black")
         .style("opacity", 1)
     }
-    var mousemove = function(d) {
+
+    function mousemove(d) {
       tooltip
         .html(d.occupied || 'Unoccupied')
         .style("position", "absolute")
     }
-    var mouseleave = function(d) {
+
+    function mouseleave(d) {
       tooltip
         .style("opacity", 0)
       d3.select(this)
@@ -109,25 +113,27 @@ function heatmap() {
         .style("opacity", 0.8)
     }
 
+    function fill(d) {
+      if (d.occupied === '') {
+        return '#000004'
+      }
+      else if (d.occupied === 'Construction' || d.occupied == 'Blocked' ) {
+        return 'grey'
+      }
+      else {
+        return '#b93556'
+      }
+    }
+
     svg.selectAll()
-      .data(data, function(d) {return d.spot+':'+d.time;})
+      .data(data, d => X(d) + ':' + Y(d))
       .enter()
       .append("rect")
-        .attr("x", function(d) { return x(d.spot) })
-        .attr("y", function(d) { return y(d.time) })
-        .attr("width", x.bandwidth() )
-        .attr("height", y.bandwidth() )
-        .style("fill", function(d) { 
-          if (d.occupied === '') {
-            return '#000004'
-          }
-          else if (d.occupied === 'Construction' || d.occupied == 'Blocked' ) {
-            return 'grey'
-          }
-          else {
-            return '#b93556'
-          }
-          } )
+        .attr("x", d => X(d))
+        .attr("y", d => Y(d))
+        .attr("width", xScale.bandwidth())
+        .attr("height", yScale.bandwidth())
+        .style("fill", d => fill(d))
         .style("stroke-width", 4)
         .style("stroke", "none")
         .style("opacity", 0.8)
