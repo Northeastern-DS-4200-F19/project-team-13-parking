@@ -79,11 +79,17 @@ h1, h2, h3 {
 	}
 }
 
+/* SVG styling */
 .dataLine {
 	stroke-width: 1px;
 	fill: none;
 }
 
+.axisLabel {
+  fill: #475d7c;
+}
+
+/* Chart styling */
 #area-container {
   flex: 1;
 }

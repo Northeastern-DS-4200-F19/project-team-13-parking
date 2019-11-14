@@ -1,7 +1,7 @@
 /* global D3 */
 
 // Initialize a parking spot utilization rate area chart.
-// Modeled after Mike Bostock's  Reusable Chart framework https://bost.ocks.org/mike/chart/
+// Modeled after Mike Bostock's Reusable Chart framework https://bost.ocks.org/mike/chart/
 function areachart() {
   // Based on Mike Bostock's margin convention
   // https://bl.ocks.org/mbostock/3019563
@@ -19,10 +19,7 @@ function areachart() {
       yLabelText = "",
       yLabelOffsetPx = 0,
       xScale = d3.scalePoint(),
-      yScale = d3.scaleLinear(),
-      ourBrush = null,
-      selectableElements = d3.select(null),
-      dispatcher;
+      yScale = d3.scaleLinear()
   
   // Create the chart by adding an svg to the div with the id 
   // specified by the selector using the given data
