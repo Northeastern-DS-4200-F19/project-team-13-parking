@@ -19,6 +19,7 @@ h1, h2, h3 {
 .vis-holder {
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
@@ -78,16 +79,23 @@ h1, h2, h3 {
 	}
 }
 
+/* SVG styling */
 .dataLine {
 	stroke-width: 1px;
 	fill: none;
 }
 
+.axisLabel {
+  fill: #475d7c;
+}
+
+/* Chart styling */
 #area-container {
-	text-align: center;
+  flex: 1;
 }
 
 #heatmap-container {
-	margin: 0 50px;
+  flex: 1;
+	/* margin: 0 50px; */
 	overflow-x: scroll;
 }
