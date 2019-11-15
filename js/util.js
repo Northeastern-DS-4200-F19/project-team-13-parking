@@ -32,12 +32,12 @@ const TIMES = [
  * @param {number} x 
  * @param {number} y 
  */
-function addTitle(el, title, x=0, y=0) {
+function addTitle(el, title, x=0, y=0, font_size=22) {
   el.append("text")
     .attr("x", x)
     .attr("y", y)
     .attr("text-anchor", "left")
-    .style("font-size", "22px")
+    .style("font-size", font_size + "px")
     .style('fill', 'black')
     .text(title);
 }

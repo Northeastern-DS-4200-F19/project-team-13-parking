@@ -31,8 +31,12 @@ function heatmap() {
         .attr("height", height)
         .classed("svg-content", true);
     
-    // addTitle(svg, 'Chester Square Parking', 0, -10);
-    // addLegend(svg, ['Occupied', 'Unoccupied', 'Blocked'], {'Occupied': 'red', 'Unoccupied': 'black', 'Blocked': 'grey'}, false, 250, -15, 120);
+    addTitle(svg, 'Chester Square Parking', x=margin.left, y=25, font_size=35);
+    addLegend(
+      svg,
+      ['Occupied', 'Unoccupied', 'Blocked'],
+      {'Occupied': 'red', 'Unoccupied': 'black', 'Blocked': 'grey'},
+      true, margin.right + 10, 45, 15);
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -42,21 +46,12 @@ function heatmap() {
       .range([0, width])
       .domain(d3.map(data, xValue).keys())
       .padding(0.05);
-    // svg.append("g")
-    //   .style("font-size", 15)
-    //   .attr("transform", "translate(0," + height + ")")
-    //   .call(d3.axisBottom(xScale).tickSize(0))
-    //   .select(".domain").remove()
 
     // Build Y scales and axis:
     yScale
       .range([height - margin.top - margin.bottom, 0])
       .domain(d3.map(data, yValue).keys())
       .padding(0.05);
-    // svg.append("g")
-    //   .style("font-size", 15)
-    //   .call(d3.axisLeft(yScale).tickSize(0))
-    //   .select(".domain").remove()
     
     // X axis
     const xAxis = svg.append("g")
