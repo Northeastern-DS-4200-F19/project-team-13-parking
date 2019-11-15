@@ -19,7 +19,10 @@ function heatmap() {
     yLabelText = "",
     yLabelOffsetPx = 0,
     xScale = d3.scaleBand(),
-    yScale = d3.scaleBand();
+    yScale = d3.scaleBand(),
+    ourBrush = null,
+    selectableElements = d3.select(null),
+    dispatcher;;
   
   // Create the chart by adding an svg to the div with the id 
   // specified by the selector using the given data
@@ -135,6 +138,52 @@ function heatmap() {
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave);
+    
+    const points = svg.selectAll("rect").data(data);
+    console.log(points)
+    selectableElements = points;
+
+    svg.call(brush);
+
+    // Highlight points when brushed
+    function brush(g) {
+      const brush = d3.brush()
+        .on("start brush", highlight)
+        .on("end", brushEnd)
+        .extent([
+          [-margin.left, -margin.bottom],
+          [width + margin.right, height + margin.top]
+        ]);
+
+      ourBrush = brush;
+
+      g.call(brush); // Adds the brush to this element
+
+      // Highlight the selected circles.
+      function highlight() {
+        if (d3.event.selection === null) return;
+        const [
+          [x0, y0],
+          [x1, y1]
+        ] = d3.event.selection;
+        points.classed("selected", d =>
+          x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
+        );
+      }
+      
+      function brushEnd() {
+        // We don't want an infinite recursion
+        if (d3.event.sourceEvent.type != "end") {
+          d3.select(this).call(brush.move, null);
+        }
+
+        // Get the name of our dispatcher's event
+        let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+
+        // Let other charts know
+        dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
+      }
+    }
 
     return chart;
   }
@@ -195,7 +244,25 @@ function heatmap() {
     if (!arguments.length) return yLabelOffsetPx;
     yLabelOffsetPx = _;
     return chart;
-  }; 
+  };
+
+  // Gets or sets the dispatcher we use for selection events
+  chart.selectionDispatcher = function (_) {
+    if (!arguments.length) return dispatcher;
+    dispatcher = _;
+    return chart;
+  };
+
+  // Given selected data from another visualization 
+  // select the relevant elements here (linking)
+  chart.updateSelection = function (selectedData) {
+    if (!arguments.length) return;
+
+    // Select an element if its datum was selected
+    selectableElements.classed("selected", d => 
+      selectedData.some(sd => sd['time'] == d['time'])
+    );
+  };
 
   return chart;
 }

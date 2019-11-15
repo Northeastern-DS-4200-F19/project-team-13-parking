@@ -89,6 +89,11 @@ h1, h2, h3 {
   fill: #475d7c;
 }
 
+.selected {
+  stroke-width: 1px !important;
+  stroke: blue !important;
+}
+
 /* Chart styling */
 #area-container {
   flex: 1;

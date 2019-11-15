@@ -19,7 +19,10 @@ function areachart() {
     yLabelText = "",
     yLabelOffsetPx = 0,
     xScale = d3.scalePoint(),
-    yScale = d3.scaleLinear();
+    yScale = d3.scaleLinear(),
+    ourBrush = null,
+    selectableElements = d3.select(null),
+    dispatcher;
   
   // Create the chart by adding an svg to the div with the id 
   // specified by the selector using the given data
@@ -86,6 +89,7 @@ function areachart() {
     Object.keys(data).forEach(key => {
       svg.append('path')
         .attr('d', area(data[key].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time))))
+        .attr('class', 'dataArea')
         .attr('stroke', REGULATION_COLORS[key])
         .attr('stroke-opacity', 0.5)
         .attr('fill', REGULATION_COLORS[key])
@@ -95,6 +99,54 @@ function areachart() {
         .attr('class', 'dataLine')
         .attr('stroke', REGULATION_COLORS[key]);
     });
+
+    const areas = svg.selectAll(".dataArea").data(data);
+    console.log(areas);
+    selectableElements = areas;
+
+    svg.call(brush);
+
+    // Highlight points when brushed
+    function brush(g) {
+      const brush = d3.brush()
+        .on("start brush", highlight)
+        .on("end", brushEnd)
+        .extent([
+          [-margin.left, -margin.bottom],
+          [width + margin.right, height + margin.top]
+        ]);
+
+      ourBrush = brush;
+
+      g.call(brush); // Adds the brush to this element
+
+      // Highlight the selected circles.
+      function highlight() {
+        if (d3.event.selection === null) return;
+        const [
+          [x0, y0],
+          [x1, y1]
+        ] = d3.event.selection;
+        areas.classed("selected", function(d) {
+          a = x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
+          console.log(a);
+          return a;
+        });
+
+        // Get the name of our dispatcher's event
+        let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+
+        // Let other charts know
+        dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
+      }
+      
+      function brushEnd() {
+        // We don't want an infinite recursion
+        if (d3.event.sourceEvent.type != "end") {
+          d3.select(this).call(brush.move, null);
+        }
+      }
+    }
 
     return chart;
   }
@@ -155,7 +207,14 @@ function areachart() {
     if (!arguments.length) return yLabelOffsetPx;
     yLabelOffsetPx = _;
     return chart;
-  }; 
+  };
+
+  // Gets or sets the dispatcher we use for selection events
+  chart.selectionDispatcher = function (_) {
+    if (!arguments.length) return dispatcher;
+    dispatcher = _;
+    return chart;
+  };
 
   return chart;
 }
