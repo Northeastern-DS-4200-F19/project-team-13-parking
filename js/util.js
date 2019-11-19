@@ -29,6 +29,8 @@ const TIMES = [
  */
 function redrawChart(chart, container_selector, data) {
   d3.select(container_selector).select('svg').remove()
+  d3.select(container_selector).select('div').remove()
+
   chart(container_selector, data);
 }
 
@@ -62,22 +64,34 @@ function addTitle(el, title, x=0, y=0, font_size=22) {
  * @param {number} y 
  * @param {number} y_offset 
  */
-function addLegend(el, keys, color_map={}, vertical=true, x=0, y=0, offset=15) {
+function addLegend(el, keys, color_map={}, vertical=true, x=0, y=0, offset=15, callbacks=[]) {
   const labelGroup = el.append('g')
     .attr('transform','translate(' + x +',' + y + ')');
   
+  function appendEventHandlers(element, key) {
+    element
+      .on('click', _ => callbacks.forEach(callback => callback([key])))
+      .on('mouseover', function(_) { d3.select(this).style("cursor", "pointer"); })
+      .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
+  }
+
+
   keys.forEach((key, idx) => {
+    let circle, text;
     if (vertical) {
       labelY = idx * offset;
 
-      labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black');
-      labelGroup.append("text").attr("x", 15).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
+      circle = labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black')
+      text = labelGroup.append("text").attr("x", 15).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
     } else {
       labelX = idx * offset
 
-      labelGroup.append("circle").attr("cx", labelX).attr("cy", 0).attr("r", 6).style("fill", color_map[key] || 'black');
-      labelGroup.append("text").attr("x", labelX + 10).attr("y", 0).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
+      circle = labelGroup.append("circle").attr("cx", labelX).attr("cy", 0).attr("r", 6).style("fill", color_map[key] || 'black');
+      text = labelGroup.append("text").attr("x", labelX + 10).attr("y", 0).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
     }
+
+    appendEventHandlers(circle, key);
+    appendEventHandlers(text, key);
   });
 }
 
@@ -129,26 +143,27 @@ function utilizationRateByGroup(data, spots=[], times=[]) {
 
     data_by_regulation = {}
     const excluded_keys = ['total_spots', 'spots']
-    Object.keys(grouped_data).forEach(function (regulation) {
+    Object.keys(grouped_data).forEach(regulation => {
         data_by_regulation[regulation] = []
 
-        Object.keys(grouped_data[regulation]).forEach(function (time) {
+        Object.keys(grouped_data[regulation]).forEach(time => {
             if (times.length > 0 && !times.includes(time)) {
               return;
             }
 
             if (!excluded_keys.includes(time)) {
-                total_spots = grouped_data[regulation]['total_spots'];
-                occupied_spots = grouped_data[regulation][time]['occupied_spots'];
-                spots = grouped_data[regulation]['spots']
+              total_spots = grouped_data[regulation]['total_spots'];
+              occupied_spots = grouped_data[regulation][time]['occupied_spots'];
+              spots = grouped_data[regulation]['spots']
 
-                util_rate = occupied_spots / total_spots;
-                data_by_regulation[regulation].push({
-                  'time': time,
-                  'util_rate': util_rate,
-                  'occupied_spots': occupied_spots,
-                  'spots': spots
-                });
+              util_rate = occupied_spots / total_spots;
+              data_by_regulation[regulation].push({
+                'time': time,
+                'util_rate': util_rate,
+                'occupied_spots': occupied_spots,
+                'spots': spots,
+                'regulation': regulation
+              });
             }
         });
     });
@@ -156,15 +171,25 @@ function utilizationRateByGroup(data, spots=[], times=[]) {
     return data_by_regulation
 }
 
-function parkingSpotTimeData(data) {
+/**
+ * Process the data into a list of information for all spots at all recorded times,
+ * optionally filtered by times.
+ */
+function parkingSpotTimeData(data, times=[], regulations=[]) {
   parking_spot_time_data = []
+
   for (row of data) {
     Object.keys(row).forEach(time => {
+      if (times.length > 0 && !times.includes(time)) {
+        return;
+      }
+
       if (time.includes('AM') || time.includes('PM')) {
         parking_spot_time_data.push({
           'spot': row['Absolute Spot Number'],
           'time': time,
-          'occupied': row[time]
+          'occupied': row[time],
+          'hidden': regulations.length > 0 && !regulations.includes(row['Regulation'])
         });
       }
     });

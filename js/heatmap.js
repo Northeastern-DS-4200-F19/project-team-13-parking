@@ -11,7 +11,7 @@ function heatmap() {
       right: 30,
       bottom: 50
     },
-    width = 6000 - margin.left - margin.right,
+    width = 7000 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom,
     xValue = d => d[0],
     yValue = d => d[1],
@@ -111,7 +111,11 @@ function heatmap() {
         .style("opacity", 0.8)
     }
 
-    function fill(d) {
+    function fill(d, exclude_hidden=true) {
+      if (exclude_hidden && d.hidden) {
+        return 'white'
+      }
+
       if (d.occupied === '') {
         return '#000004'
       }
@@ -132,15 +136,14 @@ function heatmap() {
         .attr("width", xScale.bandwidth())
         .attr("height", yScale.bandwidth())
         .style("fill", d => fill(d))
-        .style("stroke-width", 4)
-        .style("stroke", "none")
+        .style("stroke-width", 1)
+        .style("stroke", d => fill(d, false))
         .style("opacity", 0.8)
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave);
     
     const points = svg.selectAll("rect").data(data);
-    console.log(points)
     selectableElements = points;
 
     svg.call(brush);
