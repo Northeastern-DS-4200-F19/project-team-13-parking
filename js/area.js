@@ -12,7 +12,7 @@ function areachart() {
       bottom: 50
     },
     width = 600 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom,
+    height = 500 - margin.top - margin.bottom,
     xValue = d => d[0],
     yValue = d => d[1],
     xLabelText = "",
@@ -22,6 +22,7 @@ function areachart() {
     yScale = d3.scaleLinear(),
     ourBrush = null,
     selectableElements = d3.select(null),
+    legendCallbacks = [],
     dispatcher;
   
   // Create the chart by adding an svg to the div with the id 
@@ -34,7 +35,7 @@ function areachart() {
         .classed("svg-content", true);
     
     addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=17);
-    addLegend(svg, Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10);
+    addLegend(svg, Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10, 15, legendCallbacks);
 
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -86,30 +87,50 @@ function areachart() {
       .y(d => Y(d));
 
     // Create lines for each regulation
-    Object.keys(data).forEach(key => {
+    Object.keys(data).forEach(regulation => {
+      sorted_data = data[regulation].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time))
+
       svg.append('path')
-        .attr('d', area(data[key].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time))))
+        .attr('d', area(sorted_data))
         .attr('class', 'dataArea')
-        .attr('stroke', REGULATION_COLORS[key])
+        .attr('stroke', REGULATION_COLORS[regulation])
         .attr('stroke-opacity', 0.5)
-        .attr('fill', REGULATION_COLORS[key])
+        .attr('fill', REGULATION_COLORS[regulation])
         .attr('fill-opacity', 0.5);
       svg.append('path')
-        .attr('d', line(data[key].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time))))
+        .attr('d', line(sorted_data))
         .attr('class', 'dataLine')
-        .attr('stroke', REGULATION_COLORS[key]);
+        .attr('stroke', REGULATION_COLORS[regulation]);
     });
 
-    const areas = svg.selectAll(".dataArea").data(data);
-    console.log(areas);
-    selectableElements = areas;
+
+    all_points = []
+    Object.keys(data).forEach(regulation => {
+      // Add the points
+      let points = svg.append("g")
+        .selectAll(".linePoint")
+          .data(data[regulation]);
+      
+      points.exit().remove();
+            
+      points = points.enter()
+        .append("circle")
+          .attr("class", "point linePoint")
+        .merge(points)
+          .attr("cx", X)
+          .attr("cy", Y)        
+          .attr("r",5);
+      all_points.push(points);
+    });
+
+    selectableElements = all_points;
 
     svg.call(brush);
 
     // Highlight points when brushed
     function brush(g) {
-      const brush = d3.brush()
-        .on("start brush", highlight)
+      const brush = d3.brushX()
+        .on("start brush", select)
         .on("end", brushEnd)
         .extent([
           [-margin.left, -margin.bottom],
@@ -120,31 +141,21 @@ function areachart() {
 
       g.call(brush); // Adds the brush to this element
 
-      // Highlight the selected circles.
-      function highlight() {
+      function select() {
         if (d3.event.selection === null) return;
-        const [
-          [x0, y0],
-          [x1, y1]
-        ] = d3.event.selection;
-        areas.classed("selected", function(d) {
-          a = x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
-          console.log(a);
-          return a;
-        });
+        const [x0, x1] = d3.event.selection;
 
+        all_points.forEach(area_points => {
+          area_points.classed("selected-no-fill", d => x0 <= X(d) && X(d) <= x1);
+        });
+      }
+      
+      function brushEnd() {
         // Get the name of our dispatcher's event
         let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
 
         // Let other charts know
-        dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
-      }
-      
-      function brushEnd() {
-        // We don't want an infinite recursion
-        if (d3.event.sourceEvent.type != "end") {
-          d3.select(this).call(brush.move, null);
-        }
+        dispatcher.call(dispatchString, this, svg.selectAll(".selected-no-fill").data());
       }
     }
 
@@ -206,6 +217,12 @@ function areachart() {
   chart.yLabelOffset = function (_) {
     if (!arguments.length) return yLabelOffsetPx;
     yLabelOffsetPx = _;
+    return chart;
+  };
+
+  chart.registerLegendCallback = function (_) {
+    if (!arguments.length) return legendCallbacks;
+    legendCallbacks.push(_);
     return chart;
   };
 
