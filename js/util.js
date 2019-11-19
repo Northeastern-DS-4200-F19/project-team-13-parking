@@ -25,6 +25,15 @@ const TIMES = [
 ]
 
 /**
+ * Remove the chart in the given container and draw the given chart there with the data.
+ */
+function redrawChart(chart, container_selector, data) {
+  d3.select(container_selector).select('svg').remove()
+  chart(container_selector, data);
+}
+
+
+/**
  * Adds the given title to the element at the given x and y.
  * 
  * @param {*} el 
@@ -86,18 +95,24 @@ function hourToInt(hour) {
  * Processes the data into a map from regulation to a list of utilization rates during
  * each recorded time of the day.
  */
-function utilizationRateByGroup(data) {
+function utilizationRateByGroup(data, spots=[], times=[]) {
     let grouped_data = {};
     const excluded = ['Construction', 'Blocked', '']
 
     for (row of data) {
+        if (spots.length > 0 && !spots.includes(row['Absolute Spot Number'])) {
+          continue;
+        }
+
         regulation = row['Regulation']
         if (grouped_data[regulation] == undefined) {
             grouped_data[regulation] = {}
             grouped_data[regulation]['total_spots'] = 0
+            grouped_data[regulation]['spots'] = []
         }
 
         grouped_data[regulation]['total_spots'] += 1
+        grouped_data[regulation]['spots'].push(row['Absolute Spot Number']);
 
         Object.keys(row).forEach(function (key) {
             if (key.includes('AM') || key.includes('PM')) {
@@ -113,16 +128,27 @@ function utilizationRateByGroup(data) {
     }
 
     data_by_regulation = {}
+    const excluded_keys = ['total_spots', 'spots']
     Object.keys(grouped_data).forEach(function (regulation) {
         data_by_regulation[regulation] = []
 
         Object.keys(grouped_data[regulation]).forEach(function (time) {
-            if (time != 'total_spots') {
+            if (times.length > 0 && !times.includes(time)) {
+              return;
+            }
+
+            if (!excluded_keys.includes(time)) {
                 total_spots = grouped_data[regulation]['total_spots'];
                 occupied_spots = grouped_data[regulation][time]['occupied_spots'];
+                spots = grouped_data[regulation]['spots']
 
                 util_rate = occupied_spots / total_spots;
-                data_by_regulation[regulation].push({'time': time, 'util_rate': util_rate, 'occupied_spots': occupied_spots});
+                data_by_regulation[regulation].push({
+                  'time': time,
+                  'util_rate': util_rate,
+                  'occupied_spots': occupied_spots,
+                  'spots': spots
+                });
             }
         });
     });
