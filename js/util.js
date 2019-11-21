@@ -179,6 +179,10 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
   parking_spot_time_data = []
 
   for (row of data) {
+    if (regulations.length > 0 && !regulations.includes(row['Regulation'])) {
+      continue;
+    }
+
     Object.keys(row).forEach(time => {
       if (times.length > 0 && !times.includes(time)) {
         return;
@@ -188,12 +192,11 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
         parking_spot_time_data.push({
           'spot': row['Absolute Spot Number'],
           'time': time,
-          'occupied': row[time],
-          'hidden': regulations.length > 0 && !regulations.includes(row['Regulation'])
+          'occupied': row[time]
         });
       }
     });
   }
 
-  return parking_spot_time_data;
+  return parking_spot_time_data.reverse();
 }

@@ -11,8 +11,8 @@ function heatmap() {
       right: 30,
       bottom: 50
     },
-    width = 7000 - margin.left - margin.right,
-    height = 700 - margin.top - margin.bottom,
+    width = 700 - margin.left - margin.right,
+    height = 7000 - margin.top - margin.bottom,
     xValue = d => d[0],
     yValue = d => d[1],
     xLabelText = "",
@@ -38,15 +38,15 @@ function heatmap() {
     addLegend(
       svg,
       ['Occupied', 'Unoccupied', 'Blocked'],
-      {'Occupied': 'red', 'Unoccupied': 'black', 'Blocked': 'grey'},
-      true, margin.right + 10, 45, 15);
+      {'Occupied': '#b93556', 'Unoccupied': '#000004', 'Blocked': 'grey'},
+      false, margin.left, 45, 125);
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // Build X scales and axis:
     xScale
-      .range([0, width])
+      .range([0, width - 120])
       .domain(d3.map(data, xValue).keys())
       .padding(0.05);
 
@@ -58,9 +58,14 @@ function heatmap() {
     
     // X axis
     const xAxis = svg.append("g")
-        .attr("transform", "translate(0," + (height - margin.bottom - margin.top) + ")")
-        .call(d3.axisBottom(xScale).tickSize(0))
-        .select(".domain").remove();
+        .attr("transform", "translate(0," + 0 + ")")
+        .call(d3.axisTop(xScale).tickSize(0))
+    xAxis.selectAll("text")	
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(65)");
+    xAxis.select(".domain").remove();
         
     // X axis label
     xAxis.append("text")        
@@ -111,11 +116,7 @@ function heatmap() {
         .style("opacity", 0.8)
     }
 
-    function fill(d, exclude_hidden=true) {
-      if (exclude_hidden && d.hidden) {
-        return 'white'
-      }
-
+    function fill(d) {
       if (d.occupied === '') {
         return '#000004'
       }
@@ -127,17 +128,20 @@ function heatmap() {
       }
     }
 
+    rect_width = xScale.bandwidth();
+    rect_height = yScale.bandwidth();
+
     svg.selectAll()
       .data(data, d => X(d) + ':' + Y(d))
       .enter()
       .append("rect")
         .attr("x", d => X(d))
         .attr("y", d => Y(d))
-        .attr("width", xScale.bandwidth())
-        .attr("height", yScale.bandwidth())
+        .attr("width", rect_width)
+        .attr("height", rect_height)
         .style("fill", d => fill(d))
         .style("stroke-width", 1)
-        .style("stroke", d => fill(d, false))
+        .style("stroke", d => fill(d))
         .style("opacity", 0.8)
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
@@ -170,7 +174,7 @@ function heatmap() {
           [x1, y1]
         ] = d3.event.selection;
         points.classed("selected", d =>
-          x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
+          x0 <= X(d) + (rect_width/2) && X(d) <= x1 && y0 <= Y(d) + (rect_height/2) && Y(d) <= y1
         );
       }
       

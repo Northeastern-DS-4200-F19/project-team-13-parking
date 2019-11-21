@@ -22,8 +22,42 @@ h1, h2, h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: auto;
+  margin: 40px auto;
 }
+
+.webpage {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 800px) {
+  .webpage {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.text-side {
+  flex: 1;
+}
+
+.vis-side {
+  flex: 1;
+}
+
+.vis-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.sticky {
+  height: fit-content;
+  position: sticky;
+  top: 10px;
+}
+
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
 #forkongithub a{
@@ -99,14 +133,14 @@ h1, h2, h3 {
 
 /* Chart styling */
 #area-container {
-  flex: 1;
+  /* flex: 1; */
 }
 
 #heatmap-container {
   flex: 1;
-	overflow-x: scroll;
+	/* overflow-y: scroll; */
 }
 
 #map-container {
-  flex: 1;
+  /* flex: 1; */
 }

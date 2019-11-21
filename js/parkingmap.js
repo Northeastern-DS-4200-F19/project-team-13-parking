@@ -27,12 +27,13 @@ d3.csv("./data/parking.csv").then (function(data) {
         data[i]['8:00 PM']];
     }
 });
+console.log(mapData);
 
 
 
 d3.selectAll(".parkingspot")
-            .on("mouseover", mouseover)
-            .on("mouseout", mouseleave)
+  .on("mouseover", mouseover)
+  .on("mouseout", mouseleave)
 
 
 function mouseover() {
@@ -46,21 +47,38 @@ function mouseover() {
       .style("fill", "red")
 }
 
+function updateParkingMap() {
+  for (var j = 1; j < 290; j++) {
+    if (mapData["_" + j][rangeslider.value - 5] == "Construction" || mapData["_" + j][rangeslider.value - 5] == "Blocked") {
+        d3.select("#_" + j).style("fill", "grey")
+    }
+    else if (mapData["_" + j][rangeslider.value - 5] == "") {
+        d3.select("#_" + j).style("fill", "#000004")
+    }
+    else {
+        d3.select("#_" + j).style("fill", "#b93556")
+    }
+  }
+}
+
+function filterParkingMap(spots) {
+  console.log(spots);
+  updateParkingMap();
+
+  if (spots.length == 0) {
+    return;
+  }
+
+  for (var id = 1; id < 290; id++) {
+    if (!spots.includes("" + id)) {
+      d3.select("#_" + id).style("fill", "white");
+    }
+  }
+}
+
 rangeslider.oninput = function() { 
     output.innerHTML = this.value; 
-    for (var j = 1; j < 290; j++) {
-        if (mapData["_" + j][rangeslider.value - 5] == "Construction" || mapData["_" + j][rangeslider.value - 5] == "Blocked") {
-            d3.select("#_" + j).style("fill", "grey")
-        }
-        else if (mapData["_" + j][rangeslider.value - 5] == "") {
-            d3.select("#_" + j).style("fill", "#000004")
-        }
-        else {
-            d3.select("#_" + j).style("fill", "#b93556")
-        }
-    }
-    
-  
+    updateParkingMap();
 } 
 
 function mouseleave() {
