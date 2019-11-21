@@ -1,291 +1,385 @@
-Group Member,Route Number,Side of Street,Relative Spot Number,Absolute Spot Number,Regulation,6:00 AM,7:00 AM,8:00 AM,9:00 AM,10:00 AM,11:00 AM,12:00 PM,1:00 PM,2:00 PM,3:00 PM,4:00 PM,5:00 PM,6:00 PM,7:00 PM,8:00 PM,Street Name,Street Direction,Start Bound Street,End Bound Street
+Data Entry Group Member,Route Number,Side of Street,Relative Spot Number,Absolute Spot Number,Regulation,6:00 AM,7:00 AM,8:00 AM,9:00 AM,10:00 AM,11:00 AM,12:00 PM,1:00 PM,2:00 PM,3:00 PM,4:00 PM,5:00 PM,6:00 PM,7:00 PM,8:00 PM,Street Name,Street Direction,Start Bound Street,End Bound Street
 Ysabelle,1,Right,1,1,Resident Only,,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,,Massachusetts Avenue,North,Shawmut Avenue,Chester Square - Entrance
-Ysabelle,1,Right,2,2,Resident Only,,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,,,,,
-Ysabelle,1,Right,3,3,Resident Only,,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,55K,55K,,,,
-Ysabelle,1,Right,4,4,Resident Only,1AH,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,2YD,2YD,2YD,2YD,,,,
-Ysabelle,1,Right,5,5,Resident Only,V41,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,6WW,6WW,6WW,6WW,,,,
-Ysabelle,1,Right,6,6,Resident Only,,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,27B,V41,,58G,,,,
-Ysabelle,1,Right,7,7,Resident Only,7XF,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,5EC,5EC,,,,
-Ysabelle,2,Right,1,8,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,2,9,Resident Only,5LJ,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,3,10,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,4,11,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,5,12,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,6,13,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,7,14,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,8,15,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,1DH,,,,
-Ysabelle,2,Right,9,16,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,10,17,Resident Only,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,11,18,Resident Only,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,1,19,Resident Only,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,2,20,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,3,21,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Ysabelle,2,Right,4,22,Resident Only,9XB,472,472,472,472,,Construction,Construction,Construction,Construction,Construction,Construction,,,9XB,,,,
-Ysabelle,2,Right,5,23,Resident Only,,,,576,,,Construction,Construction,Construction,Construction,Construction,Construction,,,,,,,
-Ysabelle,2,Right,6,24,Resident Only,1JG,1JG,1JG,,,,Construction,Construction,Construction,Construction,Construction,Construction,,,,,,,
-Ysabelle,2,Right,7,25,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,,,,
-Ysabelle,2,Right,8,26,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,,,,
-Ysabelle,2,Right,9,27,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,1HZ,1LS,1LS,,,,
-Ysabelle,2,Right,10,28,Resident Only,1MG,,,,,,Construction,Construction,Construction,Construction,Construction,Construction,1MG,1MG,1MG,,,,
-Ysabelle,2,Right,11,29,Resident Only,7WC,,,1HZ,1HZ,,Construction,Construction,Construction,Construction,Construction,Construction,,,,,,,
-Ysabelle,3,Right,1,30,Resident Only,,20M,20M,20M,20M,20M,20M,20M,,7WJ,7WG,,749,7WJ,,,,,
-Ysabelle,,Right,2,31,Resident Only,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,,,,
-Ysabelle,,Right,3,32,Resident Only,1RC,1RC,1RC,,1MH,1MH,1MH,1MH,1MH,1MH,1MH,1MH,,1DG,1DG,,,,
-Ysabelle,,Right,4,33,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,,,,
-Ysabelle,,Right,1,34,Resident Only,8RJ,8RJ,8RJ,8RJ,367,367,367,367,367,5HT,,,,Blocked,,,,,
-Ysabelle,,Right,2,35,Resident Only,,,,,H93,IHL,Blocked,Blocked,Blocked,Blocked,,,,8TX,8TX,,,,
-Ysabelle,,Right,3,36,Resident Only,5EC,5EC,5EC,,Blocked,Blocked,7WJ,7WJ,547,547,547,,CLR,CLR,CLR,,,,
-Ysabelle,,Right,4,37,Resident Only,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,,,,,
-Ysabelle,,Right,1,38,Resident Only,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,,,,,,,
-Ysabelle,,Right,2,39,Resident Only,9DP,9DP,9DP,9DP,9DP,9DP,9DP,9DP,9DP,1TS,1TS,1TS,1TS,1TS,,,,,
-Ysabelle,,Right,3,40,Resident Only,1NR,1NR,1NR,1NR,1NR,ITS,8WC,Blocked,Blocked,Blocked,Blocked,,,,,,,,
-Ysabelle,,Right,4,41,Resident Only,,,,,,Blocked,Blocked,8GW,8GW,,2YD,,,,,,,,
-Ysabelle,,Right,1,42,Resident Only,1DL,1DL,,,619,619,619,619,26B,26B,,,,,,,,,
-Ysabelle,,Right,2,43,Resident Only,1VE,1VE,1VE,1VE,1VE,1VE,1VE,1VE,1VE,1VE,,,7XP,,72A,,,,
-Ysabelle,,Right,3,44,Resident Only,CKI,,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,9CG,9CG,,,,
-Ysabelle,,Right,4,45,Resident Only,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,,,,
-Ysabelle,,Right,1,46,Resident Only,,5CP,5CP,5CP,5CP,IRC,IRC,IRC,,,,,,251,,,,,
-Ysabelle,,Right,2,47,Resident Only,3YK,3YK,3YK,3YK,IRL,,Blocked,Blocked,,,,,,Blcoked,,,,,
-Ysabelle,,Right,3,48,Resident Only,,1HV,1HV,1HV,1HV,3YK,3YK,3YK,3YK,3YK,3YK,3YK,3YK,3YK,3YK,,,,
-Ysabelle,,Right,4,49,Resident Only,,,,,,ISG,ISG,ISG,ISG,,,,,,,,,,
-Ysabelle,,Right,1,50,Resident Only,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,,1AH,,,,,
-Ysabelle,,Right,2,51,Resident Only,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,,,,
-Ysabelle,,Right,3,52,Resident Only,9NX,,,,,P62,P62,2HA,2HA,6SN,6SN,6SN,6SN,6SN,6SN,,,,
-Ysabelle,,Right,4,53,Resident Only,,,,,,,,,,,,,,,,,,,
-Ysabelle,,Right,1,54,Unrestricted,7JF,7JF,,,,813,813,813,813,813,813,813,813,813,813,,,,
-Ysabelle,,Right,1,55,Unrestricted,1NV,1NV,,9NX,9NX,9NX,9NX,9NX,9NX,9NX,9NX,9NX,7DL,1M4,8NC,,,,
-Ysabelle,,Right,2,56,Unrestricted,6CF,6CF,5GC,5GC,5GC,5GC,5GC,5GC,5GC,5GC,5GC,5GC,,1NV,1NV,,,,
-Ysabelle,,Right,3,57,Unrestricted,7DL,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,,,,
-Ysabelle,,Right,4,58,Unrestricted,6LZ,6LZ,6LZ,,,,,,8NC,8NC,6VJ,,,,BGW,,,,
-Ysabelle,,Right,1,59,Unrestricted,,IRL,IRL,IRL,IRL,IRL,IRL,IRL,IRL,IRL,IRL,,,9JL,6DY,,,,
-Ysabelle,,Right,2,60,Unrestricted,6RG,6RG,6RG,,9GB,9GB,9GB,9GB,9GB,,7JF,155,,,,,,,
-Ysabelle,,Right,3,61,Unrestricted,1KP,1KP,,,,7RJ,7RJ,7RJ,7RJ,7RJ,7RJ,,,,,,,,
-Ysabelle,,Right,1,62,Metered,810,,V25,,F2G,,1MS,,,,959,,T69,T69,T69,,,,
-Ysabelle,,Right,2,63,Metered,75D,4LE,4LE,,V21,UP3,UP3,,237,,,,,8DP,444,,,,
-Ysabelle,,Right,3,64,Metered,JBG,JBG,JBG,JBG,JBG,JBG,8DZ,924,,456,,,LRS,LRS,LRS,,,,
-Ysabelle,,Right,4,65,Metered,AEW,AEW,AEW,AEW,85N,3LS,3LS,7JM,7JM,UTJ,1KM,,8CF,5LB,5LB,,,,
-Ysabelle,,Right,1,66,Metered,441,441,,,374,261,261,7ZW,,,,,7MM,7MM,7MM,,,,
-Ysabelle,,Right,2,67,Metered,818,818,,,,6WP,2RT,,LCB,,,441,441,441,441,,,,
-Ysabelle,,Right,3,68,Metered,1TS,1TS,1TS,1TS,1TS,5WR,1NJ,1NJ,1NJ,6EA,R32,R32,6KB,6KB,6KB,,,,
-Ysabelle,,Right,4,69,Metered,6DJ,6DJ,,,3PR,3PR,,3TB,31A,1NJ,,,665,492,HWW,,,,
-Ysabelle,,Right,1,70,Unrestricted,707,707,707,707,707,707,707,707,,1TS,1TS,1TS,1TS,1TS,1TS,,,,
-Ysabelle,,Right,2,71,Unrestricted,NE1,NE2,NE3,NE4,NE5,NE6,NE7,NE8,NE9,NE10,NE11,NE12,NE13,NE14,NE15,,,,
-Ysabelle,,Right,3,72,Unrestricted,1EN,1EN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,6PG,6PG,6PG,,,,
-Ysabelle,,Right,4,73,Unrestricted,,,,,,,,,,1EN,1EN,1EN,1EN,1EN,1EN,,,,
-Ysabelle,,Right,1,74,Unrestricted,994,994,,,,587,V30,,,,,9NH,,387,387,,,,
-Ysabelle,,Right,2,75,Unrestricted,,,,,,,,,,,,,,,,,,,
-Ysabelle,,Right,1,76,Unrestricted,,,,,,,,,,,,,,,,,,,
-Ysabelle,,Right,1,77,Unrestricted,EV8,EV8,EV8,4AC,4AC,4AC,4AC,4AC,4AC,4AC,4AC,4AC,1BS,1BS,1BS,,,,
-Ysabelle,,Right,2,78,Unrestricted,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,,,,
-Ysabelle,,Right,1,79,Unrestricted,585,585,585,585,673,6ZJ,6ZJ,6ZJ,6ZJ,6ZJ,6ZJ,6ZJ,4A9,EZG,EZG,,,,
-Ysabelle,,Right,2,80,Unrestricted,981,981,981,6RG,6RG,6RG,6RG,6RG,6RG,6RG,6RG,,HZL,4VR,4VR,,,,
-Ysabelle,,Right,3,81,Unrestricted,8NC,8NC,8NC,5CL,5CL,5CL,5CL,5CL,5CL,5CL,5CL,5CL,6CF,6CF,6CF,,,,
-Ysabelle,,Right,1,82,Unrestricted,204,204,204,,586,1SH,1SH,1SH,,95G,95G,95G,95G,6LZ,6LZ,,,,
-Ysabelle,,Right,2,83,Unrestricted,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Ysabelle,,Right,1,84,Unrestricted,3GC,3GC,,,548,548,548,548,548,548,548,,,,,,,,
-Ysabelle,,Right,2,85,Unrestricted,8XX,8XX,8XX,8XX,R29,,Blocked,Blocked,,Blocked,Blocked,,4TC,4TC,4TC,,,,
-Ysabelle,,Right,1,86,Unrestricted,962,,564,564,564,564,564,564,564,564,564,564,6ES,6ES,6ES,,,,
-Ysabelle,,Right,2,87,Unrestricted,45J,45J,45J,45J,,62G,62G,62G,62G,62G,62G,62G,617,8BG,8BG,,,,
-Ysabelle,,Right,3,88,Unrestricted,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Ysabelle,,Right,4,89,Unrestricted,643,643,643,643,643,643,643,643,643,6LR,6LR,,8BY,8BY,8BY,,,,
-Ysabelle,,Right,1,90,Unrestricted,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,,,,
-Ysabelle,,Right,2,91,Unrestricted,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,,,,
-Lal,,Right,1,92,Resident Only,704L,704L,620,620,620,620,620,,,SSW,SSW,SSW,SSW,SSW,SSW,,,,
-Lal,,Right,1,93,Resident Only,3PX,,,962,962,962,962,962,962,962,962,204,204,204,204,,,,
-Lal,,Right,2,94,Resident Only,,,,,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Lal,,Right,3,95,Resident Only,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,,,,
-Lal,,Right,1,96,Resident Only,5VT,5VT,5VT,5VT,,3GC,3GC,3GC,3GC,7DK,7DK,7DK,7DK,7DK,7DK,,,,
-Lal,,Right,2,97,Resident Only,8FP,,,T24,T25,T26,T27,T28,2GG,2GG,2GG,2GG,2GG,2GG,2GG,,,,
-Lal,,Right,3,98,Resident Only,6WY,6WY,,SDY,SDY,SDY,SDY,SDY,SDY,SDY,SDY,SDY,Blocked,7JF,7JF,,,,
-Lal,,Right,1,99,Resident Only,,7HV,,,,,,,,,,122,122,122,122,,,,
-Lal,,Right,2,100,Resident Only,DV92,,,P99,P100,,,,,,,DV9,DV9,DV9,DV9,,,,
-Lal,,Right,3,101,Resident Only,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,,,,
-Lal,,Right,HC,102,Handicapped,613,613,,,,,,,,9BK,9BK,9BK,9BK,9BK,9BK,,,,
-Lal,,Right,1,103,Resident Only,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,,,,
-Lal,,Right,1,104,Resident Only,336,,56S,,,,,2X5,2X5,BC9,BC9,BC9,BC9,BC9,BC9,,,,
-Lal,,Right,1,105,Resident Only,6B7,6B7,6B7,6B7,6B7,,,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,,,,
-Lal,,Right,2,106,Resident Only,,,,,Blocked,,,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Lal,,Right,1,107,Resident Only,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,,,,
-Lal,,Right,2,108,Resident Only,382,382,382,382,382,382,382,382,382,382,382,382,382,382,382,,,,
-Lal,,Right,3,109,Resident Only,,,,,,8MW,,,,15C,15C,15C,15C,15C,15C,,,,
-Lal,,Right,1,110,Resident Only,5.A.M,5.A.M,5.A.M,5.A.M,5.A.M,5.A.M,,,,,294,294,294,294,294,,,,
-Lal,,Right,2,111,Resident Only,8XM,8XM,8XM,8XM,8XM,,,,,25L,25L,25L,25L,25L,9FB,25L also fit in this spot,,,
-Lal,,Right,3,112,Resident Only,5TD,5TD,5TD,5TD,5TD,5TD,5TD,5TD,5TD,5TD,,217,217,217,217,,,,
-Lal,,Right,1,113,Resident Only,9FX,9FX,9FX,9FX,9FX,9FX,4GH,4GH,,,729,729,729,729,729,,,,
-Lal,,Right,2,114,Resident Only,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,,,,
-Lal,,Right,1,115,Resident Only,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,,,,
-Lal,,Right,2,116,Resident Only,9RX,,473,473,473,1RL,1RL,JT2,JT2,JT2,JT2,JT2,9NX,9NX,9NX,,,,
-Lal,,Right,3,117,Resident Only,9GP,9GP,9GP,9GP,1NRV,1NRV,1NRV,1NRV,1NRV,1NRV,,HJM,HJM,1SS,1SS,,,,
-Lal,,Right,1,118,Resident Only,27E,27E,1JD,1JD,1JD,,,,6BW,6BW,6BW,6BW,6BW,6BW,6BW,,,,
-Lal,,Right,2,119,Resident Only,8PF,8PF,8PF,8PF,8PF,892,892,447,447,9GP,9GP,9GP,9GP,9GP,9GP,,,,
-Lal,,Right,3,120,Resident Only,2GG,2GG,2GG,2GG,GGF,GGF,1AG,22F,22F,22F,22F,,1RA,1RA,1RA,,,,
-Lal,,Right,1,121,Resident Only,2PB,2PB,,8G9,S71,S71,S71,,3SC,3SC,3SC,,IC4,IC4,IC4,,,,
-Lal,,Right,2,122,Resident Only,Blocked,Blocked,,Blocked,Blocked,Blocked,Blocked,,Blocked,Blocked,Blocked,,,Blocked,Blocked,,,,
-Lal,,Right,3,123,Resident Only,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,,,,
-Lal,,Right,4,124,Resident Only,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,9HW,,,,
-Lal,,Right,1,125,Resident Only,841,,,,,302,,9HH,9HH,9HH,9HH,858,858,,55S,,,,
-Lal,,Right,2,126,Resident Only,5VN,5VN,,,7LG,22P,5HT,5HT,5HJ,,Blocked,Blocked,5KF,5KF,5KF,,,,
-Lal,,Right,3,127,Resident Only,Blocked ,Blocked ,566,566,566,P67,P67,P67,P67,P67,586,586,94X,94X,94X,,,,
-Lal,,Right,4,128,Resident Only,236,236,236,,2SS,Blocked,Blocked,Blocked,Blocked,Blocked,,7W5,,Blocked,Blocked,,,,
-Lal,,Right,1,129,Resident Only,155,155,155,,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,,,,
-Lal,,Right,2,130,Resident Only,237,237,237,237,237,237,237,237,237,237,237,460,460,460,6LR,,,,
-Lal,,Right,3,131,Resident Only,9YX,9YX,6LT,,22F,22F,4FM,4FM,,1RC,1RC,1RC,1RC,1RC,1RC,,,,
-Lal,,Right,1,132,Resident Only,867,867,867,867,867,867,867,867,867,867,867,867,867,1RH,1RH,,,,
-Lal,,Right,2,133,Resident Only,58X,58X,8EE,8EE,8EE,206,206,206,206,,1BA,1BA,1BA,1BA,1BA,,,,
-Lal,,Right,3,134,Resident Only,96K,96K,96K,,6VK,6VK,6VK,,9MB,9MB,,5VN,5VN,5VN,5VN,,,,
-Lal,,Right,1,135,Resident Only,Blocked,Blocked,Blocked,Blocked,163,163,163,163,163,163,163,163,163,163,470,,,,
-Lal,,Right,2,136,Resident Only,KP7,KP7,KP7,KP7,5TG,5TG,5TG,5TG,5TG,5TG,5TG,5TG,5TG,5TG,7MV,,,,
-Lal,,Right,3,137,Resident Only,9BK,9BK,9BK,9BK,9BK,9BK,9BK,,96K,96K,96K,96K,96K,96K,96K,,,,
-Lal,,Right,1,138,Resident Only,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,,,,
-Lal,,Right,2,139,Resident Only,1BC,1BC,1BC,1BC,8BA,8BA,8BA,,8FC,8FC,8FC,8FC,8FC,8FC,8FC,,,,
-Lal,,Right,3,140,Resident Only,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,,,,
-Lal,,Right,4,141,Resident Only,729,729,21K,21K,21K,21K,21K,21K,21K,21K,21K,,236,236,236,,,,
-Lal,,Right,1,142,Resident Only,EV2,EV2,,7PG,7PG,7PG,7PG,7PG,7PG,7PG,9AC,P32,P32,P32,P32,,,,
-Lal,,Right,2,143,Resident Only,4KX,9GA,9GA,9GA,9GA,9GA,9GA,9GA,9GA,9GA,9GA,,V41,V41,V41,,,,
-Lal,,Right,3,144,Resident Only,8EK,6KA,6KA,,6NF,6NF,6NF,6NF,6NF,6NF,6NF,,2VT,2VT,2VT,,,,
-Lal,,Right,4,145,Resident Only,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,,,,
-Lal,,Right,5,146,Resident Only,2LW,6CH,6CH,6CH,6CH,6CH,6CH,6CH,6CH,6CH,6CH,3WY,8WJ,8WJ,,,,,
-Lal,,Right,6,147,Resident Only,2PJ,2PJ,2PJ,2PJ,2PJ,2PJ,892,892,892,892,892,892,892,892,892,,,,
-Lal,,Right,7,148,Resident Only,,,,,,,,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Lal,,Right,HC 1,149,Handicapped,6WW,6WW,6WW,6WW,6WW,,,811,,,,,193,193,,,,,
-Lal,,Right,HC 2,150,Handicapped,7ZV,7ZV,7ZV,,,9HW,9HW,9HW,9HW,9HW,,,,,613,,,,
-Lal,,Right,1,151,Resident Only,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,,Blocked,,,,,
-Lal,,,1,152,Resident Only,547,,,,,,,,,,,,,,,,,,
-Lal,,,2,153,Resident Only,5CP,,,,,,,,,,,,,,,,,,
-Lal,,,3,154,Resident Only,5KA,,,,,,,,,,,,,,,,,,
-Lal,,,4,155,Resident Only,1HZ,1HZ,,,,,,,,,,,,,,,,,
-Lal,,,5,156,Resident Only,,,,,,,,,,,,,5KA,9HM,9HM,,,,
-Lal,,,6,157,Resident Only,,,,,,,,,,,,,547,547,547,,,,
-Lal,,,7,158,Resident Only,,,,,,,,,,,,,,3MD,3MD,,,,
-Lal,,,8,159,Resident Only,27D,,,,,,,,,,,,,,,,,,
-Lal,,,9,160,Resident Only,916,,,,,,,,,,,,,916,916,,,,
-Lal,,,1,161,Resident Only,,,,,,,,,,,,,,,,,,,
-Lal,,,2,162,Resident Only,,,,,,,,,,,,,,,,,,,
-Lal,,,3,163,Resident Only,,,,,,,,,,,,,,,,,,,
-Lal,,,4,164,Resident Only,,,,,,,,,,,,,,,,,,,
-Lal,,,5,165,Resident Only,,,,,,,,,,,,,,,,,,,
-Lal,,,6,166,Resident Only,3JF,3JF,,,,,,,,,,,,1NR,1NR,,,,
-Lal,,,7,167,Resident Only,7DK,7DK,,,,,,,,,,,5TM,5TM,5TM,,,,
-Lal,,,8,168,Resident Only,5TM,,,,,,,,,,,,6VI,6VI,6VI,,,,
-Lal,,,1,169,Resident Only,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,,,,
-Lal,,,2,170,Resident Only,5HT,5HT,J15,,,,,,,9DP,9DP,9DP,9DP,9DP,9DP,,,,
-Lal,,,3,171,Resident Only,,,Blocked,431,431,431,,,,,5HT,5HT,5HT,5HT,5HT,,,,
-Lal,,,4,172,Resident Only,122,122,759,759,759,,7NB,,,,,,,7VL,7VL,,,,
-Lal,,,5,173,Resident Only,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,,,,
-Lal,,,6,174,Resident Only,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,,,,
-Lal,,,7,175,Resident Only,174,174,174,174,174,174,174,174,174,174,174,174,174,174,174,,,,
-Lal,,,8,176,Resident Only,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,,,,
-Lal,,,9,177,Resident Only,5GS,5GS,,,,,V22,V22,V22,,,8ZV,759,759,759,,,,
-Lal,,,10,178,Resident Only,NED,NED,NED,NED,NED,NED,NED,NED,NED,45J,NED,NED,NED,NED,NED,,,,
-Lal,,,1,179,Resident Only,2XS,,,,,586,586,586,586,,336,336,336,336,336,,,,
-Lal,,,2,180,Resident Only,Blocked,Blocked,,,,Blocked,Blocked,Blocked,Blocked,CK1,Blocked,Blocked,Blocked,Blocked,,,,,
-Lal,,,3,181,Resident Only,294,294,294,294,294,294,294,,,Blocked,9KT,9KT,9KT,96Z,96Z,,,,
-Lal,,,4,182,Resident Only,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,,,,
-Lal,,,5,183,Resident Only,Blocked,Blocked,,,Blocked,,,45J,,,5TD,5TD,5TD,5TD,5TD,,,,
-Lal,,,6,184,Resident Only,9KT,9KT,9KT,,2XS,,,,,,Blocked,Blocked,Blocked,Blocked,,,,,
-Lal,,,7,185,Resident Only,4GH,4GH,4GH,4GH,4GH,,,,4GE,,9FX,9FX,9FX,9FX,9FX,,,,
-Lal,,,8,186,Resident Only,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,,,,
-Lal,,,9,187,Resident Only,,,Blocked,,Blocked,,,,,,,97P,97P,97P,97P,,,,
-Lal,,,10,188,Resident Only,5KF,,TG1,,N92,,SMW,SMW,SMW,SMW,,9MF,9MF,9MF,9MF,,,,
-Lal,,,11,189,Resident Only,1JS,1JS,1JS,1JS,,743,,,,,1JS,1JS,1JS,1JS,1JS,,,,
-Lal,,,1,190,Resident Only,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,,,,
-Lal,,,2,191,Resident Only,1P.M.,1P.M.,1P.M.,1P.M.,1P.M.,1P.M.,8FX,8FX,8FX,8FX,8FX,8FX,8FX,EV2,EV2,,,,
-Lal,,,1,192,Resident Only,531,531,531,531,531,531,531,531,531,8LE,8LE,8LE,8LE,8LE,8LE,,,,
-Lal,,,2,193,Resident Only,5PB,5PB,5PB,5PB,5PB,11F,11F,11F,11F,11F,11F,11F,11F,11F,11F,,,,
-Lal,,,1,194,Resident Only,4DV,4DV,4DV,4DV,8SY,65H,65H,65H,65H,31Z,31Z,31Z,31Z,31Z,31Z,,,,
-Lal,,,2,195,Resident Only,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,,,,
-Victoria,,,1,196,Resident Only,8ER,,,,,,,,,,,,8ER,8ER,8ER,,,,
-Victoria,,,2,197,Resident Only,,,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,,,,
-Victoria,,,3,198,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,
-Victoria,,,4,199,Resident Only,,LV8,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,,,,
-Victoria,,,5,200,Resident Only,8D2,8D2,8D2,8D2,8D2,8D2,,,,,2YL,2YL,2YL,2YL,2YL,,,,
-Victoria,,,6,201,Resident Only,,,,,,,,,,,,,,,,,,,
-Victoria,,,7,202,Resident Only,IRR,IRR,,,M86,,,,,,,951,951,951,951,,,,
-Victoria,,,1,203,Resident Only,5GA,5GA,5GA,,,,,,4GH,4GH,4GH,4GH,4GH,4GH,4GH,,,,
-Victoria,,,2,204,Resident Only,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,,5ZD,5ZD,5ZD,,,,
-Victoria,,,3,205,Resident Only,,,,,,,,,,,,,1F6 ,8MR,8MR,,,,
-Victoria,,,4,206,Resident Only,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,,,,,
-Victoria,,,5,207,Resident Only,967,,,,,,,,,,,,,,,,,,
-Victoria,,,6,208,Resident Only,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,,,,
-Victoria,,,7,209,Resident Only,1DA,1DA,,,,,,,,,,,9JY,9JY,9JY,,,,
-Victoria,,,8,210,Resident Only,217,217,,,,,,,1JH,,1JH,1JH,448,448,448,,,,
-Victoria,,,1,211,Resident Only,,,,,,,,448,448,448,448,85L,85L,,5GS,,,,
-Victoria,,,2,212,Resident Only,,,,,,,7WB,7WB,7WB,7WB,7WB,7WB,7WB,7WB,7WB,,,,
-Victoria,,,3,213,Resident Only,85L,15H,15H,15H,15H,15H,,,,,,,,,,,,,
-Victoria,,,4,214,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Victoria,,,5,215,Resident Only,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,,9NP,9NP,,,,
-Victoria,,,1,216,Resident Only,448,,,,,,,,4TJ,4TJ,4TJ,4TJ,4TJ,4TJ,4TJ,,,,
-Victoria,,,1,217,Resident Only,,,,,,,,,,,,,,388,388,,,,
-Victoria,,,2,218,Resident Only,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,44W,44W,,,,
-Victoria,,,3,219,Resident Only,,5KP,,,,,,,,,,,1KP,1KP,1KP,,,,
-Victoria,,,4,220,Resident Only,ATO,,,,44W,44W,44W,,53E,53E,53E,53B,53B,53B,53B,,,,
-Victoria,,,5,221,Resident Only,739,739,739,739,739,739,739,739,739,739,739,739,739,739,739,,,,
-Victoria,,,6,222,Resident Only,53B,53B,53B,,,,,,,,,ATO,ATO,ATO,ATO,,,,
-Victoria,,,1,223,Resident Only,,,ATO,,9LD,9LD,9LD,9LD,9LD,9LD,9LD,9LD,9LD,9LD,5KP,,,,
-Victoria,,,2,224,Resident Only,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,,,,
-Victoria,,,3,225,Resident Only,9ES,9ES,9ES,9ES,9ES,606,,,,ATO,,,9ES,9ES,9ES,,,,
-Victoria,,,4,226,Resident Only,ANT,ANT,ANT,,,Blocked,,Blocked,,,,,,,2VE,,,,
-Victoria,,,5,227,Resident Only,Blocked,Blocked,Blocked,,734,734,734,734,734,,,,Blocked,Blocked,,,,,
-Victoria,,,6,228,Resident Only,3YO,3YO,3YO,3YO,3YO,8RF,,,8GA,,8RF,8RF,8RF,8RF,8RF,,,,
-Victoria,,,7,229,Resident Only,5KP,,5KP,5KP,,,,,,8D2,8D2,8D2,396,396,396,,,,
-Victoria,,,1,230,Resident Only,6UM,6UM,,,,,,,737,737,737,737,737,737,737,,,,
-Victoria,,,1,231,Resident Only,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,,,,
-Victoria,,,2,232,Resident Only,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,,,,
-Victoria,,,3,233,Resident Only,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,,,,
-Victoria,,,4,234,Resident Only,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,8BP,8BP,,,,
-Victoria,,,1,235,Resident Only,,,,,,,,,,,,,,,T19,,,,
-Victoria,,,2,236,Resident Only,4LD,4LD,,2XS,,511,511,511,,,,IPN,IPN,IPN,,,,,
-Victoria,,,3,237,Resident Only,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,,,,
-Victoria,,,4,238,Resident Only,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,9LE,9LE,,,,
-Victoria,,,5,239,Resident Only,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,6ZP,,,,
-Victoria,,,6,240,Resident Only,8BG,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,T34,,9WY,,,,
-Victoria,,,1,241,Resident Only,214,214,214,214,214,1GS,,,,Blocked,,4ET,4ET,4ET,4ET,,,,
-Victoria,,,2,242,Resident Only,,T34,T34,T34,Blocked,Blocked,Blocked,Blocked,Blocked,H23,T34,9WF,9WF,9WF,9WF,,,,
-Victoria,,,3,243,Resident Only,,Blocked,Blocked,Blocked,T34,T34,T34,T34,T34,,,,,,9KG,,,,
-Victoria,,,1,244,Visitor Parking,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,,,,
-Victoria,,,2,245,Visitor Parking,VPC,VPC,,,46Z,8TW,3LS,3LS,,8CF,3LS,,7WC,7WC,7WC,,,,
-Victoria,,,3,246,Visitor Parking,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,,,,
-Victoria,,,4,247,Visitor Parking,547,547,547,,759,759,759,759,759,759,759,759,7V5,7V5,7V5,,,,
-Victoria,,,5,248,Visitor Parking,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,,,,
-Victoria,,,1,249,Visitor Parking,87D,87D,87D,87D,87D,87D,87D,87D,87D,87D,46K,46K,46K,46K,46K,,,,
-Victoria,,,HC 1,250,Handicapped,,2MM,2MM,2MM,2MM,2MM,2MM,2MM,2MM,2MM,87D,87D,87D,87D,87D,,,,
-Victoria,,,2,251,Visitor Parking,,,,,928,928,928,928,928,1RZ,1RZ,4AK,4AK,4AK,4AK,,,,
-Victoria,,,HC 2,252,Handicapped,,,,,,,,,,YO9,YO9,YO9,YO9,YO9,YO9,,,,
-Victoria,,,3,253,Visitor Parking,6LH,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,,,,
-Victoria,,,1,254,Visitor Parking,,,,,,45A,,,,,,55X,55X,55X,55X,,,,
-Victoria,,,2,255,Visitor Parking,5FB,,,T39,,,,,,,,,469,469,,,,,
-Victoria,,,3,256,Visitor Parking,,,,,,,,,,,,6AS,6AS,6AS,,,,,
-Victoria,,,4,257,Visitor Parking,7XF,7XF,,9XC,,,,,,,,,,FF4,7XF,,,,
-Victoria,,,1,258,Visitor Parking,NE4,NE4,NE4,,9GX,9GX,9GX,,,35L,928,928,928,928,928,,,,
-Victoria,,,2,259,Visitor Parking,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,,,,
-Victoria,,,3,260,Visitor Parking,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Victoria,,,1,261,Visitor Parking,5RL,5RL,5RL,Blocked,Blocked,4AK,4AK,4AK,4AK,,,,9BD,9BD,9BD,,,,
-Victoria,,,2,262,Visitor Parking,3MD,,,IHV,IHV,,35L,35L,35L,,,,8LD,8LD,8LD,,,,
-Victoria,,,3,263,Visitor Parking,79R,79R,79R,79R,79R,79R,79R,,4MA,,,IBB,IBB,IBB,IBB,,,,
-Victoria,,,1,264,Resident Only,742,,,Blocked,,,,7JE,7JE,7YZ,7YZ,7YZ,7YZ,7YZ,7YZ,,,,
-Victoria,,,2,265,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Victoria,,,3,266,Resident Only,1LS,1LS,,T59,,2PB,2PB,2PB,2PB,2PB,2PB,2PB,2PB,2PB,2PB,,,,
-Victoria,,,4,267,Resident Only,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,,,,
-Victoria,,,1,268,Resident Only,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,,,,
-Victoria,,,2,269,Resident Only,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,5BX,5BX,,,,
-Victoria,,,3,270,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,
-Victoria,,,4,271,Resident Only,592,592,592,592,592,592,592,592,592,592,592,592,592,592,592,,,,
-Victoria,,,5,272,Resident Only,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,,,,
-Victoria,,,6,273,Resident Only,27P,,,,,,,,6GF,,5VG,5VG,5VG,5VG,5VG,,,,
-Victoria,,,7,274,Resident Only,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,7BG,7BG,7BG,,,,
-Victoria,,,8,275,Resident Only,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,,,,
-Victoria,,,1,276,Resident Only,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,,,,
-Victoria,,,HC 1,277,Handicapped,6WX,6WX,6WX,6WX,6WX,6WX,6WX,6WX,6WX,,,6WX,6WX,6WX,6WX,,,,
-Victoria,,,1,278,Resident Only,1EM,1EM,1EM,1EM,1EM,1EM,1EM,1EM,,27D,27D,27D,27D,27D,27D,,,,
-Victoria,,,2,279,Resident Only,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,,,,
-Victoria,,,3,280,Resident Only,8AX,,Blocked,,,V39,V39,,,,,1EM,1EM,1EM,1EM,,,,
-Victoria,,,4,281,Resident Only,,7RV,85T,,,Blocked,Blocked,868,868,868,868,868,868,868,868,,,,
-Victoria,,,1,282,Resident Only,6GH,6GH,6GH,6GH,,17R,,17G,17G,2EL,2EL,2EL,2EL,2EL,2EL,,,,
-Victoria,,,2,283,Resident Only,N25,N25,N25,,V17,V17,V17,,8BA,8BA,8BA,5SR,5SR,5SR,5SR,,,,
-Victoria,,,3,284,Resident Only,404,404,,67K,67K,46Z,46Z,46Z,,,,6H6,6H6,6H6,6H6,,,,
-Victoria,,,4,285,Resident Only,1AD,1AD,1AD,9VK,9VK,9VK,9VK,3LC,3LC,3LC,814,814,814,814,814,,,,
-Victoria,,,5,286,Resident Only,454,V15,V15,,,699,1MB,1MB,,,3FK,3FK,3FK,3FK,3FK,,,,
-Victoria,,,1,287,Resident Only,82A,82A,,,,,,,V12,,,IMV,IMV,IMV,IMV,,,,
-Victoria,,,2,288,Resident Only,,,,,,,,,44W,44W,44W,44W,454,7MM,7MM,,,,
-Victoria,,,3,289,Resident Only,,,,,,,,,,,,,55N,55N,55N,,,,
-Victoria,,,4,290,Resident Only,,,,,,,,,,,,,223,223,223,,,,
+Ysabelle,1,Right,2,2,Resident Only,,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,,Massachusetts Avenue,North,Shawmut Avenue,Chester Square - Entrance
+Ysabelle,1,Right,3,3,Resident Only,,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,55K,55K,Massachusetts Avenue,North,Shawmut Avenue,Chester Square - Entrance
+Ysabelle,1,Right,4,4,Resident Only,1AH,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,2YD,2YD,2YD,2YD,Massachusetts Avenue,North,Shawmut Avenue,Chester Square - Entrance
+Ysabelle,1,Right,5,5,Resident Only,V41,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,6WW,6WW,6WW,6WW,Massachusetts Avenue,North,Shawmut Avenue,Chester Square - Entrance
+Ysabelle,1,Right,6,6,Resident Only,,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,27B,V41,,58G,Massachusetts Avenue,North,Shawmut Avenue,Chester Square - Entrance
+Ysabelle,1,Right,7,7,Resident Only,7XF,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,5EC,5EC,Massachusetts Avenue,North,Shawmut Avenue,Chester Square - Entrance
+Ysabelle,2,Right,1,8,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,2,9,Resident Only,5LJ,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,3,10,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,4,11,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,5,12,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,6,13,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,7,14,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,8,15,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,1DH,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,9,16,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,10,17,Resident Only,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,11,18,Resident Only,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,1,19,Resident Only,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,2,20,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,3,21,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,4,22,Resident Only,9XB,472,472,472,472,,Construction,Construction,Construction,Construction,Construction,Construction,,,9XB,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,5,23,Resident Only,,,,576,,,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,6,24,Resident Only,1JG,1JG,1JG,,,,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,7,25,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,8,26,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,9,27,Resident Only,,,,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,1HZ,1LS,1LS,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,10,28,Resident Only,1MG,,,,,,Construction,Construction,Construction,Construction,Construction,Construction,1MG,1MG,1MG,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,2,Right,11,29,Resident Only,7WC,,,1HZ,1HZ,,Construction,Construction,Construction,Construction,Construction,Construction,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Ysabelle,3a,Right,1,30,Resident Only,,20M,20M,20M,20M,20M,20M,20M,,7WJ,7WG,,749,7WJ,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,2,31,Resident Only,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,1GA,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,3,32,Resident Only,1RC,1RC,1RC,,1MH,1MH,1MH,1MH,1MH,1MH,1MH,1MH,,1DG,1DG,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,4,33,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,1,34,Resident Only,8RJ,8RJ,8RJ,8RJ,367,367,367,367,367,5HT,,,,Blocked,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,2,35,Resident Only,,,,,H93,IHL,Blocked,Blocked,Blocked,Blocked,,,,8TX,8TX,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,3,36,Resident Only,5EC,5EC,5EC,,Blocked,Blocked,7WJ,7WJ,547,547,547,,CLR,CLR,CLR,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,4,37,Resident Only,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,6BX,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,1,38,Resident Only,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,SN3,,,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,2,39,Resident Only,9DP,9DP,9DP,9DP,9DP,9DP,9DP,9DP,9DP,1TS,1TS,1TS,1TS,1TS,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,3,40,Resident Only,1NR,1NR,1NR,1NR,1NR,ITS,8WC,Blocked,Blocked,Blocked,Blocked,,,,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,4,41,Resident Only,,,,,,Blocked,Blocked,8GW,8GW,,2YD,,,,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,1,42,Resident Only,1DL,1DL,,,619,619,619,619,26B,26B,,,,,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,2,43,Resident Only,1VE,1VE,1VE,1VE,1VE,1VE,1VE,1VE,1VE,1VE,,,7XP,,72A,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,3,44,Resident Only,CKI,,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,3JF,9CG,9CG,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,4,45,Resident Only,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,1HX,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,1,46,Resident Only,,5CP,5CP,5CP,5CP,IRC,IRC,IRC,,,,,,251,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,2,47,Resident Only,3YK,3YK,3YK,3YK,IRL,,Blocked,Blocked,,,,,,Blcoked,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,3,48,Resident Only,,1HV,1HV,1HV,1HV,3YK,3YK,3YK,3YK,3YK,3YK,3YK,3YK,3YK,3YK,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,4,49,Resident Only,,,,,,ISG,ISG,ISG,ISG,,,,,,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,1,50,Resident Only,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,5ML,,1AH,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,2,51,Resident Only,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,1HV,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,3,52,Resident Only,9NX,,,,,P62,P62,2HA,2HA,6SN,6SN,6SN,6SN,6SN,6SN,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3a,Right,4,53,Resident Only,,,,,,,,,,,,,,,,Massachusetts Avenue,North,Chester Square - Entrance,Chester Square - Exit
+Ysabelle,3b,Right,1,54,Unrestricted,7JF,7JF,,,,813,813,813,813,813,813,813,813,813,813,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,3b,Right,1,55,Unrestricted,1NV,1NV,,9NX,9NX,9NX,9NX,9NX,9NX,9NX,9NX,9NX,7DL,1M4,8NC,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,3b,Right,2,56,Unrestricted,6CF,6CF,5GC,5GC,5GC,5GC,5GC,5GC,5GC,5GC,5GC,5GC,,1NV,1NV,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,3b,Right,3,57,Unrestricted,7DL,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,ZKZ,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,3b,Right,4,58,Unrestricted,6LZ,6LZ,6LZ,,,,,,8NC,8NC,6VJ,,,,BGW,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,3b,Right,1,59,Unrestricted,,IRL,IRL,IRL,IRL,IRL,IRL,IRL,IRL,IRL,IRL,,,9JL,6DY,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,3b,Right,2,60,Unrestricted,6RG,6RG,6RG,,9GB,9GB,9GB,9GB,9GB,,7JF,155,,,,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,3b,Right,3,61,Unrestricted,1KP,1KP,,,,7RJ,7RJ,7RJ,7RJ,7RJ,7RJ,,,,,Massachusetts Avenue,North,Chester Square - Exit,Tremont Street
+Ysabelle,4,Right,1,62,Metered,810,,V25,,F2G,,1MS,,,,959,,T69,T69,T69,Tremont Street,West,Massachusetts Avenue,W. Springfield Street
+Ysabelle,4,Right,2,63,Metered,75D,4LE,4LE,,V21,UP3,UP3,,237,,,,,8DP,444,Tremont Street,West,Massachusetts Avenue,W. Springfield Street
+Ysabelle,4,Right,3,64,Metered,JBG,JBG,JBG,JBG,JBG,JBG,8DZ,924,,456,,,LRS,LRS,LRS,Tremont Street,West,Massachusetts Avenue,W. Springfield Street
+Ysabelle,4,Right,4,65,Metered,AEW,AEW,AEW,AEW,85N,3LS,3LS,7JM,7JM,UTJ,1KM,,8CF,5LB,5LB,Tremont Street,West,Massachusetts Avenue,W. Springfield Street
+Ysabelle,5,Right,1,66,Metered,441,441,,,374,261,261,7ZW,,,,,7MM,7MM,7MM,Tremont Street,East,W. Springfield Street,Massachusetts Avenue
+Ysabelle,5,Right,2,67,Metered,818,818,,,,6WP,2RT,,LCB,,,441,441,441,441,Tremont Street,East,W. Springfield Street,Massachusetts Avenue
+Ysabelle,5,Right,3,68,Metered,1TS,1TS,1TS,1TS,1TS,5WR,1NJ,1NJ,1NJ,6EA,R32,R32,6KB,6KB,6KB,Tremont Street,East,W. Springfield Street,Massachusetts Avenue
+Ysabelle,5,Right,4,69,Metered,6DJ,6DJ,,,3PR,3PR,,3TB,31A,1NJ,,,665,492,HWW,Tremont Street,East,W. Springfield Street,Massachusetts Avenue
+Ysabelle,6,Right,1,70,Unrestricted,707,707,707,707,707,707,707,707,,1TS,1TS,1TS,1TS,1TS,1TS,Tremont Street,East,Massachusetts Avenue,Northampton Street
+Ysabelle,6,Right,2,71,Unrestricted,NE1,NE2,NE3,NE4,NE5,NE6,NE7,NE8,NE9,NE10,NE11,NE12,NE13,NE14,NE15,Tremont Street,East,Massachusetts Avenue,Northampton Street
+Ysabelle,6,Right,3,72,Unrestricted,1EN,1EN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,8XN,6PG,6PG,6PG,Tremont Street,East,Massachusetts Avenue,Northampton Street
+Ysabelle,6,Right,4,73,Unrestricted,,,,,,,,,,1EN,1EN,1EN,1EN,1EN,1EN,Tremont Street,East,Massachusetts Avenue,Northampton Street
+Ysabelle,6,Right,1,74,Unrestricted,994,994,,,,587,V30,,,,,9NH,,387,387,Tremont Street,East,Massachusetts Avenue,Northampton Street
+Ysabelle,6,Right,2,75,Unrestricted,,,,,,,,,,,,,,,,Tremont Street,East,Massachusetts Avenue,Northampton Street
+Ysabelle,6,Right,1,76,Unrestricted,,,,,,,,,,,,,,,,Tremont Street,East,Massachusetts Avenue,Northampton Street
+Ysabelle,7,Right,1,77,Unrestricted,EV8,EV8,EV8,4AC,4AC,4AC,4AC,4AC,4AC,4AC,4AC,4AC,1BS,1BS,1BS,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,2,78,Unrestricted,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,1HK,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,1,79,Unrestricted,585,585,585,585,673,6ZJ,6ZJ,6ZJ,6ZJ,6ZJ,6ZJ,6ZJ,4A9,EZG,EZG,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,2,80,Unrestricted,981,981,981,6RG,6RG,6RG,6RG,6RG,6RG,6RG,6RG,,HZL,4VR,4VR,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,3,81,Unrestricted,8NC,8NC,8NC,5CL,5CL,5CL,5CL,5CL,5CL,5CL,5CL,5CL,6CF,6CF,6CF,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,1,82,Unrestricted,204,204,204,,586,1SH,1SH,1SH,,95G,95G,95G,95G,6LZ,6LZ,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,2,83,Unrestricted,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,1,84,Unrestricted,3GC,3GC,,,548,548,548,548,548,548,548,,,,,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,7,Right,2,85,Unrestricted,8XX,8XX,8XX,8XX,R29,,Blocked,Blocked,,Blocked,Blocked,,4TC,4TC,4TC,Tremont Street,West,Northampton Street,Massachusetts Avenue
+Ysabelle,8,Right,1,86,Unrestricted,962,,564,564,564,564,564,564,564,564,564,564,6ES,6ES,6ES,Massachusetts Avenue,South,Tremont Street,Chester Square - Entrance
+Ysabelle,8,Right,2,87,Unrestricted,45J,45J,45J,45J,,62G,62G,62G,62G,62G,62G,62G,617,8BG,8BG,Massachusetts Avenue,South,Tremont Street,Chester Square - Entrance
+Ysabelle,8,Right,3,88,Unrestricted,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Massachusetts Avenue,South,Tremont Street,Chester Square - Entrance
+Ysabelle,8,Right,4,89,Unrestricted,643,643,643,643,643,643,643,643,643,6LR,6LR,,8BY,8BY,8BY,Massachusetts Avenue,South,Tremont Street,Chester Square - Entrance
+Ysabelle,8,Right,1,90,Unrestricted,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,1HR,Massachusetts Avenue,South,Tremont Street,Chester Square - Entrance
+Ysabelle,8,Right,2,91,Unrestricted,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,9LJ,Massachusetts Avenue,South,Tremont Street,Chester Square - Entrance
+Lal,9,Right,1,92,Resident Only,704L,704L,620,620,620,620,620,,,SSW,SSW,SSW,SSW,SSW,SSW,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,93,Resident Only,3PX,,,962,962,962,962,962,962,962,962,204,204,204,204,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,2,94,Resident Only,,,,,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,3,95,Resident Only,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,9FP,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,96,Resident Only,5VT,5VT,5VT,5VT,,3GC,3GC,3GC,3GC,7DK,7DK,7DK,7DK,7DK,7DK,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,2,97,Resident Only,8FP,,,T24,T25,T26,T27,T28,2GG,2GG,2GG,2GG,2GG,2GG,2GG,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,3,98,Resident Only,6WY,6WY,,SDY,SDY,SDY,SDY,SDY,SDY,SDY,SDY,SDY,Blocked,7JF,7JF,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,99,Resident Only,,7HV,,,,,,,,,,122,122,122,122,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,2,100,Resident Only,DV92,,,P99,P100,,,,,,,DV9,DV9,DV9,DV9,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,3,101,Resident Only,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,44N,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,HC,102,Handicapped,613,613,,,,,,,,9BK,9BK,9BK,9BK,9BK,9BK,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,103,Resident Only,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,5YH,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,104,Resident Only,336,,56S,,,,,2X5,2X5,BC9,BC9,BC9,BC9,BC9,BC9,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,105,Resident Only,6B7,6B7,6B7,6B7,6B7,,,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,5A.M. ,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,2,106,Resident Only,,,,,Blocked,,,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,107,Resident Only,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,6AP,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,2,108,Resident Only,382,382,382,382,382,382,382,382,382,382,382,382,382,382,382,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,3,109,Resident Only,,,,,,8MW,,,,15C,15C,15C,15C,15C,15C,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,110,Resident Only,5.A.M,5.A.M,5.A.M,5.A.M,5.A.M,5.A.M,,,,,294,294,294,294,294,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,2,111,Resident Only,8XM,8XM,8XM,8XM,8XM,,,,,25L,25L,25L,25L,25L,9FB,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,3,112,Resident Only,5TD,5TD,5TD,5TD,5TD,5TD,5TD,5TD,5TD,5TD,,217,217,217,217,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,1,113,Resident Only,9FX,9FX,9FX,9FX,9FX,9FX,4GH,4GH,,,729,729,729,729,729,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Right,2,114,Resident Only,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,A28,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,10a,Right,1,115,Resident Only,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,9FG,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,2,116,Resident Only,9RX,,473,473,473,1RL,1RL,JT2,JT2,JT2,JT2,JT2,9NX,9NX,9NX,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,3,117,Resident Only,9GP,9GP,9GP,9GP,1NRV,1NRV,1NRV,1NRV,1NRV,1NRV,,HJM,HJM,1SS,1SS,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,1,118,Resident Only,27E,27E,1JD,1JD,1JD,,,,6BW,6BW,6BW,6BW,6BW,6BW,6BW,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,2,119,Resident Only,8PF,8PF,8PF,8PF,8PF,892,892,447,447,9GP,9GP,9GP,9GP,9GP,9GP,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,3,120,Resident Only,2GG,2GG,2GG,2GG,GGF,GGF,1AG,22F,22F,22F,22F,,1RA,1RA,1RA,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,1,121,Resident Only,2PB,2PB,,8G9,S71,S71,S71,,3SC,3SC,3SC,,IC4,IC4,IC4,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,2,122,Resident Only,Blocked,Blocked,,Blocked,Blocked,Blocked,Blocked,,Blocked,Blocked,Blocked,,,Blocked,Blocked,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,3,123,Resident Only,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,7PS,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,4,124,Resident Only,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,1DH,9HW,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,1,125,Resident Only,841,,,,,302,,9HH,9HH,9HH,9HH,858,858,,55S,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,2,126,Resident Only,5VN,5VN,,,7LG,22P,5HT,5HT,5HJ,,Blocked,Blocked,5KF,5KF,5KF,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,3,127,Resident Only,Blocked ,Blocked ,566,566,566,P67,P67,P67,P67,P67,586,586,94X,94X,94X,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,4,128,Resident Only,236,236,236,,2SS,Blocked,Blocked,Blocked,Blocked,Blocked,,7W5,,Blocked,Blocked,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,1,129,Resident Only,155,155,155,,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,8RS,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,2,130,Resident Only,237,237,237,237,237,237,237,237,237,237,237,460,460,460,6LR,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,3,131,Resident Only,9YX,9YX,6LT,,22F,22F,4FM,4FM,,1RC,1RC,1RC,1RC,1RC,1RC,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,1,132,Resident Only,867,867,867,867,867,867,867,867,867,867,867,867,867,1RH,1RH,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,2,133,Resident Only,58X,58X,8EE,8EE,8EE,206,206,206,206,,1BA,1BA,1BA,1BA,1BA,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10a,Right,3,134,Resident Only,96K,96K,96K,,6VK,6VK,6VK,,9MB,9MB,,5VN,5VN,5VN,5VN,Massachusetts Avenue,South,Chester Square - Entrance,Chester Square - Exit
+Lal,10b,Right,1,135,Resident Only,Blocked,Blocked,Blocked,Blocked,163,163,163,163,163,163,163,163,163,163,470,Massachusetts Avenue,South,Chester Square - Exit,Shawmut Avenue
+Lal,10b,Right,2,136,Resident Only,KP7,KP7,KP7,KP7,5TG,5TG,5TG,5TG,5TG,5TG,5TG,5TG,5TG,5TG,7MV,Massachusetts Avenue,South,Chester Square - Exit,Shawmut Avenue
+Lal,10b,Right,3,137,Resident Only,9BK,9BK,9BK,9BK,9BK,9BK,9BK,,96K,96K,96K,96K,96K,96K,96K,Massachusetts Avenue,South,Chester Square - Exit,Shawmut Avenue
+Lal,10b,Right,1,138,Resident Only,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,6HC,Massachusetts Avenue,South,Chester Square - Exit,Shawmut Avenue
+Lal,10b,Right,2,139,Resident Only,1BC,1BC,1BC,1BC,8BA,8BA,8BA,,8FC,8FC,8FC,8FC,8FC,8FC,8FC,Massachusetts Avenue,South,Chester Square - Exit,Shawmut Avenue
+Lal,10b,Right,3,140,Resident Only,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,1SR,Massachusetts Avenue,South,Chester Square - Exit,Shawmut Avenue
+Lal,10b,Right,4,141,Resident Only,729,729,21K,21K,21K,21K,21K,21K,21K,21K,21K,,236,236,236,Massachusetts Avenue,South,Chester Square - Exit,Shawmut Avenue
+Lal,11,Right,1,142,Resident Only,EV2,EV2,,7PG,7PG,7PG,7PG,7PG,7PG,7PG,9AC,P32,P32,P32,P32,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,2,143,Resident Only,4KX,9GA,9GA,9GA,9GA,9GA,9GA,9GA,9GA,9GA,9GA,,V41,V41,V41,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,3,144,Resident Only,8EK,6KA,6KA,,6NF,6NF,6NF,6NF,6NF,6NF,6NF,,2VT,2VT,2VT,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,4,145,Resident Only,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,7BF,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,5,146,Resident Only,2LW,6CH,6CH,6CH,6CH,6CH,6CH,6CH,6CH,6CH,6CH,3WY,8WJ,8WJ,,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,6,147,Resident Only,2PJ,2PJ,2PJ,2PJ,2PJ,2PJ,892,892,892,892,892,892,892,892,892,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,7,148,Resident Only,,,,,,,,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,HC 1,149,Handicapped,6WW,6WW,6WW,6WW,6WW,,,811,,,,,193,193,,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Right,HC 2,150,Handicapped,7ZV,7ZV,7ZV,,,9HW,9HW,9HW,9HW,9HW,,,,,613,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,12,Right,1,151,Resident Only,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,6XD,,Blocked,,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,152,Resident Only,1EM,1EM,,,,,,,173,,,,,1RR,1RR,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,153,Resident Only,,,5PT,,,,,,,,,,,4DV,4DV,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,4,154,Resident Only,IC4,IC4,,,,,,8DT,,,,,,6VF,6VF,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,5,155,Resident Only,6VF,6VF,,,,H15,,,5GE,5GE,5GE,,743,743,743,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,156,Resident Only,5GE,5GE,,,1PM,1PM,1PM,1PM,,7EX,,8EK,8EK,8EK,8EK,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,157,Resident Only,894,894,,,,,Blocked ,Blocked,,Blocked,,,,5GE,5GE,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,158,Resident Only,5LD,5LD,5LD,5LD,5LD,5LD,5LD,5LD,5LD,5LD,5LD,5LD,5LD,967,967,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,4,159,Resident Only,550,550,550,550,,,,,,,,7RV,7RV,7RV,7RV,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,160,Resident Only,Blocked,Blocked,,,Blocked,,,,,462,,,,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,161,Resident Only,BC9,,,,,,9ID,,,,,FF1,8ZV,8ZV,8ZV,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,162,Resident Only,496,496,496,496,496,496,496,496,496,496,496,496,496,496,496,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,163,Resident Only,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,4,164,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,165,Resident Only,,,,,,6BF,6BF,6BF,6BF,6BF,6BF,6BF,,6WY,6WY,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,166,Resident Only,7DF,7DF,,,Blocked,Blocked,Blocked,Blocked,,,1SA,1SA,1SA,1SA,1SA,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,167,Resident Only,8TW,8TW,8TW,,9KT,9KT,9KT,9KT,9KT,,,177,177,177,177,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,168,Resident Only,8ZV,8ZV,,,,,,,,Blocked,Blocked,2XS,2XS,2XS,2XS,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,169,Resident Only,177,,,,,,,,,V32,V32,,8TW,8TW,8TW,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,170,Resident Only,1CX,1CX,1CX,1CX,1CX,1CX,1CX,,,,,,Blocked,Blocked,EV8,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,4,171,Resident Only,,,,,,,Blocked,,,,,,,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,172,Resident Only,5HZ,5HZ,,,,,,,,,,,,,5HZ,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,173,Resident Only,7WB,7WB,7WB,7WB,7WB,7WB,,,,,,1HN,,9AP,9AP,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,174,Resident Only,1KD,1KD,1KD,1KD,,,,,,96X,,,214,214,214,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,175,Resident Only,388,,237,237,628,628,,,,,,,5KP,5KP,5HM,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,176,Resident Only,,,,,,,737,737,,8WP,8WP,8WP,8WP,8WP,8WP,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,177,Resident Only,,237,237,237,237,237,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,4,178,Resident Only,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,1PR,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,179,Resident Only,5CH,5CH,5CH,5CH,5CH,5CH,5CH,5CH,5CH,5CH,5CH,5CH,5CH,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,180,Resident Only,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,1BG,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,181,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,182,Resident Only,4VH,4VH,4VH,4VH,,,,,,,,,,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,183,Resident Only,9RD,9RD,,,,,,,,,,,862,862,862,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,184,Resident Only,,,,,,,,8HD,,4YV,,,Blocked,Blocked ,Blocked,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,4,185,Resident Only,4ET,4ET,4ET,4ET,,4ET,4ET,4ET,4ET,4ET,4ET,72B,72B,72B,72B,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,186,Resident Only,,,,,V24,V24,V24,V24,V24,,,,3VN,9RD,9RD,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,187,Resident Only,9EY,,,,8BP,8BP,8BP,8BP,8BP,8BP,8BP,T34,,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,3,188,Resident Only,9WF,,269,269,269,269,269,269,,,,,,4LB,4LB,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,4,189,Resident Only,9KG,9KG,9KG,9KG,9KG,9KG,9KG,9KG,9KG,9KG,9KG,9KG,26F,5AF,5AF,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,5,190,Resident Only,,,,,,,,,,,2VE,2VE,2VE,2VE,841,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,6,191,Resident Only,Motorcycle,Motorcycle,Motorcycle,Motorcycle,Motorcycle,Motorcycle,,,,,9CP,9CP,9CP,9CP,9CP,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,1,192,Resident Only,,,,,,,,,,,NE5,NE5,NE5,,76C,Northampton Street,North,Shawmut Avenue,Tremont Street
+,12,Right,2,193,Resident Only,29A,29A,29A,29A,29A,29A,29A,29A,29A,29A,29A,29A,29A,29A,29A,Northampton Street,North,Shawmut Avenue,Tremont Street
+,13,Right,1,194,Resident Only,79K,79K,79K,79K,79K,79K,79K,79K,79K,79K,79K,79K,79K,79K,79K,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,195,Resident Only,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,1RX,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,196,Resident Only,,,,5FW,5FW,,,,,,1VE,1VE,1VE,1VE,1VE,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,4,197,Resident Only,7BG,,,,,6LH,6LH,6LH,6LH,6LH,6LH,6LH,6LH,6LH,6LH,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,198,Resident Only,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,2CN,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,199,Resident Only,9RG,,GVD,GVD,GVD,BCF,,5FW,5FW,5FW,5FW,,1KP,1KP,1KP,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,200,Resident Only,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,5WJ,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,4,201,Resident Only,887,887,887,887,887,887,887,887,887,887,887,,7RF,7RF,7RF,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,5,202,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,203,Resident Only,H23,H24,H25,H26,H27,H28,H29,H30,H31,898,,7PR,7PR,7PR,7PR,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,HC,204,Resident Only,1AC,1AC,1AC,1AC,1AC,,,,,,8SX,8SX,8SX,8SX,8SX,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,205,Resident Only,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,5KX,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,206,Resident Only,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,9PZ,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,207,Resident Only,,,,,363,363,463,463,4TS,4TS,4TS,4TS,4TS,4TS,4TS,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,208,Resident Only,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,7NV,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,4,209,Resident Only,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,3LE,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,210,Resident Only,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,9ZV,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,211,Resident Only,9RE,9RE,9RE,9RE,9RE,5WR,,,9RE,9RE,9RE,9RE,9RE,9RE,9RE,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,212,Resident Only,7EM,1CY,,,5RL,5RL,5RL,5RL,5RL,5RL,5RL,5RL,5RL,5RL,5RL,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,213,Resident Only,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,WS4,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,214,Resident Only,44F,44F,44F,44F,44F,44F,44F,44F,44F,44F,44F,44F,44F,44F,44F,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,215,Resident Only,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,3ZY,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,216,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,,,,27E,27E,27E,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,217,Resident Only,4TS,4TS,4TS,4TS,4TS,4TS,4TS,4TS,R48,,,1LK,1LK,1LK,1LK,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,4,218,Resident Only,1CS,1CS,1CS,1CS,1CS,1CS,1CS,1CS,1CS,,6SS,6SS,6SS,6SS,6SS,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,219,Resident Only,7FB,7FB,7FB,7FB,7FB,7FB,7FB,7FB,7FB,,,,7FB,7FB,7FB,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,220,Resident Only,8LD,8LD,,,,,,,,8DG,2SF,2SF,2SF,2SF,2SF,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,221,Resident Only,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,7RX,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,4,222,Resident Only,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,CIJ,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,223,Resident Only,,SSB,,,,,RGO,RGO,RGO,RGO,RGO,RGO,RGO,RGO,RGO,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,224,Resident Only,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,IC3,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,225,Resident Only,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,5LK,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,226,Resident Only,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,1RR,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,227,Resident Only,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,9CV,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,228,Resident Only,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,2GA,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,4,229,Resident Only,358,358,358,358,358,358,358,358,358,358,358,358,358,358,358,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,230,Resident Only,5LJ,5LJ,5LJ,5LJ,5LJ,5LJ,5LJ,5LJ,5LJ,,222,222,222,222,222,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,231,Resident Only,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,5EL,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,1,232,Visitor,,1ER,1ER,1ER,1ER,1ER,1ER,1ER,1ER,1ER,1ER,1ER,1LL,1LL,1LL,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,2,233,Visitor,5VG,5VG,5VG,5VG,AEW,AEW,AEW,AEW,,,,362,362,362,362,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,3,234,Visitor,59P,59P,59P,59P,,5CX,8NE,8NE,8NE,8NE,8NE,4TN,4TN,4TN,4TN,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,4,235,Visitor,,44W,44W,44W,,8NL,3SL,3SL,3SL,AEW,AEW,AEW,AEW,AEW,AEW,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,13,Right,5,236,Visitor,48D,48D,48D,48D,48D,48D,48D,48D,48D,48D,48D,48D,48D,48D,48D,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+,14,Right,1,237,Resident Only,365,365,365,365,365,365,365,365,365,365,365,365,365,365,365,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,1,238,Resident Only,8NL,8NL,8NL,8NL,8NL,263,,V39,,1EM,1EM,9AZ,9AZ,9AZ,9AZ,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,2,239,Resident Only,R60,R60,R60,R60,R60,,,,955,955,955,8FP,8FP,8FP,8FP,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,3,240,Resident Only,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,2EJ,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,4,241,Resident Only,,,,N25,N25,N25,N25,N25,N25,8NL,8NL,8NL,8NL,8NL,8NL,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,1,242,Resident Only,9PJ,,V17,Blocked,Blocked,Blocked,Blocked,Blocked,,171,171,171,171,171,171,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,2,243,Resident Only,,,,,,,,,,,Blocked,Blocked,Blocked,Blocked,Blocked,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,3,244,Resident Only,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,2LW,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+,14,Right,4,245,Resident Only,,,,,,,,,,,,,,,Blocked,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Lal,2,Left,1,246,Resident Only,547,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,2,247,Resident Only,5CP,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,3,248,Resident Only,5KA,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,4,249,Resident Only,1HZ,1HZ,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,5,250,Resident Only,,,,,,,,,,,,,5KA,9HM,9HM,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,6,251,Resident Only,,,,,,,,,,,,,547,547,547,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,7,252,Resident Only,,,,,,,,,,,,,,3MD,3MD,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,8,253,Resident Only,27D,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,9,254,Resident Only,916,,,,,,,,,,,,,916,916,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,1,255,Resident Only,,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,2,256,Resident Only,,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,3,257,Resident Only,,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,4,258,Resident Only,,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,5,259,Resident Only,,,,,,,,,,,,,,,,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,6,260,Resident Only,3JF,3JF,,,,,,,,,,,,1NR,1NR,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,7,261,Resident Only,7DK,7DK,,,,,,,,,,,5TM,5TM,5TM,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,2,Left,8,262,Resident Only,5TM,,,,,,,,,,,,6VI,6VI,6VI,Chester Square,North,Massachusetts Avenue,Massachusetts Avenue
+Lal,9,Left,1,263,Resident Only,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,22A,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,2,264,Resident Only,5HT,5HT,J15,,,,,,,9DP,9DP,9DP,9DP,9DP,9DP,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,3,265,Resident Only,,,Blocked,431,431,431,,,,,5HT,5HT,5HT,5HT,5HT,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,4,266,Resident Only,122,122,759,759,759,,7NB,,,,,,,7VL,7VL,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,5,267,Resident Only,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,1GC,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,6,268,Resident Only,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,8PR,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,7,269,Resident Only,174,174,174,174,174,174,174,174,174,174,174,174,174,174,174,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,8,270,Resident Only,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,1AG,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,9,271,Resident Only,5GS,5GS,,,,,V22,V22,V22,,,8ZV,759,759,759,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,10,272,Resident Only,NED,NED,NED,NED,NED,NED,NED,NED,NED,45J,NED,NED,NED,NED,NED,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,1,273,Resident Only,2XS,,,,,586,586,586,586,,336,336,336,336,336,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,2,274,Resident Only,Blocked,Blocked,,,,Blocked,Blocked,Blocked,Blocked,CK1,Blocked,Blocked,Blocked,Blocked,,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,3,275,Resident Only,294,294,294,294,294,294,294,,,Blocked,9KT,9KT,9KT,96Z,96Z,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,4,276,Resident Only,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,15X,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,5,277,Resident Only,Blocked,Blocked,,,Blocked,,,45J,,,5TD,5TD,5TD,5TD,5TD,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,6,278,Resident Only,9KT,9KT,9KT,,2XS,,,,,,Blocked,Blocked,Blocked,Blocked,,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,7,279,Resident Only,4GH,4GH,4GH,4GH,4GH,,,,4GE,,9FX,9FX,9FX,9FX,9FX,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,8,280,Resident Only,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,8XR,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,9,281,Resident Only,,,Blocked,,Blocked,,,,,,,97P,97P,97P,97P,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,10,282,Resident Only,5KF,,TG1,,N92,,SMW,SMW,SMW,SMW,,9MF,9MF,9MF,9MF,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,9,Left,11,283,Resident Only,1JS,1JS,1JS,1JS,,743,,,,,1JS,1JS,1JS,1JS,1JS,Chester Square,South,Chester Square - Entrance,Massachusetts Avenue
+Lal,11,Left,1,284,Resident Only,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,1CP,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Left,2,285,Resident Only,1P.M.,1P.M.,1P.M.,1P.M.,1P.M.,1P.M.,8FX,8FX,8FX,8FX,8FX,8FX,8FX,EV2,EV2,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Left,1,286,Resident Only,531,531,531,531,531,531,531,531,531,8LE,8LE,8LE,8LE,8LE,8LE,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Left,2,287,Resident Only,5PB,5PB,5PB,5PB,5PB,11F,11F,11F,11F,11F,11F,11F,11F,11F,11F,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Left,1,288,Resident Only,4DV,4DV,4DV,4DV,8SY,65H,65H,65H,65H,31Z,31Z,31Z,31Z,31Z,31Z,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Lal,11,Left,2,289,Resident Only,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,7JJ,Shawmut Avenue,West,Massachusetts Avenue,Northampton Street
+Victoria,12,Left,1,290,Resident Only,8ER,,,,,,,,,,,,8ER,8ER,8ER,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,291,Resident Only,,,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,5NH,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,292,Resident Only,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Construction,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,4,293,Resident Only,,LV8,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,1BV,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,5,294,Resident Only,8D2,8D2,8D2,8D2,8D2,8D2,,,,,2YL,2YL,2YL,2YL,2YL,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,6,295,Resident Only,,,,,,,,,,,,,,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,7,296,Resident Only,IRR,IRR,,,M86,,,,,,,951,951,951,951,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,297,Resident Only,5GA,5GA,5GA,,,,,,4GH,4GH,4GH,4GH,4GH,4GH,4GH,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,298,Resident Only,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,7RV,,5ZD,5ZD,5ZD,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,299,Resident Only,,,,,,,,,,,,,1F6 ,8MR,8MR,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,4,300,Resident Only,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,1JS,,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,5,301,Resident Only,967,,,,,,,,,,,,,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,6,302,Resident Only,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,9AB,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,7,303,Resident Only,1DA,1DA,,,,,,,,,,,9JY,9JY,9JY,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,8,304,Resident Only,217,217,,,,,,,1JH,,1JH,1JH,448,448,448,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,305,Resident Only,,,,,,,,448,448,448,448,85L,85L,,5GS,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,306,Resident Only,,,,,,,7WB,7WB,7WB,7WB,7WB,7WB,7WB,7WB,7WB,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,307,Resident Only,85L,15H,15H,15H,15H,15H,,,,,,,,,,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,4,308,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,5,309,Resident Only,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,5HM,,9NP,9NP,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,310,Resident Only,448,,,,,,,,4TJ,4TJ,4TJ,4TJ,4TJ,4TJ,4TJ,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,311,Resident Only,,,,,,,,,,,,,,388,388,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,312,Resident Only,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,9NP,44W,44W,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,313,Resident Only,,5KP,,,,,,,,,,,1KP,1KP,1KP,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,4,314,Resident Only,ATO,,,,44W,44W,44W,,53E,53E,53E,53B,53B,53B,53B,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,5,315,Resident Only,739,739,739,739,739,739,739,739,739,739,739,739,739,739,739,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,6,316,Resident Only,53B,53B,53B,,,,,,,,,ATO,ATO,ATO,ATO,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,317,Resident Only,,,ATO,,9LD,9LD,9LD,9LD,9LD,9LD,9LD,9LD,9LD,9LD,5KP,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,318,Resident Only,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,UMD,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,319,Resident Only,9ES,9ES,9ES,9ES,9ES,606,,,,ATO,,,9ES,9ES,9ES,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,4,320,Resident Only,ANT,ANT,ANT,,,Blocked,,Blocked,,,,,,,2VE,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,5,321,Resident Only,Blocked,Blocked,Blocked,,734,734,734,734,734,,,,Blocked,Blocked,,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,6,322,Resident Only,3YO,3YO,3YO,3YO,3YO,8RF,,,8GA,,8RF,8RF,8RF,8RF,8RF,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,7,323,Resident Only,5KP,,5KP,5KP,,,,,,8D2,8D2,8D2,396,396,396,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,324,Resident Only,6UM,6UM,,,,,,,737,737,737,737,737,737,737,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,325,Resident Only,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,66A,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,326,Resident Only,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,GWX,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,327,Resident Only,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,CLO,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,4,328,Resident Only,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,1GK,8BP,8BP,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,329,Resident Only,,,,,,,,,,,,,,,T19,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,330,Resident Only,4LD,4LD,,2XS,,511,511,511,,,,IPN,IPN,IPN,,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,331,Resident Only,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,N65,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,4,332,Resident Only,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,7BV,9LE,9LE,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,5,333,Resident Only,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,67L,6ZP,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,6,334,Resident Only,8BG,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,6CF,T34,,9WY,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,1,335,Resident Only,214,214,214,214,214,1GS,,,,Blocked,,4ET,4ET,4ET,4ET,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,2,336,Resident Only,,T34,T34,T34,Blocked,Blocked,Blocked,Blocked,Blocked,H23,T34,9WF,9WF,9WF,9WF,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,12,Left,3,337,Resident Only,,Blocked,Blocked,Blocked,T34,T34,T34,T34,T34,,,,,,9KG,Northampton Street,North,Shawmut Avenue,Tremont Street
+Victoria,13,Left,1,338,Visitor Parking,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,32N,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,339,Visitor Parking,VPC,VPC,,,46Z,8TW,3LS,3LS,,8CF,3LS,,7WC,7WC,7WC,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,340,Visitor Parking,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,4DH,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,4,341,Visitor Parking,547,547,547,,759,759,759,759,759,759,759,759,7V5,7V5,7V5,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,5,342,Visitor Parking,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,AT8,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,343,Visitor Parking,87D,87D,87D,87D,87D,87D,87D,87D,87D,87D,46K,46K,46K,46K,46K,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,HC 1,344,Handicapped,,2MM,2MM,2MM,2MM,2MM,2MM,2MM,2MM,2MM,87D,87D,87D,87D,87D,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,345,Visitor Parking,,,,,928,928,928,928,928,1RZ,1RZ,4AK,4AK,4AK,4AK,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,HC 2,346,Handicapped,,,,,,,,,,YO9,YO9,YO9,YO9,YO9,YO9,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,347,Visitor Parking,6LH,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,55H,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,348,Visitor Parking,,,,,,45A,,,,,,55X,55X,55X,55X,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,349,Visitor Parking,5FB,,,T39,,,,,,,,,469,469,,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,350,Visitor Parking,,,,,,,,,,,,6AS,6AS,6AS,,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,4,351,Visitor Parking,7XF,7XF,,9XC,,,,,,,,,,FF4,7XF,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,352,Visitor Parking,NE4,NE4,NE4,,9GX,9GX,9GX,,,35L,928,928,928,928,928,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,353,Visitor Parking,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,5ES,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,354,Visitor Parking,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,355,Visitor Parking,5RL,5RL,5RL,Blocked,Blocked,4AK,4AK,4AK,4AK,,,,9BD,9BD,9BD,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,356,Visitor Parking,3MD,,,IHV,IHV,,35L,35L,35L,,,,8LD,8LD,8LD,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,357,Visitor Parking,79R,79R,79R,79R,79R,79R,79R,,4MA,,,IBB,IBB,IBB,IBB,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,358,Resident Only,742,,,Blocked,,,,7JE,7JE,7YZ,7YZ,7YZ,7YZ,7YZ,7YZ,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,359,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,360,Resident Only,1LS,1LS,,T59,,2PB,2PB,2PB,2PB,2PB,2PB,2PB,2PB,2PB,2PB,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,4,361,Resident Only,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,7ZX,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,362,Resident Only,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,5TS,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,363,Resident Only,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,53R,5BX,5BX,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,364,Resident Only,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,Blocked,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,4,365,Resident Only,592,592,592,592,592,592,592,592,592,592,592,592,592,592,592,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,5,366,Resident Only,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,15J,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,6,367,Resident Only,27P,,,,,,,,6GF,,5VG,5VG,5VG,5VG,5VG,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,7,368,Resident Only,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,4NJ,7BG,7BG,7BG,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,8,369,Resident Only,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,79C,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,370,Resident Only,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,1DP,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,HC 1,371,Handicapped,6WX,6WX,6WX,6WX,6WX,6WX,6WX,6WX,6WX,,,6WX,6WX,6WX,6WX,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,1,372,Resident Only,1EM,1EM,1EM,1EM,1EM,1EM,1EM,1EM,,27D,27D,27D,27D,27D,27D,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,2,373,Resident Only,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,56E,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,3,374,Resident Only,8AX,,Blocked,,,V39,V39,,,,,1EM,1EM,1EM,1EM,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,13,Left,4,375,Resident Only,,7RV,85T,,,Blocked,Blocked,868,868,868,868,868,868,868,868,W. Springfield Street,South,Tremont Street,Shawmut Avenue
+Victoria,14,Left,1,376,Resident Only,6GH,6GH,6GH,6GH,,17R,,17G,17G,2EL,2EL,2EL,2EL,2EL,2EL,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,2,377,Resident Only,N25,N25,N25,,V17,V17,V17,,8BA,8BA,8BA,5SR,5SR,5SR,5SR,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,3,378,Resident Only,404,404,,67K,67K,46Z,46Z,46Z,,,,6H6,6H6,6H6,6H6,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,4,379,Resident Only,1AD,1AD,1AD,9VK,9VK,9VK,9VK,3LC,3LC,3LC,814,814,814,814,814,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,5,380,Resident Only,454,V15,V15,,,699,1MB,1MB,,,3FK,3FK,3FK,3FK,3FK,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,1,381,Resident Only,82A,82A,,,,,,,V12,,,IMV,IMV,IMV,IMV,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,2,382,Resident Only,,,,,,,,,44W,44W,44W,44W,454,7MM,7MM,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,3,383,Resident Only,,,,,,,,,,,,,55N,55N,55N,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue
+Victoria,14,Left,4,384,Resident Only,,,,,,,,,,,,,223,223,223,Shawmut Avenue,West,W. Springfield Street,Massachusetts Avenue

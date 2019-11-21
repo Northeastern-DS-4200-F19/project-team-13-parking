@@ -48,7 +48,7 @@ function mouseover() {
 }
 
 function updateParkingMap() {
-  for (var j = 1; j < 290; j++) {
+  for (var j = 1; j < 384; j++) {
     if (mapData["_" + j][rangeslider.value - 5] == "Construction" || mapData["_" + j][rangeslider.value - 5] == "Blocked") {
         d3.select("#_" + j).style("fill", "grey")
     }
