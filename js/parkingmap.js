@@ -41,11 +41,10 @@ d3.selectAll(".parkingspot")
 
 
 function mouseover() {
-    console.log(d3.select(this).attr("id"))
 
     //convert the slider value to the correct index of time in mapData
     index = rangeslider.value - 5
-    
+
     tooltip
         .html(mapData[d3.select(this).attr("id")][0] + ' ' + mapData[d3.select(this).attr("id")][index])
         .style("opacity", 1)
