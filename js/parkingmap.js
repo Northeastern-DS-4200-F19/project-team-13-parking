@@ -4,10 +4,6 @@ var rangeslider = document.getElementById("sliderRange");
 var output = document.getElementById("demo"); 
 output.innerHTML = rangeslider.value; 
   
-rangeslider.oninput = function() { 
-  output.innerHTML = this.value; 
-} 
-
 // read the data
 var mapData = {}
 d3.csv("./data/parking.csv").then (function(data) {
@@ -30,27 +26,42 @@ d3.csv("./data/parking.csv").then (function(data) {
         data[i]['7:00 PM'],
         data[i]['8:00 PM']];
     }
-    console.log(mapData);
 });
+
 
 
 d3.selectAll(".parkingspot")
             .on("mouseover", mouseover)
             .on("mouseout", mouseleave)
-            // .on("click", mouseclick)
 
 
 function mouseover() {
     console.log(d3.select(this).attr("id"))
     //convert the slider value to the correct index of time in mapData
     index = rangeslider.value - 5
-
     tooltip
         .html(mapData[d3.select(this).attr("id")][0] + ' ' + mapData[d3.select(this).attr("id")][index])
         .style("opacity", 1)
     d3.select(this)
       .style("fill", "red")
 }
+
+rangeslider.oninput = function() { 
+    output.innerHTML = this.value; 
+    for (var j = 1; j < 290; j++) {
+        if (mapData["_" + j][rangeslider.value - 5] == "Construction" || mapData["_" + j][rangeslider.value - 5] == "Blocked") {
+            d3.select("#_" + j).style("fill", "grey")
+        }
+        else if (mapData["_" + j][rangeslider.value - 5] == "") {
+            d3.select("#_" + j).style("fill", "#000004")
+        }
+        else {
+            d3.select("#_" + j).style("fill", "#b93556")
+        }
+    }
+    
+  
+} 
 
 function mouseleave() {
     tooltip
