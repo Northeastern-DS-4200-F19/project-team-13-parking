@@ -37,17 +37,19 @@ d3.csv("/data/parking.csv").then (function(data) {
 d3.selectAll(".parkingspot")
             .on("mouseover", mouseover)
             .on("mouseout", mouseleave)
-            // .on("click", mouseclick)
+            .on("click", mouseclick)
 
 
 function mouseover() {
 
     //convert the slider value to the correct index of time in mapData
-    index = rangeslider.value - 5
+    // index = rangeslider.value - 5
 
-    tooltip
-        .html(mapData[d3.select(this).attr("id")][0] + ' ' + mapData[d3.select(this).attr("id")][index])
-        .style("opacity", 1)
+    console.log(d3.select(this).attr("id"))
+
+    // tooltip
+    //     .html(mapData[d3.select(this).attr("id")][0] + ' ' + mapData[d3.select(this).attr("id")][index])
+    //     .style("opacity", 1)
     d3.select(this)
       .style("fill", "red")
 }
@@ -70,12 +72,13 @@ const tooltip = d3.select("#map-container")
     .style("border-radius", "5px")
     .style("padding", "5px")
 
-// function mouseclick() {
-//     tooltip
-//         .html(mapData[d3.select(this).attr("id")])
-//         .style("opacity", 1)
-//     d3.select(this)
-//         .style("fill", "green")
+function mouseclick() {
+    index = rangeslider.value - 5
+    tooltip
+    .html(mapData[d3.select(this).attr("id")][0] + ' ' + mapData[d3.select(this).attr("id")][index])
+    .style("opacity", 1)
+    d3.select(this)
+        .style("fill", "green")
 
-// }
+}
 
