@@ -12,7 +12,7 @@ function areachart() {
       bottom: 50
     },
     width = 600 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom,
+    height = 400 - margin.top - margin.bottom,
     xValue = d => d[0],
     yValue = d => d[1],
     xLabelText = "",
@@ -97,6 +97,7 @@ function areachart() {
         .attr('stroke-opacity', 0.5)
         .attr('fill', REGULATION_COLORS[regulation])
         .attr('fill-opacity', 0.5);
+
       svg.append('path')
         .attr('d', line(sorted_data))
         .attr('class', 'dataLine')
