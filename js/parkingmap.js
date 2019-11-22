@@ -8,6 +8,10 @@ output.innerHTML = intToHour(rangeslider.value);
 var mapData = {}
 d3.csv("./data/parking.csv").then (function(data) {
     for (var i = 0; i < data.length; i++) {
+      let regulation = data[i]['Regulation'];
+      if (data[i]['Regulation'] === "Visitor") {
+        regulation = "Visitor Parking";
+      }
         mapData['_' + data[i]['Absolute Spot Number']] = 
         [data[i]['Regulation'], 
         data[i]['6:00 AM'], 
@@ -38,12 +42,12 @@ function mouseover() {
     spot = d3.select(this);
     if (!spot.classed('hidden-spot')) {
       index = rangeslider.value - 5
-
+      let occupant = mapData[spot.attr("id")][index];
       tooltip
-          .html(mapData[spot.attr("id")][0] + ': ' + mapData[spot.attr("id")][index] || "Unoccupied")
+          .html(mapData[spot.attr("id")][0] + ': ' + (occupant === "" ? "Unoccupied" : occupant))
           .style("opacity", 1);
 
-      spot.style("fill", "red")
+      // spot.style("fill", "red")
     }
 }
 
@@ -54,33 +58,38 @@ function mouseleave() {
 }
 
 function updateParkingMap() {
-  for (var j = 1; j < PARKING_SPOTS; j++) {
+  for (var j = 1; j <= PARKING_SPOTS; j++) {
     fillById("_" + j);
   }
 }
 
 function fillById(id) {
   if (mapData[id][rangeslider.value - 5] == "Construction" || mapData[id][rangeslider.value - 5] == "Blocked") {
-    d3.select("#" + id).style("fill", "grey")
+    d3.select("#" + id).style("fill", REGULATION_COLORS["Blocked"])
   } else if (mapData[id][rangeslider.value - 5] == "") {
-    d3.select("#" + id).style("fill", "#000004")
+    d3.select("#" + id).style("fill", "#000000")
   } else {
-    d3.select("#" + id).style("fill", "#b93556")
+    d3.select("#" + id).style("fill", REGULATION_COLORS[mapData[id][0]])
   }
 }
 
 function filterParkingMap(spots=[], regulations=[]) {
   updateParkingMap();
 
-  for (var id = 1; id < PARKING_SPOTS; id++) {
+  for (var id = 1; id <= PARKING_SPOTS; id++) {
     const notInSpots = spots.length > 0 && !spots.includes("" + id);
     const notInRegulations = regulations.length > 0 && !regulations.includes(mapData['_' + id][0]);
     d3.select("#_" + id).classed("hidden-spot", notInSpots || notInRegulations);
   }
 }
 
+rangeslider.onmouseover = function() {
+  console.log(this.value);
+}
+
 rangeslider.oninput = function() { 
-    output.innerHTML = intToHour(this.value); 
+    output.innerHTML = intToHour(this.value);
+    setHeatmapTimeMarker(intToHour(this.value));
     updateParkingMap();
 } 
 

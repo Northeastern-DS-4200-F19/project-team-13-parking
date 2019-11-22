@@ -84,7 +84,7 @@ h1, h2, h3 {
 }
 
 .hidden-spot {
-  fill: white !important;
+  opacity: 0.3;
 }
 
 /* Slider Styling */

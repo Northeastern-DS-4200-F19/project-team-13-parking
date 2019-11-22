@@ -34,7 +34,7 @@ function heatmap() {
         .attr("height", height)
         .classed("svg-content", true);
     
-    addTitle(svg, 'Chester Square Parking Spots', x=margin.left, y=25, font_size=35)
+    addTitle(svg, 'Chester Square Parking Spot Occupancy', x=margin.left, y=25, font_size=35)
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -49,7 +49,7 @@ function heatmap() {
     yScale
       .range([height - margin.top - margin.bottom, 0])
       .domain(d3.map(data, yValue).keys())
-      .padding(0.05);
+      .padding(0.1);
     
     // X axis
     const xAxis = svg.append("g")
@@ -80,13 +80,13 @@ function heatmap() {
     // create a tooltip
     const tooltip = d3.select("#heatmap-container")
       .append("div")
-      .style("opacity", 0)
-      .attr("class", "tooltip")
-      .style("background-color", "white")
-      .style("border", "solid")
-      .style("border-width", "2px")
-      .style("border-radius", "5px")
-      .style("padding", "5px")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
 
     // Three function that change the tooltip when user hover / move / leave a cell
     function mouseover(d) {
@@ -122,10 +122,18 @@ function heatmap() {
     };
 
     function fill(d) {
-      if (d.occupied === "Blocked") {
+      if (d.occupied === "Blocked" || d.occupied === "Construction") {
         return colors.Blocked[d.timeRange.duration]; // Blocked spaces will count as occupied because our data format is weird
       }
-      return colors[d.regulation][14 + d.timeRange.duration];
+
+      // HACK, TODO, update colors
+      if (d.timeRange.duration === 15) {
+        return colors[d.regulation][27];
+      }
+      if (d.timeRange.duration === -15) {
+        return colors[d.regulation][0];
+      }
+      return colors[d.regulation][d.timeRange.duration < 0 ? 14 + d.timeRange.duration : 13 + d.timeRange.duration];
     }
 
     function opacity(d) {
@@ -151,6 +159,18 @@ function heatmap() {
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave);
     
+    let timeMarker = svg.append("rect")
+      .attr("id", "timeMarker")
+      .attr("y", 0)
+      .attr("x", xScale(intToHour(document.getElementById("sliderRange").value)))
+      .attr("fill", "none")
+      .attr("stroke", "white")
+      .attr("stroke-width", "3px")
+      .attr("width", rect_width)
+      .attr("height", height-100);
+    TIMES.forEach((time) => {
+      timeMarker.attr(timeToAttr[time], xScale(time));
+    })
     const points = svg.selectAll("rect").data(data);
     selectableElements = points;
 

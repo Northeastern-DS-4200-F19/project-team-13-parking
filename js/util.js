@@ -4,6 +4,7 @@ const REGULATION_COLORS = {
     'Metered': 'mediumblue',
     'Handicapped': 'gold',
     'Visitor Parking': 'purple',
+    'Blocked': 'red' // Blocked is not a regulation, but in some instances is used as one.
 }
 
 const TIMES = [
@@ -23,6 +24,24 @@ const TIMES = [
   "7:00 PM",
   "8:00 PM"
 ]
+
+const timeToAttr = {
+  "6:00 AM": "sixAM",
+  "7:00 AM": "sevenAM",
+  "8:00 AM": "eightAM",
+  "9:00 AM": "nineAM",
+  "10:00 AM": "tenAM",
+  "11:00 AM": "elevenAM",
+  "12:00 PM": "noon",
+  "1:00 PM": "onePM",
+  "2:00 PM": "twoPM",
+  "3:00 PM": "threePM",
+  "4:00 PM": "fourPM",
+  "5:00 PM": "fivePM",
+  "6:00 PM": "sixPM",
+  "7:00 PM": "sevenPM",
+  "8:00 PM": "eightPM"
+}
 
 /**
  * Remove the chart in the given container and draw the given chart there with the data.
@@ -168,6 +187,11 @@ function intToHour(intHour) {
   return TIMES.find(time => hourToInt(time) == intHour) || '11:00PM';
 }
 
+function setHeatmapTimeMarker(time) {
+  let marker = d3.select("#timeMarker");
+  marker.attr("x", marker.attr(timeToAttr[time]));
+}
+
 
 /**
  * Processes the data into a map from regulation to a list of utilization rates during
@@ -183,6 +207,9 @@ function utilizationRateByGroup(data, spots=[], times=[]) {
         }
 
         regulation = row['Regulation']
+        if (regulation === "Visitor") {
+          regulation = "Visitor Parking"
+        }
         if (grouped_data[regulation] == undefined) {
             grouped_data[regulation] = {}
             grouped_data[regulation]['total_spots'] = 0
@@ -243,7 +270,7 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
   parking_spot_time_data = []
 
   for (row of data) {
-    const unselected_regulation = regulations.length > 0 && !regulations.includes(row['Regulation']);
+    const unselected_regulation = regulations.length > 0 && !regulations.includes(row['Regulation'] === "Visitor" ? "Visitor Parking" : row['Regulation']);
 
     let getTime = (i) => {
       if (i < 6) {
@@ -275,7 +302,7 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
             'end': end,
             'duration': (occupant === "") ? -1 * (j  + 1) : j + 1
           },
-          'regulation': row['Regulation'],
+          'regulation': row['Regulation'] === "Visitor" ? "Visitor Parking" : row['Regulation'],
           'unselected': unselected_regulation || (times.length > 0 && !times.includes(getTime(i + k)))
         });
       }

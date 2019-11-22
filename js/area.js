@@ -35,7 +35,7 @@ function areachart() {
         .classed("svg-content", true);
     
     connectFilters(legendCallbacks);
-    addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=50);
+    addTitle(svg, 'Chester Square Parking Spot Utilization by Regulation Type', x=margin.left, y=50);
 
     scaleLegend = svg.append("g")
       .attr("transform", "translate(" + (width - 200) + ", " + 30 + ")")
@@ -97,12 +97,12 @@ function areachart() {
 
     // Define our areas and lines
     const area = d3.area()
-      .curve(d3.curveNatural)
+      .curve(d3.curveCatmullRom.alpha(0.3))
       .x(d => X(d))
       .y0(d => Y(d) - d.occupied_spots / 4)
       .y1(d => Y(d) + d.occupied_spots / 4);
     const line = d3.line()
-      .curve(d3.curveNatural)
+      .curve(d3.curveCatmullRom.alpha(0.3))
       .x(d => X(d))
       .y(d => Y(d));
 
