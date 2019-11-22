@@ -27,6 +27,7 @@ d3.csv("./data/parking.csv").then (function(data) {
         data[i]['8:00 PM']];
     }
 });
+console.log(mapData);
 
 d3.selectAll("use")
   .on("mouseover", mouseover)
@@ -64,15 +65,19 @@ function updateParkingMap() {
   }
 }
 
-function filterParkingMap(spots) {
+function filterParkingMap(spots=[], regulations=[]) {
   updateParkingMap();
 
-  if (spots.length == 0) {
+  console.log(spots, regulations);
+
+  if (spots.length == 0 && regulations.length == 0) {
     return;
   }
 
   for (var id = 1; id < PARKING_SPOTS; id++) {
-    if (!spots.includes(""+ id)) {
+    console.log(mapData['_' + id][0])
+    console.log(regulations.includes(mapData['_' + id][0]))
+    if (!spots.includes(""+ id) && !regulations.includes(mapData['_' + id][0])) {
       d3.select("#_" + id).style("fill", "white");
     }
   }

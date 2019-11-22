@@ -1,7 +1,7 @@
 const REGULATION_COLORS = {
     'Resident Only': 'green',
     'Unrestricted': 'orange',
-    'Metered': 'blue',
+    'Metered': 'mediumblue',
     'Handicapped': 'gold',
     'Visitor Parking': 'purple',
 }

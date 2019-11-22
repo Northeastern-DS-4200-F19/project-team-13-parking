@@ -11,6 +11,7 @@
       .yLabelOffset(40)
       .selectionDispatcher(d3.dispatch(DATA_SELECTED))
       .registerLegendCallback(updateHeatmapRegulations)
+      .registerLegendCallback(updateParkingMapRegulations)
       ("#area-container", utilizationRateByGroup(data));
     
     const hmParkingSpots = heatmap()
@@ -29,13 +30,17 @@
       redrawChart(hmParkingSpots, '#heatmap-container', parkingSpotTimeData(data, [], regulations))
     }
 
+    function updateParkingMapRegulations(regulations) {
+      filterParkingMap(spots=[], regulations=regulations);
+    }
+
     acUtilRate.selectionDispatcher().on(DATA_SELECTED, selectedData => {
       redrawChart(hmParkingSpots, '#heatmap-container', parkingSpotTimeData(data, selectedData.map(d => d.time)));
     });
 
     hmParkingSpots.selectionDispatcher().on(DATA_SELECTED, selectedData => {
       redrawChart(acUtilRate, '#area-container', utilizationRateByGroup(data, selectedData.map(d => d.spot), selectedData.map(d => d.time)))
-      filterParkingMap(selectedData.map(d => d.spot));
+      filterParkingMap(spots=selectedData.map(d => d.spot));
     });
   });
 })())
