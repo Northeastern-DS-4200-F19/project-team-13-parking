@@ -240,7 +240,7 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
             'duration': (occupant === "") ? -1 * (j  + 1) : j + 1
           },
           'regulation': row['Regulation'],
-          'unselected': unselected_regulation || times.includes(getTime(i + k))
+          'unselected': unselected_regulation || (times.length > 0 && !times.includes(getTime(i + k)))
         });
       }
       i = i + j;
