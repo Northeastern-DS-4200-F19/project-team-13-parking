@@ -33,6 +33,7 @@
       .yLabel("Utilization")
       .yLabelOffset(40)
       .selectionDispatcher(d3.dispatch(DATA_SELECTED))
+      .registerLegendCallback(updateAreaRegulations)
       .registerLegendCallback(updateHeatmapRegulations)
       .registerLegendCallback(updateParkingMapRegulations)
       ("#area-container", utilizationRateByGroup(data));
@@ -47,6 +48,10 @@
       ("#heatmap-container", parkingSpotTimeData(data));
 
     updateParkingMap();
+
+    function updateAreaRegulations(regulations) {
+      redrawChart(acUtilRate, '#area-container', utilizationRateByGroup(data, [], [], regulations));
+    }
 
 
     function updateHeatmapRegulations(regulations) {
