@@ -35,10 +35,10 @@ function areachart() {
         .classed("svg-content", true);
     
     connectFilters(legendCallbacks);
-    addTitle(svg, 'Chester Square Parking Spot Utilization by Regulation Type', x=margin.left, y=50);
+    addTitle(svg, 'Chester Square Parking Spot Utilization by Regulation Type', x=margin.left, y=50, font_size=20);
 
     scaleLegend = svg.append("g")
-      .attr("transform", "translate(" + (width - 60) + ", " + 35 + ")")
+      .attr("transform", "translate(" + (width - 60) + ", " + 60 + ")")
 
     scaleLegend.append("rect")
       .attr("height", 20)

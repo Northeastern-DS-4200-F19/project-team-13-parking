@@ -34,7 +34,7 @@ function heatmap() {
         .attr("height", height)
         .classed("svg-content", true);
     
-    addTitle(svg, 'Chester Square Parking Spot Occupancy', x=margin.left, y=25, font_size=35)
+    addTitle(svg, 'Chester Square Parking Spot Occupancy', x=margin.left, y=25, font_size=25)
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
