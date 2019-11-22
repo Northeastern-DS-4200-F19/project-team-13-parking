@@ -116,16 +116,17 @@ function heatmap() {
         .style("opacity", 0.8)
     }
 
+    colors = {
+      'Resident Only': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#eff6ed', '#e0eddb', '#d1e4c9', '#c1dbb8', '#b2d2a7', '#a2c896', '#93bf85', '#83b674', '#73ad63', '#63a453', '#529b42', '#3f9231', '#29891d', '#008000'],
+      'Unrestricted': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fff9f1', '#fff3e3', '#ffedd4', '#ffe7c6', '#ffe1b7', '#ffdba8', '#ffd599', '#ffce8a', '#ffc879', '#ffc169', '#ffba57', '#ffb343', '#ffac2c', '#ffa500'],
+      'Metered': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fff3ef', '#ffe7de', '#ffdbce', '#ffcebe', '#ffc2ad', '#ffb59d', '#ffa78c', '#ff997c', '#ff8b6b', '#ff7b5a', '#ff6948', '#ff5535', '#ff3b20', '#ff0000'],
+      'Handicapped': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f6ffff', '#edffff', '#e3ffff', '#d9ffff', '#cfffff', '#c4ffff', '#b8ffff', '#abffff', '#9dffff', '#8effff', '#7cffff', '#66ffff', '#49ffff', '#00ffff'],
+      'Visitor Parking': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f7eef6', '#eeddec', '#e6cde3', '#ddbcda', '#d5acd1', '#cc9cc8', '#c38bbf', '#ba7bb5', '#b16bac', '#a75aa3', '#9e4a9b', '#943892', '#8a2389', '#800080']
+    };
+
     function fill(d) {
-      if (d.occupied === '') {
-        return '#000004'
-      }
-      else if (d.occupied === 'Construction' || d.occupied == 'Blocked' ) {
-        return 'grey'
-      }
-      else {
-        return '#b93556'
-      }
+      console.log(d.timeRange.duration);
+      return colors[d.regulation][14 + d.timeRange.duration];
     }
 
     rect_width = xScale.bandwidth();

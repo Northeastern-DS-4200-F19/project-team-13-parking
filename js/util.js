@@ -183,19 +183,42 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
       continue;
     }
 
-    Object.keys(row).forEach(time => {
-      if (times.length > 0 && !times.includes(time)) {
-        return;
+    let getTime = (i) => {
+      if (i < 6) {
+        return `${6 + i}:00 AM`;
+      } else if (i === 6) {
+        return "12:00 PM";
+      } else {
+        return `${i - 6}:00 PM`;
       }
+    }
 
-      if (time.includes('AM') || time.includes('PM')) {
+    for (let i = 0; i < 15; i++) {
+      let start = getTime(i);
+      let occupant = row[start];
+      let j = 0;
+      // count subsequent rows
+      console.log(`occupant: ${occupant}, next: ${row[getTime(i + 1)]}`);
+      while (i + j < 15 && row[getTime(i + j + 1)] === occupant) {
+        console.log("incrementing");
+        j++;
+      }
+      let end = getTime(i + j);
+      for (let k = 0; k < j + 1; k++) {
         parking_spot_time_data.push({
           'spot': row['Absolute Spot Number'],
-          'time': time,
-          'occupied': row[time]
+          'time': getTime(i + k),
+          'occupied': occupant, // they all have this occupant
+          'timeRange': {
+            'start': start,
+            'end': end,
+            'duration': (occupant === "") ? -1 * (j  + 1) : j + 1
+          },
+          'regulation': row['Regulation']
         });
       }
-    });
+      i = i + j;
+    }
   }
 
   return parking_spot_time_data.reverse();
