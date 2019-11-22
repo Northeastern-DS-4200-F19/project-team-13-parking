@@ -27,7 +27,6 @@
     <!-- Your writeup goes here -->
     <div class="webpage">
       <div class="content-column text-side">
-      
         <h1>Project Team 13: Parking, DS 4200 F19</h1>
         
         <p><strong>Daniel O'Connor</strong>, <strong>Raymond Hyang</strong>, <strong>Yilang Wan</strong></p>
@@ -36,7 +35,6 @@
         
         
         <h1>Motivation</h1>
-        
         <p>
           Increased automobile usage in Boston and the world in general has made the availability of parking spaces a problem today. Furthermore,
           allocation of parking spaces must take into consideration the rights of an area's residents while maximizing parking availability for the
@@ -48,90 +46,87 @@
         </p>
         
         <h1>Demo Video</h1>
-        
-        <p><em>Embedded MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</em></p>
-        
+
         <video controls width="100%">
-          <source src="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4" type="video/mp4">
+          <source src="./files/vis_demo.mp4" type="video/mp4">
           <p>Your browser doesn't support HTML5 video. Here is
-          a <a href="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4">link to the video</a> instead.</p>
+          a <a href="./files/vis_demo.mp4">link to the video</a> instead.</p>
         </video>
 
-          <h1>Visualization explanation</h1>
-          
-          <p><em>final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
+        <h1>Visualization explanation</h1>
+        
+        <p><em>final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
 
-          <h1>Data Analysis</h1>
-          <p>
-            Data was collected by a few teams on Tuesday, October 22, 2019 in three five hour shifts from 6 am to 8 pm in teams of 2. A route was prepared,
-            and pairs of volunteers walked the route starting on the hour. We recorded the first three letters of each license plate and noted abnormalities
-            such as construction or incidents of double or otherwise illegal parking behavior. We also recorded whether a vehicle has an out-of-state license
-            plate or a resident parking sticker. Routes were divided up into a realistic
-            number of spaces for the area between landmarks (lampposts, driveways, hydrants, etc). Each round of records took 30 to 50 minutes. After collection,
-            the data was entered by another team in a spreadsheet and shared. No additional data sources were used.
-          </p>
+        <h1>Data Analysis</h1>
+        <p>
+          Data was collected by a few teams on Tuesday, October 22, 2019 in three five hour shifts from 6 am to 8 pm in teams of 2. A route was prepared,
+          and pairs of volunteers walked the route starting on the hour. We recorded the first three letters of each license plate and noted abnormalities
+          such as construction or incidents of double or otherwise illegal parking behavior. We also recorded whether a vehicle has an out-of-state license
+          plate or a resident parking sticker. Routes were divided up into a realistic
+          number of spaces for the area between landmarks (lampposts, driveways, hydrants, etc). Each round of records took 30 to 50 minutes. After collection,
+          the data was entered by another team in a spreadsheet and shared. No additional data sources were used.
+        </p>
 
-          <h1>Task Analysis</h1>
-          <p>
-            The primary consumer of our visualization would most likely be partner organization members and anyone who is actively working to identify problems and
-            create solutions in the neighborhood. We intend our visualization to be used for summarizing who is using parking, identifying trends in parking usage,
-            and possibly discover policy or infrastructural changes that can be made  in the neighborhood that can result in improvements based on data.
-          </p>
+        <h1>Task Analysis</h1>
+        <p>
+          The primary consumer of our visualization would most likely be partner organization members and anyone who is actively working to identify problems and
+          create solutions in the neighborhood. We intend our visualization to be used for summarizing who is using parking, identifying trends in parking usage,
+          and possibly discover policy or infrastructural changes that can be made  in the neighborhood that can result in improvements based on data.
+        </p>
 
-          <h1>Design Process</h1>
-          <h4>AreaChart</h4>
-          <p>
-            <h6>Initial Sketch</h6>
-            <img src='./images/areachart_sketch_1.JPG' width='100%'>
-            The area chart started off as a bubble chart, but we felt an area chart made more sense with
-            the linear format of the data.
+        <h1>Design Process</h1>
+        <h4>AreaChart</h4>
+        <p>
+          <h6>Initial Sketch</h6>
+          <img src='./images/areachart_sketch_1.JPG' width='100%'>
+          The area chart started off as a bubble chart, but we felt an area chart made more sense with
+          the linear format of the data.
 
-            <h6>Sketch V2</h6>
-            <img src='./images/areachart_sketch_2.png' width='100%'>
-            The final area chart idea captures all of the same information as the bubble chart sketch.
-          </p>
-          <h4>Heatmap</h4>
-          <p>
-            <h6>Initial Sketch</h6>
-            <img src='./images/heatmap_sketch_1.jpg' width='100%'>
-            We wanted a information complete visualization of parking data, and felt a heatmap is the most
-            direct translation from the tabular data we collected to a visualization.
+          <h6>Sketch V2</h6>
+          <img src='./images/areachart_sketch_2.png' width='100%'>
+          The final area chart idea captures all of the same information as the bubble chart sketch.
+        </p>
+        <h4>Heatmap</h4>
+        <p>
+          <h6>Initial Sketch</h6>
+          <img src='./images/heatmap_sketch_1.jpg' width='100%'>
+          We wanted a information complete visualization of parking data, and felt a heatmap is the most
+          direct translation from the tabular data we collected to a visualization.
 
-            <h6>Sketch V2</h6>
-            <img src='./images/heatmap_sketch_2.png' width='100%'>
-            Originally, we had a color gradient planned for the heatmap, but found a more straightforward
-            one color - one meaning easier to understand.
-          </p>
-          <h4>Parking Map</h4>
-          <p>
-            <h6>Initial Sketch</h6>
-            <img src='./images/parking_map_sketch1.JPG' width='100%'>
-            We wanted a visualization that maps the parking spot data we collected to the physical location of
-            the parking spot.
+          <h6>Sketch V2</h6>
+          <img src='./images/heatmap_sketch_2.png' width='100%'>
+          Originally, we had a color gradient planned for the heatmap, but found a more straightforward
+          one color - one meaning easier to understand.
+        </p>
+        <h4>Parking Map</h4>
+        <p>
+          <h6>Initial Sketch</h6>
+          <img src='./images/parking_map_sketch1.JPG' width='100%'>
+          We wanted a visualization that maps the parking spot data we collected to the physical location of
+          the parking spot.
 
-            <h6>Sketch V2</h6>
-            <img src='./images/parking_map_sketch_2.png' width='100%'>
-            We also wanted an interactive time slider, but unfortunately did not have time to implement it.
-          </p>
+          <h6>Sketch V2</h6>
+          <img src='./images/parking_map_sketch_2.png' width='100%'>
+          We also wanted an interactive time slider, but unfortunately did not have time to implement it.
+        </p>
 
-          <h1>Conclusion</h1>
-          <p>
-            We hope our visiualizations prove helpful to the Chester Square Neighborhood Association in exploring the parking situation
-            in Chester Square today.
+        <h1>Conclusion</h1>
+        <p>
+          We hope our visiualizations prove helpful to the Chester Square Neighborhood Association in exploring the parking situation
+          in Chester Square today.
 
-            The area chart gives a general overview of how each type of parking spot gets utilized throughout the day, and the heatmap
-            and actual map allows the user to drill in on more specific parking spots.
+          The area chart gives a general overview of how each type of parking spot gets utilized throughout the day, and the heatmap
+          and actual map allows the user to drill in on more specific parking spots.
 
-            In the future, we wish we could have fleshed out the parking map like in our designs, but the visualization proved harder
-            to make than initially anticipated.
-          </p>
-          
-          <h1>Acknowledgments</h1>      
-          <ul>
-            <li><a href="https://d3js.org/">D3: Data-Driven Documents</a> by Mike Bostock.</li>
-            <li><a href="https://codepo8.github.io/css-fork-on-github-ribbon/#">Pure CSS responsive "Fork me on GitHub" ribbon</a> by Chris Heilmann</li>
-          </ul>
-          
+          In the future, we wish we could have fleshed out the parking map like in our designs, but the visualization proved harder
+          to make than initially anticipated.
+        </p>
+        
+        <h1>Acknowledgments</h1>      
+        <ul>
+          <li><a href="https://d3js.org/">D3: Data-Driven Documents</a> by Mike Bostock.</li>
+          <li><a href="https://codepo8.github.io/css-fork-on-github-ribbon/#">Pure CSS responsive "Fork me on GitHub" ribbon</a> by Chris Heilmann</li>
+        </ul> 
       </div>
       <div class="vis-side">
         <div class="vis-holder">
