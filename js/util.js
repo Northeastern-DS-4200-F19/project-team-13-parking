@@ -53,6 +53,42 @@ function addTitle(el, title, x=0, y=0, font_size=22) {
     .text(title);
 }
 
+function connectFilters(callbacks=[]) {
+
+  function appendEventHandlers(element, elements) {
+    element
+      .on('click', _ => {
+        console.log(element);
+        element.classed("clicked", !element.classed("clicked"));
+        elements.forEach(c => {console.log(c);c.classed("notClicked", !c.classed("clicked"))});
+        //document.getElementById(`${element.attr("id").split("-")[0]}-visible`).setAttribute("visibility", element.classed("clicked") ? "visible" : "hidden");
+        keys = []
+        elements.forEach(c => {
+          if (c.classed("clicked")) {
+            console.log(c.attr("key"));
+            keys.push(c.attr("key"))
+          }
+        });
+
+        if (keys.length == 0) {
+          elements.forEach(c => c.classed("notClicked", false));
+        }
+
+        callbacks.forEach(callback => callback(keys))
+      })
+      .on('mouseover', function(_) { d3.select(this).style("cursor", "pointer"); })
+      .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
+  }
+
+  let items = [];
+  items.push(d3.select("#resident-filter").attr("key", "Resident Only"));
+  items.push(d3.select("#unrestricted-filter").attr("key", "Unrestricted"));
+  items.push(d3.select("#metered-filter").attr("key", "Metered"));
+  items.push(d3.select("#handicapped-filter").attr("key", "Handicapped"));
+  items.push(d3.select("#visitor-filter").attr("key", "Visitor Parking"));
+  items.forEach(item => appendEventHandlers(item, items));
+}
+
 /**
  * Adds a legend to the given element given keys, their colors, and
  * positioning.

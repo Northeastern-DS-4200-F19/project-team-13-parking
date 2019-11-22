@@ -34,8 +34,8 @@ function areachart() {
         .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom].join(' '))
         .classed("svg-content", true);
     
-    addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=17);
-    addLegend(svg, 'Regulation', Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10, 15, legendCallbacks);
+    connectFilters(legendCallbacks);
+    addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=50);
 
     scaleLegend = svg.append("g")
       .attr("transform", "translate(" + (width - 200) + ", " + 30 + ")")

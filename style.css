@@ -119,10 +119,17 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-.notClicked {
-  opacity: 0.1;
+.visibility {
+  visibility: hidden;
 }
 
+.notClicked {
+  opacity: 0.5;
+}
+
+.notClicked .visibility {
+  visibility: visible;
+}
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
 	background-color: #eee;
@@ -150,4 +157,13 @@ h1, h2, h3 {
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
 	border: 3px solid #222;
+  }
+
+  .filters {
+    position: absolute;
+    right: 0;
+  }
+
+  #right {
+    margin-top: 50px;
   }
