@@ -35,46 +35,47 @@ d3.selectAll("use")
 
 function mouseover() {
     //convert the slider value to the correct index of time in mapData
-    index = rangeslider.value - 5
-    tooltip
-        .html(mapData[d3.select(this).attr("id")][0] + ': ' + mapData[d3.select(this).attr("id")][index] || "Unoccupied")
-        .style("opacity", 1);
-    d3.select(this)
-      .style("fill", "red")
+    spot = d3.select(this);
+    if (!spot.classed('hidden-spot')) {
+      index = rangeslider.value - 5
+
+      tooltip
+          .html(mapData[spot.attr("id")][0] + ': ' + mapData[spot.attr("id")][index] || "Unoccupied")
+          .style("opacity", 1);
+
+      spot.style("fill", "red")
+    }
 }
 
 function mouseleave() {
   tooltip
       .style("opacity", 0)
-  d3.select(this)
-    .style("fill", "black")
+  fillById(d3.select(this).attr("id"))
 }
 
 function updateParkingMap() {
   for (var j = 1; j < PARKING_SPOTS; j++) {
-    if (mapData["_" + j][rangeslider.value - 5] == "Construction" || mapData["_" + j][rangeslider.value - 5] == "Blocked") {
-        d3.select("#_" + j).style("fill", "grey")
-    }
-    else if (mapData["_" + j][rangeslider.value - 5] == "") {
-        d3.select("#_" + j).style("fill", "#000004")
-    }
-    else {
-        d3.select("#_" + j).style("fill", "#b93556")
-    }
+    fillById("_" + j);
+  }
+}
+
+function fillById(id) {
+  if (mapData[id][rangeslider.value - 5] == "Construction" || mapData[id][rangeslider.value - 5] == "Blocked") {
+    d3.select("#" + id).style("fill", "grey")
+  } else if (mapData[id][rangeslider.value - 5] == "") {
+    d3.select("#" + id).style("fill", "#000004")
+  } else {
+    d3.select("#" + id).style("fill", "#b93556")
   }
 }
 
 function filterParkingMap(spots=[], regulations=[]) {
   updateParkingMap();
 
-  if (spots.length == 0 && regulations.length == 0) {
-    return;
-  }
-
   for (var id = 1; id < PARKING_SPOTS; id++) {
-    if (!spots.includes(""+ id) && !regulations.includes(mapData['_' + id][0])) {
-      d3.select("#_" + id).style("fill", "white");
-    }
+    const notInSpots = spots.length > 0 && !spots.includes("" + id);
+    const notInRegulations = regulations.length > 0 && !regulations.includes(mapData['_' + id][0]);
+    d3.select("#_" + id).classed("hidden-spot", notInSpots || notInRegulations);
   }
 }
 
