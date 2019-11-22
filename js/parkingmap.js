@@ -35,16 +35,19 @@ d3.selectAll("use")
 
 function mouseover() {
     //convert the slider value to the correct index of time in mapData
-    console.log(d3.event.pageX)
-    console.log(d3.event.pageY)
     index = rangeslider.value - 5
     tooltip
-        .html(mapData[d3.select(this).attr("id")][0] + ' ' + mapData[d3.select(this).attr("id")][index])
-        .style("opacity", 1)
-        .style("left", d3.select(this).attr("cx") + "px")		
-        .style("top", d3.select(this).attr("cy") + "px");
+        .html(mapData[d3.select(this).attr("id")][0] + ': ' + mapData[d3.select(this).attr("id")][index] || "Unoccupied")
+        .style("opacity", 1);
     d3.select(this)
       .style("fill", "red")
+}
+
+function mouseleave() {
+  tooltip
+      .style("opacity", 0)
+  d3.select(this)
+    .style("fill", "black")
 }
 
 function updateParkingMap() {
@@ -80,33 +83,13 @@ rangeslider.oninput = function() {
     updateParkingMap();
 } 
 
-function mouseleave() {
-    tooltip
-        .style("opacity", 0)
-    d3.select(this)
-      .style("fill", "black")
-}
-
 // create a tooltip
 const tooltip = d3.select("#map-container")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
-    .style("position", "absolute")
     .style("background-color", "white")
     .style("border", "solid")
     .style("border-width", "2px")
     .style("border-radius", "5px")
     .style("padding", "5px")
-
-// function mouseclick() {
-//     index = rangeslider.value - 5
-//     console.log(d3.select(this).attr("id"))
-//     tooltip
-//     .html(mapData[d3.select(this).attr("id")][0] + ' ' + mapData[d3.select(this).attr("id")][index])
-//     .style("opacity", 1)
-//     d3.select(this)
-//         .style("fill", "green")
-
-// }
-

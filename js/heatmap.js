@@ -127,8 +127,6 @@ function heatmap() {
     };
 
     function fill(d) {
-      console.log(d.timeRange.duration);
-      console.log(d);
       return colors[d.regulation][14 + d.timeRange.duration];
     }
 

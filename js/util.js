@@ -1,7 +1,7 @@
 const REGULATION_COLORS = {
     'Resident Only': 'green',
     'Unrestricted': 'orange',
-    'Metered': 'red',
+    'Metered': 'blue',
     'Handicapped': 'cyan',
     'Visitor Parking': 'purple',
 }
@@ -206,11 +206,10 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
       let occupant = row[start];
       let j = 0;
       // count subsequent rows
-      console.log(`occupant: ${occupant}, next: ${row[getTime(i + 1)]}`);
       while (i + j < 15 && row[getTime(i + j + 1)] === occupant) {
-        console.log("incrementing");
         j++;
       }
+
       let end = getTime(i + j);
       for (let k = 0; k < j + 1; k++) {
         parking_spot_time_data.push({

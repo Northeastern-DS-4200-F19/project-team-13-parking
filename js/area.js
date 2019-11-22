@@ -37,7 +37,25 @@ function areachart() {
     addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=17);
     addLegend(svg, 'Regulation', Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10, 15, legendCallbacks);
 
-    svg.append("text")
+    scaleLegend = svg.append("g")
+      .attr("transform", "translate(" + (width - 200) + ", " + 30 + ")")
+
+    scaleLegend.append("rect")
+      .attr("height", 30)
+      .attr("width", 1)
+      .attr("fill", "black")
+    scaleLegend.append("rect")
+      .attr("height", 1)
+      .attr("width", 10)
+      .attr("transform", "translate(5, 0), rotate(180)")
+    scaleLegend.append("rect")
+      .attr("height", 1)
+      .attr("width", 10)
+      .attr("transform", "translate(5, 30), rotate(180)")
+    scaleLegend.append("text")
+      .attr("transform", "translate(10, 15)")
+      .style("font-size", "15px")
+      .text("# Occupied Spots")
 
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -91,7 +109,7 @@ function areachart() {
     // Create lines for each regulation
     Object.keys(data).forEach(regulation => {
       sorted_data = data[regulation].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time));
-      
+
       svg.append('path')
         .attr('d', area(sorted_data))
         .attr('class', 'dataArea')
