@@ -83,6 +83,10 @@ h1, h2, h3 {
   margin-top: 10px;
 }
 
+.hidden-spot {
+  fill: white !important;
+}
+
 /* Slider Styling */
 .rangeslider {
   text-align: center;
