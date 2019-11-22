@@ -1,8 +1,8 @@
 const PARKING_SPOTS = 384;
 
 var rangeslider = document.getElementById("sliderRange"); 
-var output = document.getElementById("demo"); 
-output.innerHTML = rangeslider.value; 
+var output = document.getElementById("time"); 
+output.innerHTML = intToHour(rangeslider.value); 
   
 // read the data
 var mapData = {}
@@ -72,7 +72,7 @@ function filterParkingMap(spots) {
 }
 
 rangeslider.oninput = function() { 
-    output.innerHTML = this.value; 
+    output.innerHTML = intToHour(this.value); 
     updateParkingMap();
 } 
 

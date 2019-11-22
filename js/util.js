@@ -106,6 +106,14 @@ function hourToInt(hour) {
   return hourInt + (isPm && hourInt != 12 ? 12 : 0);
 }
 
+/**
+ * Converts an int into an hour (e.g. '6:00 AM').
+ * @param {*} hour 
+ */
+function intToHour(intHour) {
+  return TIMES.find(time => hourToInt(time) == intHour) || '11:00PM';
+}
+
 
 /**
  * Processes the data into a map from regulation to a list of utilization rates during
