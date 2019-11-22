@@ -48,15 +48,47 @@
         <h1>Demo Video</h1>
 
         <video controls width="100%">
-          <source src="./files/vis_demo.mp4" type="video/mp4">
+          <source src="./files/visualization_demo.mp4" type="video/mp4">
           <p>Your browser doesn't support HTML5 video. Here is
-          a <a href="./files/vis_demo.mp4">link to the video</a> instead.</p>
+          a <a href="./files/visualization_demo.mp4">link to the video</a> instead.</p>
         </video>
 
-        <h1>Visualization explanation</h1>
-        
-        <p><em>final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
+        <h1>Visualization Explanation</h1>
 
+        <h4>Chester Square Parking Spot Occupancy Heatmap</h4>
+        <img src="./images/heatmap.png">
+        <p>
+          This heatmap shows the occupancies for all the parking spots throughout the day, alongside the amount of
+          time a parking spot has been consecutively occupied for. The idea for this chart is to give insight into
+          all individual spots we collected data for. The spots are colored by their regulation, as in the other charts.
+          The darker the color scale for a spot, the longer it has been consecutively occupied. You can brush over the 
+          rows and columns to filter down the other two charts.
+
+          The dropdown legend shows each regulations color, and the color saturation shows how long a particular spot 
+          has been occupied.
+        </p>
+
+        <h4>Chester Square Parking Spot Utilization by Regulation Type</h4>
+        <img src="./images/areachart.png">
+        <p>
+          The area chart shows the utilization rate of parking spots for each regulation. The utilization rate is the number
+          of occupied spots divided by the number of total spots at a given time. The position of each area on the y-axis shows
+          the utilization rate. The amount of area each regulation takes up corresponds the the number of occupied spots at
+          a given time. We choose an area chart since we believed it useful to be able to gauge how the utilization rate 
+          correlates to the number of parking spots for the regulation. You can brush over the x-axis to select the corresponding
+          time range on the Chester Square Parking Spot Occupancy Heatmap.
+        </p>
+
+        <h4>Parking Map</h4>
+        <img src="./images/parkingmap.png">
+        <p>
+          The parking map shows the physical location of the spots seen on the Chester Square Parking Spot Occupancy Heatmap, and is 
+          intended to be used to relate the data shown on the heatmap with the actual parking spots in Chester Square. Parking spots 
+          are color coded by regulation, just as the other two charts are.
+
+          The time range slider on the bottom can be used to see how the occupancies of parking spots change throughout the day.
+        </p>
+        
         <h1>Data Analysis</h1>
         <p>
           Data was collected by a few teams on Tuesday, October 22, 2019 in three five hour shifts from 6 am to 8 pm in teams of 2. A route was prepared,
@@ -107,7 +139,6 @@
 
           <h6>Sketch V2</h6>
           <img src='./images/parking_map_sketch_2.png' width='100%'>
-          We also wanted an interactive time slider, but unfortunately did not have time to implement it.
         </p>
 
         <h1>Conclusion</h1>
