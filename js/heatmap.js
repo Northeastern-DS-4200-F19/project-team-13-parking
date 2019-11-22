@@ -122,11 +122,13 @@ function heatmap() {
       'Unrestricted': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fff9f1', '#fff3e3', '#ffedd4', '#ffe7c6', '#ffe1b7', '#ffdba8', '#ffd599', '#ffce8a', '#ffc879', '#ffc169', '#ffba57', '#ffb343', '#ffac2c', '#ffa500'],
       'Metered': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fff3ef', '#ffe7de', '#ffdbce', '#ffcebe', '#ffc2ad', '#ffb59d', '#ffa78c', '#ff997c', '#ff8b6b', '#ff7b5a', '#ff6948', '#ff5535', '#ff3b20', '#ff0000'],
       'Handicapped': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f6ffff', '#edffff', '#e3ffff', '#d9ffff', '#cfffff', '#c4ffff', '#b8ffff', '#abffff', '#9dffff', '#8effff', '#7cffff', '#66ffff', '#49ffff', '#00ffff'],
+      'Visitor': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f7eef6', '#eeddec', '#e6cde3', '#ddbcda', '#d5acd1', '#cc9cc8', '#c38bbf', '#ba7bb5', '#b16bac', '#a75aa3', '#9e4a9b', '#943892', '#8a2389', '#800080'],
       'Visitor Parking': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f7eef6', '#eeddec', '#e6cde3', '#ddbcda', '#d5acd1', '#cc9cc8', '#c38bbf', '#ba7bb5', '#b16bac', '#a75aa3', '#9e4a9b', '#943892', '#8a2389', '#800080']
     };
 
     function fill(d) {
       console.log(d.timeRange.duration);
+      console.log(d);
       return colors[d.regulation][14 + d.timeRange.duration];
     }
 
