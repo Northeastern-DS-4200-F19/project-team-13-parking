@@ -64,9 +64,10 @@ function updateParkingMap() {
 }
 
 function fillById(id) {
-  if (mapData[id][rangeslider.value - 5] == "Construction" || mapData[id][rangeslider.value - 5] == "Blocked") {
+  spotOccupancy = mapData[id][rangeslider.value - 5]
+  if (spotOccupancy == "Construction" || spotOccupancy == "Blocked") {
     d3.select("#" + id).style("fill", REGULATION_COLORS["Blocked"])
-  } else if (mapData[id][rangeslider.value - 5] == "") {
+  } else if (spotOccupancy == "") {
     d3.select("#" + id).style("fill", "#000000")
   } else {
     d3.select("#" + id).style("fill", REGULATION_COLORS[mapData[id][0]])

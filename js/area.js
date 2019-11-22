@@ -38,10 +38,10 @@ function areachart() {
     addTitle(svg, 'Chester Square Parking Spot Utilization by Regulation Type', x=margin.left, y=50);
 
     scaleLegend = svg.append("g")
-      .attr("transform", "translate(" + (width - 200) + ", " + 30 + ")")
+      .attr("transform", "translate(" + (width - 60) + ", " + 35 + ")")
 
     scaleLegend.append("rect")
-      .attr("height", 30)
+      .attr("height", 20)
       .attr("width", 1)
       .attr("fill", "black")
     scaleLegend.append("rect")
@@ -51,10 +51,10 @@ function areachart() {
     scaleLegend.append("rect")
       .attr("height", 1)
       .attr("width", 10)
-      .attr("transform", "translate(5, 30), rotate(180)")
+      .attr("transform", "translate(5, 20), rotate(180)")
     scaleLegend.append("text")
       .attr("transform", "translate(10, 15)")
-      .style("font-size", "15px")
+      .style("font-size", "12px")
       .text("# Occupied Spots")
 
     svg = svg.append("g")

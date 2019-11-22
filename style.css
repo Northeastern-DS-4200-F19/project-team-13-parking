@@ -112,14 +112,14 @@ h1, h2, h3 {
   appearance: none;
   width: 20px;
   height: 15px;
-  background: #b93556;
+  background: #222;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 20px;
   height: 15px;
-  background: #b93556;
+  background: #222;
   cursor: pointer;
 }
 

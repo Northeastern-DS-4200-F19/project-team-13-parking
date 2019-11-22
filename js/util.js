@@ -77,14 +77,12 @@ function connectFilters(callbacks=[]) {
   function appendEventHandlers(element, elements) {
     element
       .on('click', _ => {
-        console.log(element);
         element.classed("clicked", !element.classed("clicked"));
-        elements.forEach(c => {console.log(c);c.classed("notClicked", !c.classed("clicked"))});
-        //document.getElementById(`${element.attr("id").split("-")[0]}-visible`).setAttribute("visibility", element.classed("clicked") ? "visible" : "hidden");
+        elements.forEach(c => c.classed("notClicked", !c.classed("clicked")));
+
         keys = []
         elements.forEach(c => {
           if (c.classed("clicked")) {
-            console.log(c.attr("key"));
             keys.push(c.attr("key"))
           }
         });
@@ -197,7 +195,7 @@ function setHeatmapTimeMarker(time) {
  * Processes the data into a map from regulation to a list of utilization rates during
  * each recorded time of the day.
  */
-function utilizationRateByGroup(data, spots=[], times=[]) {
+function utilizationRateByGroup(data, spots=[], times=[], regulations=[]) {
     let grouped_data = {};
     const excluded = ['Construction', 'Blocked', '']
 
@@ -214,6 +212,10 @@ function utilizationRateByGroup(data, spots=[], times=[]) {
             grouped_data[regulation] = {}
             grouped_data[regulation]['total_spots'] = 0
             grouped_data[regulation]['spots'] = []
+        }
+
+        if (regulations.length > 0 && !regulations.includes(regulation)) {
+          continue;
         }
 
         grouped_data[regulation]['total_spots'] += 1
