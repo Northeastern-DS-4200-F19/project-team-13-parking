@@ -178,9 +178,18 @@ function heatmap() {
           [x0, y0],
           [x1, y1]
         ] = d3.event.selection;
+
         points.classed("selected", d =>
           x0 <= X(d) + (rect_width/2) && X(d) <= x1 && y0 <= Y(d) + (rect_height/2) && Y(d) <= y1
         );
+        points.classed("notSelected", d =>
+          !(x0 <= X(d) + (rect_width/2) && X(d) <= x1 && y0 <= Y(d) + (rect_height/2) && Y(d) <= y1)
+        );
+
+        // Un-gray out "notSelected" elements if no elements are selected.
+        if (svg.selectAll(".selected").size() == 0) {
+          svg.selectAll(".notSelected").classed("notSelected", false);
+        }
       }
       
       function brushEnd() {
