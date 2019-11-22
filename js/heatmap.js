@@ -65,7 +65,7 @@ function heatmap() {
     // X axis label
     xAxis.append("text")        
         .attr("class", "axisLabel")
-        .attr("transform", "translate(" + (width - 50) + ",-10)")
+        .attr("transform", "translate(" + (width - 100) + ",-10)")
         .text(xLabelText);
     
     // Y axis and label

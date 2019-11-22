@@ -43,7 +43,7 @@
       .xLabel("Time of Day")
       .y(d => d.spot)
       .yLabel("Parking Spot Number")
-      .yLabelOffset(40)
+      .yLabelOffset(0)
       .selectionDispatcher(d3.dispatch(DATA_SELECTED))
       ("#heatmap-container", parkingSpotTimeData(data));
 
