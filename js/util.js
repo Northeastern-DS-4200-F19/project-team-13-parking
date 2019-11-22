@@ -58,14 +58,12 @@ function connectFilters(callbacks=[]) {
   function appendEventHandlers(element, elements) {
     element
       .on('click', _ => {
-        console.log(element);
         element.classed("clicked", !element.classed("clicked"));
-        elements.forEach(c => {console.log(c);c.classed("notClicked", !c.classed("clicked"))});
-        //document.getElementById(`${element.attr("id").split("-")[0]}-visible`).setAttribute("visibility", element.classed("clicked") ? "visible" : "hidden");
+        elements.forEach(c => c.classed("notClicked", !c.classed("clicked")));
+
         keys = []
         elements.forEach(c => {
           if (c.classed("clicked")) {
-            console.log(c.attr("key"));
             keys.push(c.attr("key"))
           }
         });
