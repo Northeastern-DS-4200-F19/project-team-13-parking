@@ -76,7 +76,7 @@ function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offse
       .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
   }
 
-  labelGroup.append("text").attr("x", 0).attr("y", 0).text(title + ':').attr("alignment-baseline","middle");
+  labelGroup.append("text").attr("x", 0).attr("y", 0).text(title + ':').style("font-size", "15px").attr("alignment-baseline","middle");
 
   keys.forEach((key, idx) => {
     let circle, text;
