@@ -79,8 +79,8 @@ function areachart() {
     const area = d3.area()
       .curve(d3.curveNatural)
       .x(d => X(d))
-      .y0(d => Y(d) - d.occupied_spots / 2)
-      .y1(d => Y(d) + d.occupied_spots / 2);
+      .y0(d => Y(d) - d.occupied_spots / 4)
+      .y1(d => Y(d) + d.occupied_spots / 4);
     const line = d3.line()
       .curve(d3.curveNatural)
       .x(d => X(d))

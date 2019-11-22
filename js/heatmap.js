@@ -47,7 +47,7 @@ function heatmap() {
     // Build X scales and axis:
     xScale
       .range([0, width - 120])
-      .domain(d3.map(data, xValue).keys())
+      .domain(d3.map(data, xValue).keys().reverse())
       .padding(0.05);
 
     // Build Y scales and axis:
