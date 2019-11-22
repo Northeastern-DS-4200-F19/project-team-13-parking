@@ -179,17 +179,17 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
   parking_spot_time_data = []
 
   for (row of data) {
-    if (regulations.length > 0 && !regulations.includes(row['Regulation'])) {
-      continue;
-    }
+    const unselected_regulation = regulations.length > 0 && !regulations.includes(row['Regulation']);
 
     Object.keys(row).forEach(time => {
+      const unselected_time = times.length > 0 && !times.includes(time);
+
       if (time.includes('AM') || time.includes('PM')) {
         parking_spot_time_data.push({
           'spot': row['Absolute Spot Number'],
           'time': time,
           'occupied': row[time],
-          'unselected': times.length > 0 && !times.includes(time)
+          'unselected': unselected_regulation || unselected_time
         });
       }
     });
