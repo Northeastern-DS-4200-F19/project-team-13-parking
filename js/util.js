@@ -2,7 +2,7 @@ const REGULATION_COLORS = {
     'Resident Only': 'green',
     'Unrestricted': 'orange',
     'Metered': 'blue',
-    'Handicapped': 'cyan',
+    'Handicapped': 'gold',
     'Visitor Parking': 'purple',
 }
 
@@ -69,21 +69,38 @@ function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offse
   const labelGroup = el.append('g')
     .attr('transform','translate(' + x +',' + y + ')');
   
-  function appendEventHandlers(element, key) {
+  function appendEventHandlers(element, elements) {
     element
-      .on('click', _ => callbacks.forEach(callback => callback([key])))
+      .on('click', _ => {
+        element.classed("clicked", !element.classed("clicked"));
+        elements.forEach(c => c.classed("notClicked", !c.classed("clicked")));
+
+        keys = []
+        elements.forEach(c => {
+          if (c.classed("clicked")) {
+            keys.push(c.attr("id"))
+          }
+        });
+
+        if (keys.length == 0) {
+          elements.forEach(c => c.classed("notClicked", false));
+        }
+
+        callbacks.forEach(callback => callback(keys))
+      })
       .on('mouseover', function(_) { d3.select(this).style("cursor", "pointer"); })
       .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
   }
 
   labelGroup.append("text").attr("x", 0).attr("y", 0).text(title + ':').style("font-size", "15px").attr("alignment-baseline","middle");
 
+  circles = [];
   keys.forEach((key, idx) => {
     let circle, text;
     if (vertical) {
       labelY = (idx + 1) * offset;
 
-      circle = labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black')
+      circle = labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black').attr("id", key)
       text = labelGroup.append("text").attr("x", 15).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
     } else {
       labelX = (idx + 1) * offset
@@ -92,9 +109,10 @@ function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offse
       text = labelGroup.append("text").attr("x", labelX + 10).attr("y", 0).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
     }
 
-    appendEventHandlers(circle, key);
-    appendEventHandlers(text, key);
+    circles.push(circle);
   });
+
+  circles.forEach(circle => appendEventHandlers(circle, circles));
 }
 
 /**

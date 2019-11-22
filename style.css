@@ -180,3 +180,7 @@ h1, h2, h3 {
   background: #b93556;
   cursor: pointer;
 }
+
+.notClicked {
+  opacity: 0.1;
+}
