@@ -7,7 +7,7 @@ function heatmap() {
   // https://bl.ocks.org/mbostock/3019563
   let margin = {
       top: 120,
-      left: 75,
+      left: 50,
       right: 30,
       bottom: 50
     },
@@ -35,12 +35,6 @@ function heatmap() {
         .classed("svg-content", true);
     
     addTitle(svg, 'Chester Square Parking Spots', x=margin.left, y=25, font_size=35)
-    addLegend(
-      svg,
-      'Spot Status',
-      ['Occupied', 'Unoccupied', 'Blocked'],
-      {'Occupied': '#b93556', 'Unoccupied': '#000004', 'Blocked': 'grey'},
-      false, margin.left, 45, 125, []);
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -120,13 +114,17 @@ function heatmap() {
     colors = {
       'Resident Only': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#eff6ed', '#e0eddb', '#d1e4c9', '#c1dbb8', '#b2d2a7', '#a2c896', '#93bf85', '#83b674', '#73ad63', '#63a453', '#529b42', '#3f9231', '#29891d', '#008000'],
       'Unrestricted': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fff9f1', '#fff3e3', '#ffedd4', '#ffe7c6', '#ffe1b7', '#ffdba8', '#ffd599', '#ffce8a', '#ffc879', '#ffc169', '#ffba57', '#ffb343', '#ffac2c', '#ffa500'],
-      'Metered': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fff3ef', '#ffe7de', '#ffdbce', '#ffcebe', '#ffc2ad', '#ffb59d', '#ffa78c', '#ff997c', '#ff8b6b', '#ff7b5a', '#ff6948', '#ff5535', '#ff3b20', '#ff0000'],
-      'Handicapped': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f6ffff', '#edffff', '#e3ffff', '#d9ffff', '#cfffff', '#c4ffff', '#b8ffff', '#abffff', '#9dffff', '#8effff', '#7cffff', '#66ffff', '#49ffff', '#00ffff'],
+      'Metered': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f3edfc', '#e7dbf9', '#dbcaf6', '#cfb8f3', '#c2a7f0', '#b596ec', '#a785e9', '#9975e5', '#8a64e1', '#7a53dd', '#6842d9', '#5431d5', '#3a1dd1', '#0000cd'],
+      'Handicapped': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fffcf3', '#fffae6', '#fff7d9', '#fff5cc', '#fff2bf', '#ffefb1', '#ffeca3', '#ffe994', '#ffe784', '#ffe473', '#ffe161', '#ffdd4d', '#ffda34', '#ffd700'],
       'Visitor': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f7eef6', '#eeddec', '#e6cde3', '#ddbcda', '#d5acd1', '#cc9cc8', '#c38bbf', '#ba7bb5', '#b16bac', '#a75aa3', '#9e4a9b', '#943892', '#8a2389', '#800080'],
-      'Visitor Parking': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f7eef6', '#eeddec', '#e6cde3', '#ddbcda', '#d5acd1', '#cc9cc8', '#c38bbf', '#ba7bb5', '#b16bac', '#a75aa3', '#9e4a9b', '#943892', '#8a2389', '#800080']
+      'Visitor Parking': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#f7eef6', '#eeddec', '#e6cde3', '#ddbcda', '#d5acd1', '#cc9cc8', '#c38bbf', '#ba7bb5', '#b16bac', '#a75aa3', '#9e4a9b', '#943892', '#8a2389', '#800080'],
+      'Blocked': ['#fff3ef', '#ffe7de', '#ffdbce', '#ffcebe', '#ffc2ad', '#ffb59d', '#ffa78c', '#ff997c', '#ff8b6b', '#ff7b5a', '#ff6948', '#ff5535', '#ff3b20', '#ff0000']
     };
 
     function fill(d) {
+      if (d.occupied === "Blocked") {
+        return colors.Blocked[d.timeRange.duration]; // Blocked spaces will count as occupied because our data format is weird
+      }
       return colors[d.regulation][14 + d.timeRange.duration];
     }
 
