@@ -58,13 +58,14 @@ function addTitle(el, title, x=0, y=0, font_size=22) {
  * positioning.
  * 
  * @param {*} el 
+ * @param {String} title
  * @param {Array<String>} keys 
  * @param {object} color_map 
  * @param {number} x 
  * @param {number} y 
  * @param {number} y_offset 
  */
-function addLegend(el, keys, color_map={}, vertical=true, x=0, y=0, offset=15, callbacks=[]) {
+function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offset=15, callbacks=[]) {
   const labelGroup = el.append('g')
     .attr('transform','translate(' + x +',' + y + ')');
   
@@ -75,16 +76,17 @@ function addLegend(el, keys, color_map={}, vertical=true, x=0, y=0, offset=15, c
       .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
   }
 
+  labelGroup.append("text").attr("x", 0).attr("y", 0).text(title + ':').attr("alignment-baseline","middle");
 
   keys.forEach((key, idx) => {
     let circle, text;
     if (vertical) {
-      labelY = idx * offset;
+      labelY = (idx + 1) * offset;
 
       circle = labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black')
       text = labelGroup.append("text").attr("x", 15).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
     } else {
-      labelX = idx * offset
+      labelX = (idx + 1) * offset
 
       circle = labelGroup.append("circle").attr("cx", labelX).attr("cy", 0).attr("r", 6).style("fill", color_map[key] || 'black');
       text = labelGroup.append("text").attr("x", labelX + 10).attr("y", 0).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
@@ -195,5 +197,5 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
     });
   }
 
-  return parking_spot_time_data.reverse();
+  return parking_spot_time_data.sort((a, b) => b['spot'] - a['spot']);
 }

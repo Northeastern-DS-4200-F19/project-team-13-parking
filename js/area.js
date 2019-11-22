@@ -35,7 +35,7 @@ function areachart() {
         .classed("svg-content", true);
     
     addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=17);
-    addLegend(svg, Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10, 15, legendCallbacks);
+    addLegend(svg, 'Regulation', Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10, 15, legendCallbacks);
 
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");

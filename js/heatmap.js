@@ -37,9 +37,10 @@ function heatmap() {
     addTitle(svg, 'Chester Square Parking Spots', x=margin.left, y=25, font_size=35)
     addLegend(
       svg,
+      'Spot Status',
       ['Occupied', 'Unoccupied', 'Blocked'],
       {'Occupied': '#b93556', 'Unoccupied': '#000004', 'Blocked': 'grey'},
-      false, margin.left, 45, 125);
+      false, margin.left, 45, 125, []);
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -47,7 +48,7 @@ function heatmap() {
     // Build X scales and axis:
     xScale
       .range([0, width - 120])
-      .domain(d3.map(data, xValue).keys().reverse())
+      .domain(d3.map(data, xValue).keys())
       .padding(0.05);
 
     // Build Y scales and axis:
