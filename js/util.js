@@ -184,15 +184,12 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
     }
 
     Object.keys(row).forEach(time => {
-      if (times.length > 0 && !times.includes(time)) {
-        return;
-      }
-
       if (time.includes('AM') || time.includes('PM')) {
         parking_spot_time_data.push({
           'spot': row['Absolute Spot Number'],
           'time': time,
-          'occupied': row[time]
+          'occupied': row[time],
+          'unselected': times.length > 0 && !times.includes(time)
         });
       }
     });

@@ -128,6 +128,10 @@ function heatmap() {
       }
     }
 
+    function opacity(d) {
+      return d.unselected ? 0.1 : 0.8;
+    }
+
     rect_width = xScale.bandwidth();
     rect_height = yScale.bandwidth();
 
@@ -142,7 +146,7 @@ function heatmap() {
         .style("fill", d => fill(d))
         .style("stroke-width", 1)
         .style("stroke", d => fill(d))
-        .style("opacity", 0.8)
+        .style("opacity", d => opacity(d))
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave);
