@@ -37,9 +37,10 @@ function heatmap() {
     addTitle(svg, 'Chester Square Parking Spots', x=margin.left, y=25, font_size=35)
     addLegend(
       svg,
+      'Spot Status',
       ['Occupied', 'Unoccupied', 'Blocked'],
       {'Occupied': '#b93556', 'Unoccupied': '#000004', 'Blocked': 'grey'},
-      false, margin.left, 45, 125);
+      false, margin.left, 45, 125, []);
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -129,6 +130,10 @@ function heatmap() {
       return colors[d.regulation][14 + d.timeRange.duration];
     }
 
+    function opacity(d) {
+      return d.unselected ? 0.1 : 0.8;
+    }
+
     rect_width = xScale.bandwidth();
     rect_height = yScale.bandwidth();
 
@@ -143,7 +148,7 @@ function heatmap() {
         .style("fill", d => fill(d))
         .style("stroke-width", 1)
         .style("stroke", d => fill(d))
-        .style("opacity", 0.8)
+        .style("opacity", d => opacity(d))
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave);
@@ -174,9 +179,18 @@ function heatmap() {
           [x0, y0],
           [x1, y1]
         ] = d3.event.selection;
+
         points.classed("selected", d =>
           x0 <= X(d) + (rect_width/2) && X(d) <= x1 && y0 <= Y(d) + (rect_height/2) && Y(d) <= y1
         );
+        points.classed("notSelected", d =>
+          !(x0 <= X(d) + (rect_width/2) && X(d) <= x1 && y0 <= Y(d) + (rect_height/2) && Y(d) <= y1)
+        );
+
+        // Un-gray out "notSelected" elements if no elements are selected.
+        if (svg.selectAll(".selected").size() == 0) {
+          svg.selectAll(".notSelected").classed("notSelected", false);
+        }
       }
       
       function brushEnd() {

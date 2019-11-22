@@ -1,8 +1,8 @@
-
+const PARKING_SPOTS = 384;
 
 var rangeslider = document.getElementById("sliderRange"); 
-var output = document.getElementById("demo"); 
-output.innerHTML = rangeslider.value; 
+var output = document.getElementById("time"); 
+output.innerHTML = intToHour(rangeslider.value); 
   
 // read the data
 var mapData = {}
@@ -27,9 +27,6 @@ d3.csv("./data/parking.csv").then (function(data) {
         data[i]['8:00 PM']];
     }
 });
-console.log(mapData);
-
-
 
 d3.selectAll(".parkingspot")
   .on("mouseover", mouseover)
@@ -37,7 +34,6 @@ d3.selectAll(".parkingspot")
 
 
 function mouseover() {
-    console.log(d3.select(this).attr("id"))
     //convert the slider value to the correct index of time in mapData
     index = rangeslider.value - 5
     tooltip
@@ -48,7 +44,7 @@ function mouseover() {
 }
 
 function updateParkingMap() {
-  for (var j = 1; j < 384; j++) {
+  for (var j = 1; j < PARKING_SPOTS; j++) {
     if (mapData["_" + j][rangeslider.value - 5] == "Construction" || mapData["_" + j][rangeslider.value - 5] == "Blocked") {
         d3.select("#_" + j).style("fill", "grey")
     }
@@ -62,22 +58,21 @@ function updateParkingMap() {
 }
 
 function filterParkingMap(spots) {
-  console.log(spots);
   updateParkingMap();
 
   if (spots.length == 0) {
     return;
   }
 
-  for (var id = 1; id < 290; id++) {
-    if (!spots.includes("" + id)) {
+  for (var id = 1; id < PARKING_SPOTS; id++) {
+    if (!spots.includes(""+ id)) {
       d3.select("#_" + id).style("fill", "white");
     }
   }
 }
 
 rangeslider.oninput = function() { 
-    output.innerHTML = this.value; 
+    output.innerHTML = intToHour(this.value); 
     updateParkingMap();
 } 
 

@@ -132,21 +132,51 @@ h1, h2, h3 {
   fill: #475d7c;
 }
 
-.selected {
-  stroke-width: 1px !important;
-  stroke: blue !important;
+.notSelected {
+  opacity: 0.2 !important;
 }
 
 /* Chart styling */
-#area-container {
-  /* flex: 1; */
-}
-
 #heatmap-container {
   flex: 1;
-	/* overflow-y: scroll; */
 }
 
 #map-container {
-  /* flex: 1; */
+  margin-top: 10px;
+}
+
+/* Slider Styling */
+.rangeslider {
+  text-align: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 10px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 15px;
+  background: #b93556;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 15px;
+  background: #b93556;
+  cursor: pointer;
 }

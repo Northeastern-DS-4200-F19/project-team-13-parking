@@ -35,7 +35,7 @@ function areachart() {
         .classed("svg-content", true);
     
     addTitle(svg, 'Chester Square Parking Spot Utilization', x=margin.left, y=17);
-    addLegend(svg, Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10, 15, legendCallbacks);
+    addLegend(svg, 'Regulation', Object.keys(data), REGULATION_COLORS, true, width - margin.right - 10, 10, 15, legendCallbacks);
 
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -79,8 +79,8 @@ function areachart() {
     const area = d3.area()
       .curve(d3.curveNatural)
       .x(d => X(d))
-      .y0(d => Y(d) - d.occupied_spots / 2)
-      .y1(d => Y(d) + d.occupied_spots / 2);
+      .y0(d => Y(d) - d.occupied_spots / 4)
+      .y1(d => Y(d) + d.occupied_spots / 4);
     const line = d3.line()
       .curve(d3.curveNatural)
       .x(d => X(d))
