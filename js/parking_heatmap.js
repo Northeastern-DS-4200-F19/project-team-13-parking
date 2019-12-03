@@ -179,7 +179,7 @@ function heatmap() {
     // Highlight points when brushed
     function brush(g) {
       const brush = d3.brush()
-        .on("start brush", highlight)
+        .on("start brush", deselectAll)
         .on("end", brushEnd)
         .extent([
           [-margin.left, -margin.bottom],
@@ -189,6 +189,11 @@ function heatmap() {
       ourBrush = brush;
 
       g.call(brush); // Adds the brush to this element
+
+      function deselectAll() {
+        points.classed("notSelected", false);
+        points.classed("selected", false);
+      }
 
       // Highlight the selected circles.
       function highlight() {
@@ -216,6 +221,8 @@ function heatmap() {
         if (d3.event.sourceEvent.type != "end") {
           d3.select(this).call(brush.move, null);
         }
+
+        highlight()
 
         // Get the name of our dispatcher's event
         let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
