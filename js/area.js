@@ -38,24 +38,24 @@ function areachart() {
     addTitle(svg, 'Chester Square Parking Spot Utilization by Regulation Type', x=margin.left, y=50, font_size=20);
 
     scaleLegend = svg.append("g")
-      .attr("transform", "translate(" + (width - 60) + ", " + 60 + ")")
+      .attr("transform", "translate(" + (width - 60) + ", " + 60 + ")");
 
     scaleLegend.append("rect")
       .attr("height", 20)
       .attr("width", 1)
-      .attr("fill", "black")
+      .attr("fill", "black");
     scaleLegend.append("rect")
       .attr("height", 1)
       .attr("width", 10)
-      .attr("transform", "translate(5, 0), rotate(180)")
+      .attr("transform", "translate(5, 0), rotate(180)");
     scaleLegend.append("rect")
       .attr("height", 1)
       .attr("width", 10)
-      .attr("transform", "translate(5, 20), rotate(180)")
+      .attr("transform", "translate(5, 20), rotate(180)");
     scaleLegend.append("text")
       .attr("transform", "translate(10, 15)")
       .style("font-size", "12px")
-      .text("# Occupied Spots")
+      .text("# Occupied Spots");
 
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -76,24 +76,24 @@ function areachart() {
         
     // Put X axis tick labels at an angle
     xAxis.selectAll("text")	
-        .style("text-anchor", "end")
-        .attr("dx", "-.8em")
-        .attr("dy", ".15em")
-        .attr("transform", "rotate(-65)");
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(-65)");
         
     // X axis label
     xAxis.append("text")        
-        .attr("class", "axisLabel")
-        .attr("transform", "translate(" + (width - 50) + ",-10)")
-        .text(xLabelText);
-    
+      .attr("class", "axisLabel")
+      .attr("transform", "translate(" + (width - 50) + ",-10)")
+      .text(xLabelText);
+  
     // Y axis and label
     const yAxis = svg.append("g")
-        .call(d3.axisLeft(yScale))
-        .append("text")
-          .attr("class", "axisLabel")
-          .attr("transform", "translate(" + yLabelOffsetPx + ", -12)")
-          .text(yLabelText);
+      .call(d3.axisLeft(yScale))
+      .append("text")
+        .attr("class", "axisLabel")
+        .attr("transform", "translate(" + yLabelOffsetPx + ", -12)")
+        .text(yLabelText);
 
     // Define our areas and lines
     const area = d3.area()
@@ -125,7 +125,7 @@ function areachart() {
     });
 
 
-    all_points = []
+    const all_points = []
     Object.keys(data).forEach(regulation => {
       // Add the points
       let points = svg.append("g")

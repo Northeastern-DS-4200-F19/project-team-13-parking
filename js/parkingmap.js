@@ -7,29 +7,29 @@ output.innerHTML = intToHour(rangeslider.value);
 // read the data
 const mapData = {}
 d3.csv("./data/parking.csv").then (function(data) {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i]['Regulation'] === "Visitor") {
-        regulation = "Visitor Parking";
-      }
-
-      mapData['_' + data[i]['Absolute Spot Number']] = 
-      [data[i]['Regulation'], 
-      data[i]['6:00 AM'], 
-      data[i]['7:00 AM'],
-      data[i]['8:00 AM'],
-      data[i]['9:00 AM'],
-      data[i]['10:00 AM'],
-      data[i]['11:00 AM'],
-      data[i]['12:00 PM'],
-      data[i]['1:00 PM'],
-      data[i]['2:00 PM'],
-      data[i]['3:00 PM'],
-      data[i]['4:00 PM'],
-      data[i]['5:00 PM'],
-      data[i]['6:00 PM'],
-      data[i]['7:00 PM'],
-      data[i]['8:00 PM']];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i]['Regulation'] === "Visitor") {
+      regulation = "Visitor Parking";
     }
+
+    mapData['_' + data[i]['Absolute Spot Number']] = 
+    [data[i]['Regulation'], 
+    data[i]['6:00 AM'], 
+    data[i]['7:00 AM'],
+    data[i]['8:00 AM'],
+    data[i]['9:00 AM'],
+    data[i]['10:00 AM'],
+    data[i]['11:00 AM'],
+    data[i]['12:00 PM'],
+    data[i]['1:00 PM'],
+    data[i]['2:00 PM'],
+    data[i]['3:00 PM'],
+    data[i]['4:00 PM'],
+    data[i]['5:00 PM'],
+    data[i]['6:00 PM'],
+    data[i]['7:00 PM'],
+    data[i]['8:00 PM']];
+  }
 });
 
 d3.selectAll("use")
@@ -44,17 +44,14 @@ function mouseover() {
       index = rangeslider.value - 5
       let occupant = mapData[spot.attr("id")][index];
       tooltip
-          .html(mapData[spot.attr("id")][0] + ': ' + (occupant === "" ? "Unoccupied" : occupant))
-          .style("opacity", 1);
-
-      // spot.style("fill", "red")
+        .html(mapData[spot.attr("id")][0] + ': ' + (occupant === "" ? "Unoccupied" : occupant))
+        .style("opacity", 1);
     }
 }
 
 function mouseleave() {
-  tooltip
-      .style("opacity", 0)
-  fillById(d3.select(this).attr("id"))
+  tooltip.style("opacity", 0);
+  fillById(d3.select(this).attr("id"));
 }
 
 function updateParkingMap() {
@@ -64,13 +61,13 @@ function updateParkingMap() {
 }
 
 function fillById(id) {
-  spotOccupancy = mapData[id][rangeslider.value - 5]
+  spotOccupancy = mapData[id][rangeslider.value - 5];
   if (spotOccupancy == "Construction" || spotOccupancy == "Blocked") {
-    d3.select("#" + id).style("fill", REGULATION_COLORS["Blocked"])
+    d3.select("#" + id).style("fill", REGULATION_COLORS["Blocked"]);
   } else if (spotOccupancy == "") {
-    d3.select("#" + id).style("fill", "#000000")
+    d3.select("#" + id).style("fill", "#000000");
   } else {
-    d3.select("#" + id).style("fill", REGULATION_COLORS[mapData[id][0]])
+    d3.select("#" + id).style("fill", REGULATION_COLORS[mapData[id][0]]);
   }
 }
 
@@ -84,23 +81,19 @@ function filterParkingMap(spots=[], regulations=[]) {
   }
 }
 
-rangeslider.onmouseover = function() {
-  console.log(this.value);
-}
-
 rangeslider.oninput = function() { 
-    output.innerHTML = intToHour(this.value);
-    setHeatmapTimeMarker(intToHour(this.value));
-    updateParkingMap();
+  output.innerHTML = intToHour(this.value);
+  setHeatmapTimeMarker(intToHour(this.value));
+  updateParkingMap();
 } 
 
 // create a tooltip
 const tooltip = d3.select("#map-container")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "2px")
-    .style("border-radius", "5px")
-    .style("padding", "5px")
+  .append("div")
+  .style("opacity", 0)
+  .attr("class", "tooltip")
+  .style("background-color", "white")
+  .style("border", "solid")
+  .style("border-width", "2px")
+  .style("border-radius", "5px")
+  .style("padding", "5px")

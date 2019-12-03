@@ -34,7 +34,7 @@ function heatmap() {
         .attr("height", height)
         .classed("svg-content", true);
     
-    addTitle(svg, 'Chester Square Parking Spot Occupancy', x=margin.left, y=25, font_size=25)
+    addTitle(svg, 'Chester Square Parking Spot Occupancy', x=margin.left, y=25, font_size=25);
         
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -53,8 +53,8 @@ function heatmap() {
     
     // X axis
     const xAxis = svg.append("g")
-        .attr("transform", "translate(0," + 0 + ")")
-        .call(d3.axisTop(xScale).tickSize(0))
+      .attr("transform", "translate(0," + 0 + ")")
+      .call(d3.axisTop(xScale).tickSize(0));
     xAxis.selectAll("text")	
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
@@ -64,18 +64,18 @@ function heatmap() {
         
     // X axis label
     xAxis.append("text")        
-        .attr("class", "axisLabel")
-        .attr("transform", "translate(" + (width - 100) + ",-10)")
-        .text(xLabelText);
+      .attr("class", "axisLabel")
+      .attr("transform", "translate(" + (width - 100) + ",-10)")
+      .text(xLabelText);
     
     // Y axis and label
     const yAxis = svg.append("g")
-        .call(d3.axisLeft(yScale).tickSize(0))
-        .select(".domain").remove()
-        .append("text")
-          .attr("class", "axisLabel")
-          .attr("transform", "translate(" + yLabelOffsetPx + ", -12)")
-          .text(yLabelText)
+      .call(d3.axisLeft(yScale).tickSize(0))
+      .select(".domain").remove()
+      .append("text")
+        .attr("class", "axisLabel")
+        .attr("transform", "translate(" + yLabelOffsetPx + ", -12)")
+        .text(yLabelText);
 
     // create a tooltip
     const tooltip = d3.select("#heatmap-container")
@@ -86,29 +86,29 @@ function heatmap() {
         .style("border", "solid")
         .style("border-width", "2px")
         .style("border-radius", "5px")
-        .style("padding", "5px")
+        .style("padding", "5px");
 
-    // Three function that change the tooltip when user hover / move / leave a cell
+    // Three functions that change the tooltip when user hover / move / leave a cell
     function mouseover(d) {
-      tooltip
-        .style("opacity", 1)
+      tooltip.style("opacity", 1);
+
       d3.select(this)
         .style("stroke", "black")
-        .style("opacity", 1)
+        .style("opacity", 1);
     }
 
     function mousemove(d) {
       tooltip
         .html(d.occupied || 'Unoccupied')
-        .style("position", "absolute")
+        .style("position", "absolute");
     }
 
     function mouseleave(d) {
-      tooltip
-        .style("opacity", 0)
+      tooltip.style("opacity", 0);
+
       d3.select(this)
         .style("stroke", "none")
-        .style("opacity", 0.8)
+        .style("opacity", 0.8);
     }
 
     colors = {
@@ -168,9 +168,11 @@ function heatmap() {
       .attr("stroke-width", "3px")
       .attr("width", rect_width)
       .attr("height", height-100);
+
     TIMES.forEach((time) => {
       timeMarker.attr(timeToAttr[time], xScale(time));
-    })
+    });
+
     const points = svg.selectAll("rect").data(data);
     selectableElements = points;
 
@@ -222,7 +224,7 @@ function heatmap() {
           d3.select(this).call(brush.move, null);
         }
 
-        highlight()
+        highlight();
 
         // Get the name of our dispatcher's event
         let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];

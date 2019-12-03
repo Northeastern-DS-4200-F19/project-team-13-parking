@@ -1,10 +1,10 @@
 const REGULATION_COLORS = {
-    'Resident Only': 'green',
-    'Unrestricted': 'orange',
-    'Metered': 'mediumblue',
-    'Handicapped': 'gold',
-    'Visitor Parking': 'purple',
-    'Blocked': 'red' // Blocked is not a regulation, but in some instances is used as one.
+  'Resident Only': 'green',
+  'Unrestricted': 'orange',
+  'Metered': 'mediumblue',
+  'Handicapped': 'gold',
+  'Visitor Parking': 'purple',
+  'Blocked': 'red' // Blocked is not a regulation, but in some instances is used as one.
 }
 
 const TIMES = [
@@ -47,8 +47,8 @@ const timeToAttr = {
  * Remove the chart in the given container and draw the given chart there with the data.
  */
 function redrawChart(chart, container_selector, data) {
-  d3.select(container_selector).select('svg').remove()
-  d3.select(container_selector).select('div').remove()
+  d3.select(container_selector).select('svg').remove();
+  d3.select(container_selector).select('div').remove();
 
   chart(container_selector, data);
 }
@@ -83,7 +83,7 @@ function connectFilters(callbacks=[]) {
         keys = []
         elements.forEach(c => {
           if (c.classed("clicked")) {
-            keys.push(c.attr("key"))
+            keys.push(c.attr("key"));
           }
         });
 
@@ -131,7 +131,7 @@ function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offse
         keys = []
         elements.forEach(c => {
           if (c.classed("clicked")) {
-            keys.push(c.attr("id"))
+            keys.push(c.attr("id"));
           }
         });
 
@@ -147,13 +147,13 @@ function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offse
 
   labelGroup.append("text").attr("x", 0).attr("y", 0).text(title + ':').style("font-size", "15px").attr("alignment-baseline","middle");
 
-  circles = [];
+  const circles = [];
   keys.forEach((key, idx) => {
     let circle, text;
     if (vertical) {
       labelY = (idx + 1) * offset;
 
-      circle = labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black').attr("id", key)
+      circle = labelGroup.append("circle").attr("cx", 0).attr("cy", labelY).attr("r", 6).style("fill", color_map[key] || 'black').attr("id", key);
       text = labelGroup.append("text").attr("x", 15).attr("y", labelY).text(key).style("font-size", "15px").attr("alignment-baseline","middle");
     } else {
       labelX = (idx + 1) * offset
@@ -196,72 +196,72 @@ function setHeatmapTimeMarker(time) {
  * each recorded time of the day.
  */
 function utilizationRateByGroup(data, spots=[], times=[], regulations=[]) {
-    let grouped_data = {};
-    const excluded = ['Construction', 'Blocked', '']
+  let grouped_data = {};
+  const excluded = ['Construction', 'Blocked', ''];
 
-    for (row of data) {
-        if (spots.length > 0 && !spots.includes(row['Absolute Spot Number'])) {
-          continue;
-        }
+  for (row of data) {
+      if (spots.length > 0 && !spots.includes(row['Absolute Spot Number'])) {
+        continue;
+      }
 
-        regulation = row['Regulation']
-        if (regulation === "Visitor") {
-          regulation = "Visitor Parking"
-        }
-        if (grouped_data[regulation] == undefined) {
-            grouped_data[regulation] = {}
-            grouped_data[regulation]['total_spots'] = 0
-            grouped_data[regulation]['spots'] = []
-        }
+      regulation = row['Regulation']
+      if (regulation === "Visitor") {
+        regulation = "Visitor Parking"
+      }
+      if (grouped_data[regulation] == undefined) {
+          grouped_data[regulation] = {}
+          grouped_data[regulation]['total_spots'] = 0
+          grouped_data[regulation]['spots'] = []
+      }
 
-        if (regulations.length > 0 && !regulations.includes(regulation)) {
-          continue;
-        }
+      if (regulations.length > 0 && !regulations.includes(regulation)) {
+        continue;
+      }
 
-        grouped_data[regulation]['total_spots'] += 1
-        grouped_data[regulation]['spots'].push(row['Absolute Spot Number']);
+      grouped_data[regulation]['total_spots'] += 1
+      grouped_data[regulation]['spots'].push(row['Absolute Spot Number']);
 
-        Object.keys(row).forEach(function (key) {
-            if (key.includes('AM') || key.includes('PM')) {
-                if (!excluded.includes(row[key])) {
-                    if (grouped_data[regulation][key] == undefined) {
-                        grouped_data[regulation][key] = {'occupied_spots': 0}
-                    }
+      Object.keys(row).forEach(function (key) {
+          if (key.includes('AM') || key.includes('PM')) {
+              if (!excluded.includes(row[key])) {
+                  if (grouped_data[regulation][key] == undefined) {
+                      grouped_data[regulation][key] = {'occupied_spots': 0}
+                  }
 
-                    grouped_data[regulation][key]['occupied_spots'] += 1
-                }
-            }
+                  grouped_data[regulation][key]['occupied_spots'] += 1
+              }
+          }
+      });
+  }
+
+  data_by_regulation = {}
+  const excluded_keys = ['total_spots', 'spots']
+  Object.keys(grouped_data).forEach(regulation => {
+    data_by_regulation[regulation] = []
+
+    Object.keys(grouped_data[regulation]).forEach(time => {
+      if (times.length > 0 && !times.includes(time)) {
+        return;
+      }
+
+      if (!excluded_keys.includes(time)) {
+        total_spots = grouped_data[regulation]['total_spots'];
+        occupied_spots = grouped_data[regulation][time]['occupied_spots'];
+        spots = grouped_data[regulation]['spots'];
+
+        util_rate = occupied_spots / total_spots;
+        data_by_regulation[regulation].push({
+          'time': time,
+          'util_rate': util_rate,
+          'occupied_spots': occupied_spots,
+          'spots': spots,
+          'regulation': regulation
         });
-    }
-
-    data_by_regulation = {}
-    const excluded_keys = ['total_spots', 'spots']
-    Object.keys(grouped_data).forEach(regulation => {
-        data_by_regulation[regulation] = []
-
-        Object.keys(grouped_data[regulation]).forEach(time => {
-            if (times.length > 0 && !times.includes(time)) {
-              return;
-            }
-
-            if (!excluded_keys.includes(time)) {
-              total_spots = grouped_data[regulation]['total_spots'];
-              occupied_spots = grouped_data[regulation][time]['occupied_spots'];
-              spots = grouped_data[regulation]['spots']
-
-              util_rate = occupied_spots / total_spots;
-              data_by_regulation[regulation].push({
-                'time': time,
-                'util_rate': util_rate,
-                'occupied_spots': occupied_spots,
-                'spots': spots,
-                'regulation': regulation
-              });
-            }
-        });
+      }
     });
+  });
 
-    return data_by_regulation
+  return data_by_regulation;
 }
 
 /**
@@ -269,7 +269,7 @@ function utilizationRateByGroup(data, spots=[], times=[], regulations=[]) {
  * optionally filtered by times.
  */
 function parkingSpotTimeData(data, times=[], regulations=[]) {
-  parking_spot_time_data = []
+  const parking_spot_time_data = [];
 
   for (row of data) {
     const unselected_regulation = regulations.length > 0 && !regulations.includes(row['Regulation'] === "Visitor" ? "Visitor Parking" : row['Regulation']);
