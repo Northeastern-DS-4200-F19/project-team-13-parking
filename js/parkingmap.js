@@ -1,34 +1,34 @@
 const PARKING_SPOTS = 384;
 
-var rangeslider = document.getElementById("sliderRange"); 
-var output = document.getElementById("time"); 
+const rangeslider = document.getElementById("sliderRange"); 
+const output = document.getElementById("time"); 
 output.innerHTML = intToHour(rangeslider.value); 
   
 // read the data
-var mapData = {}
+const mapData = {}
 d3.csv("./data/parking.csv").then (function(data) {
-    for (var i = 0; i < data.length; i++) {
-      let regulation = data[i]['Regulation'];
+    for (let i = 0; i < data.length; i++) {
       if (data[i]['Regulation'] === "Visitor") {
         regulation = "Visitor Parking";
       }
-        mapData['_' + data[i]['Absolute Spot Number']] = 
-        [data[i]['Regulation'], 
-        data[i]['6:00 AM'], 
-        data[i]['7:00 AM'],
-        data[i]['8:00 AM'],
-        data[i]['9:00 AM'],
-        data[i]['10:00 AM'],
-        data[i]['11:00 AM'],
-        data[i]['12:00 PM'],
-        data[i]['1:00 PM'],
-        data[i]['2:00 PM'],
-        data[i]['3:00 PM'],
-        data[i]['4:00 PM'],
-        data[i]['5:00 PM'],
-        data[i]['6:00 PM'],
-        data[i]['7:00 PM'],
-        data[i]['8:00 PM']];
+
+      mapData['_' + data[i]['Absolute Spot Number']] = 
+      [data[i]['Regulation'], 
+      data[i]['6:00 AM'], 
+      data[i]['7:00 AM'],
+      data[i]['8:00 AM'],
+      data[i]['9:00 AM'],
+      data[i]['10:00 AM'],
+      data[i]['11:00 AM'],
+      data[i]['12:00 PM'],
+      data[i]['1:00 PM'],
+      data[i]['2:00 PM'],
+      data[i]['3:00 PM'],
+      data[i]['4:00 PM'],
+      data[i]['5:00 PM'],
+      data[i]['6:00 PM'],
+      data[i]['7:00 PM'],
+      data[i]['8:00 PM']];
     }
 });
 
@@ -58,7 +58,7 @@ function mouseleave() {
 }
 
 function updateParkingMap() {
-  for (var j = 1; j <= PARKING_SPOTS; j++) {
+  for (let j = 1; j <= PARKING_SPOTS; j++) {
     fillById("_" + j);
   }
 }
@@ -77,7 +77,7 @@ function fillById(id) {
 function filterParkingMap(spots=[], regulations=[]) {
   updateParkingMap();
 
-  for (var id = 1; id <= PARKING_SPOTS; id++) {
+  for (let id = 1; id <= PARKING_SPOTS; id++) {
     const notInSpots = spots.length > 0 && !spots.includes("" + id);
     const notInRegulations = regulations.length > 0 && !regulations.includes(mapData['_' + id][0]);
     d3.select("#_" + id).classed("hidden-spot", notInSpots || notInRegulations);
