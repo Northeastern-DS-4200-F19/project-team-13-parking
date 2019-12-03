@@ -170,7 +170,7 @@ function heatmap() {
       .attr("height", height-100);
 
     TIMES.forEach((time) => {
-      timeMarker.attr(timeToAttr[time], xScale(time));
+      timeMarker.attr(TIME_TO_ATTR[time], xScale(time));
     });
 
     const points = svg.selectAll("rect").data(data);

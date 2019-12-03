@@ -1,3 +1,4 @@
+// Global colors for each regulation.
 const REGULATION_COLORS = {
   'Resident Only': 'green',
   'Unrestricted': 'orange',
@@ -25,7 +26,7 @@ const TIMES = [
   "8:00 PM"
 ]
 
-const timeToAttr = {
+const TIME_TO_ATTR = {
   "6:00 AM": "sixAM",
   "7:00 AM": "sevenAM",
   "8:00 AM": "eightAM",
@@ -72,6 +73,12 @@ function addTitle(el, title, x=0, y=0, font_size=22) {
     .text(title);
 }
 
+/**
+ * Attaches callbacks to the filters, which are called with the selected
+ * keys in the filter.
+ * 
+ * @param {*} callbacks the callbacks to attach.
+ */
 function connectFilters(callbacks=[]) {
 
   function appendEventHandlers(element, elements) {
@@ -97,7 +104,7 @@ function connectFilters(callbacks=[]) {
       .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
   }
 
-  let items = [];
+  const items = [];
   items.push(d3.select("#resident-filter").attr("key", "Resident Only"));
   items.push(d3.select("#unrestricted-filter").attr("key", "Unrestricted"));
   items.push(d3.select("#metered-filter").attr("key", "Metered"));
@@ -185,9 +192,14 @@ function intToHour(intHour) {
   return TIMES.find(time => hourToInt(time) == intHour) || '11:00PM';
 }
 
+/**
+ * Sets the time marker on the heatmap, used with the range slider.
+ * 
+ * @param {*} time the time to highlight.
+ */
 function setHeatmapTimeMarker(time) {
   let marker = d3.select("#timeMarker");
-  marker.attr("x", marker.attr(timeToAttr[time]));
+  marker.attr("x", marker.attr(TIME_TO_ATTR[time]));
 }
 
 
