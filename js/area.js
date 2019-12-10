@@ -108,10 +108,10 @@ function areachart() {
 
     // Create lines and areas for each regulation
     Object.keys(data).forEach(regulation => {
-      sorted_data = data[regulation].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time));
+      const sortedData = data[regulation].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time));
 
       svg.append('path')
-        .attr('d', area(sorted_data))
+        .attr('d', area(sortedData))
         .attr('class', 'dataArea')
         .attr('stroke', REGULATION_COLORS[regulation])
         .attr('stroke-opacity', 0.5)
@@ -119,13 +119,13 @@ function areachart() {
         .attr('fill-opacity', 0.5);
 
       svg.append('path')
-        .attr('d', line(sorted_data))
+        .attr('d', line(sortedData))
         .attr('class', 'dataLine')
         .attr('stroke', REGULATION_COLORS[regulation]);
     });
 
 
-    const all_points = [];
+    const allPoints = [];
     // Create points for util rates for all regulations at all times, used for brushing.
     Object.keys(data).forEach(regulation => {
       let points = svg.append("g")
@@ -141,7 +141,8 @@ function areachart() {
           .attr("cx", X)
           .attr("cy", Y)        
           .attr("r",5);
-      all_points.push(points);
+
+      allPoints.push(points);
     });
 
     svg.call(brush);
@@ -163,8 +164,8 @@ function areachart() {
         if (d3.event.selection === null) return;
         const [x0, x1] = d3.event.selection;
 
-        all_points.forEach(area_points => {
-          area_points.classed("selected-no-fill", d => x0 <= X(d) && X(d) <= x1);
+        allPoints.forEach(areaPoints => {
+          areaPoints.classed("selected-no-fill", d => x0 <= X(d) && X(d) <= x1);
         });
       }
       
