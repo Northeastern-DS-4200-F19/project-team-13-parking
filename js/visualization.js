@@ -67,7 +67,7 @@
       const selectedTimes = selectedData.map(d => d.time);
 
       // Redraw area chart filtered by spot # and time.
-      redrawChart(acUtilRate, '#area-container', utilizationRateByGroup(data, selectedSpots, selectedTimes));
+      redrawChart(acUtilRate, '#area-container', utilizationRateByGroup(data, selectedSpots, selectedTimes, SELECTED_REGULATIONS));
       // Filter the heatmap by any selected regulations and times.
       filterHeatmap('#heatmap-container', PARKING_SPOT_DATA, regulations=SELECTED_REGULATIONS, times=selectedTimes);
       // Filter parking map by spot # and selected regulations.
