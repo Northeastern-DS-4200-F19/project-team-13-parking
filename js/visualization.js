@@ -34,9 +34,6 @@
       .selectionDispatcher(d3.dispatch(DATA_SELECTED))
       ("#heatmap-container", PARKING_SPOT_DATA);
 
-    // Color parking spots in map by regulation.
-    updateParkingMap();
-
     // Store any selected regulations for consistent filtering.
     function storeSelectedRegulations(regulations) {
       SELECTED_REGULATIONS = regulations;

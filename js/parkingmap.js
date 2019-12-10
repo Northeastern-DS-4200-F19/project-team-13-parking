@@ -30,6 +30,8 @@ d3.csv("./data/parking.csv").then (function(data) {
     data[i]['7:00 PM'],
     data[i]['8:00 PM']];
   }
+
+  updateParkingMap();
 });
 
 // Register mouse events for parking spots.
@@ -79,7 +81,7 @@ function fillById(id) {
   if (!mapData[id]) {
     return;
   }
-  
+
   spotOccupancy = mapData[id][rangeslider.value - 5];
   if (spotOccupancy == "Construction" || spotOccupancy == "Blocked") {
     d3.select("#" + id).style("fill", REGULATION_COLORS["Blocked"]);
