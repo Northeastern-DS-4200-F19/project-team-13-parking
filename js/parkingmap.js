@@ -76,6 +76,10 @@ function updateParkingMap() {
  * @param {String} id the id of the parking spot to fill.
  */
 function fillById(id) {
+  if (!mapData[id]) {
+    return;
+  }
+  
   spotOccupancy = mapData[id][rangeslider.value - 5];
   if (spotOccupancy == "Construction" || spotOccupancy == "Blocked") {
     d3.select("#" + id).style("fill", REGULATION_COLORS["Blocked"]);
