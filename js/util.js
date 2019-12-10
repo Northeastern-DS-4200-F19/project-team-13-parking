@@ -1,4 +1,4 @@
-// Global colors for each regulation.
+// Global colors for every regulation.
 const REGULATION_COLORS = {
   'Resident Only': 'green',
   'Unrestricted': 'orange',
@@ -8,6 +8,7 @@ const REGULATION_COLORS = {
   'Blocked': 'red' // Blocked is not a regulation, but in some instances is used as one.
 }
 
+// All hours we have data for, in AM/PM format.
 const TIMES = [
   "6:00 AM",
   "7:00 AM",
@@ -26,6 +27,7 @@ const TIMES = [
   "8:00 PM"
 ]
 
+// A mapping between times and an attribute that represents it.
 const TIME_TO_ATTR = {
   "6:00 AM": "sixAM",
   "7:00 AM": "sevenAM",
@@ -46,10 +48,13 @@ const TIME_TO_ATTR = {
 
 /**
  * Remove the chart in the given container and draw the given chart there with the data.
+ * 
+ * @param {*} chart the reusable chart component to place in the container.
+ * @param {String} container_selector select the container to replace the chart in.
+ * @param {*} data the data to construct the chart with.
  */
 function redrawChart(chart, container_selector, data) {
-  d3.select(container_selector).select('svg').remove();
-  d3.select(container_selector).select('div').remove();
+  d3.select(container_selector).selectAll("*").remove(); // Remove all elements in container.
 
   chart(container_selector, data);
 }
@@ -58,10 +63,11 @@ function redrawChart(chart, container_selector, data) {
 /**
  * Adds the given title to the element at the given x and y.
  * 
- * @param {*} el 
- * @param {String} title 
- * @param {number} x 
- * @param {number} y 
+ * @param {*} el the element to add the title to.
+ * @param {String} title the title.
+ * @param {number} x the x offset of the title.
+ * @param {number} y the y offset of the title.
+ * @param {String} font_size the font size of the title.
  */
 function addTitle(el, title, x=0, y=0, font_size=22) {
   el.append("text")
@@ -74,89 +80,77 @@ function addTitle(el, title, x=0, y=0, font_size=22) {
 }
 
 /**
+ * Register a callback to an element, and calls the callbacks with its "key" value when clicked,
+ * alongside the "key" values of all the passed in elements that are "clicked".
+ * 
+ * @param {*} element the element to register the callbacks for.
+ * @param {*} elements the elements whose values are also passed to the callback if they are "clicked".
+ * @param {*} callbacks the callback functions to register.
+ */
+function registerCallbacks(element, elements, callbacks) {
+  element
+    .on('click', _ => {
+      element.classed("clicked", !element.classed("clicked"));
+      elements.forEach(el => el.classed("notClicked", !el.classed("clicked")));
+
+      keys = [];
+      // Add each elements key to the argument passed to the callbacks
+      // if they are "clicked".
+      elements.forEach(el => {
+        if (el.classed("clicked")) {
+          keys.push(el.attr("key"));
+        }
+      });
+
+      if (keys.length == 0) {
+        elements.forEach(el => el.classed("notClicked", false));
+      }
+
+      callbacks.forEach(callback => callback(keys));
+    })
+    .on('mouseover', function(_) { d3.select(this).style("cursor", "pointer"); })
+    .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
+}
+
+/**
  * Attaches callbacks to the filters, which are called with the selected
  * keys in the filter.
  * 
  * @param {*} callbacks the callbacks to attach.
  */
 function connectFilters(callbacks=[]) {
-
-  function appendEventHandlers(element, elements) {
-    element
-      .on('click', _ => {
-        element.classed("clicked", !element.classed("clicked"));
-        elements.forEach(c => c.classed("notClicked", !c.classed("clicked")));
-
-        keys = []
-        elements.forEach(c => {
-          if (c.classed("clicked")) {
-            keys.push(c.attr("key"));
-          }
-        });
-
-        if (keys.length == 0) {
-          elements.forEach(c => c.classed("notClicked", false));
-        }
-
-        callbacks.forEach(callback => callback(keys))
-      })
-      .on('mouseover', function(_) { d3.select(this).style("cursor", "pointer"); })
-      .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
-  }
-
   const items = [];
   items.push(d3.select("#resident-filter").attr("key", "Resident Only"));
   items.push(d3.select("#unrestricted-filter").attr("key", "Unrestricted"));
   items.push(d3.select("#metered-filter").attr("key", "Metered"));
   items.push(d3.select("#handicapped-filter").attr("key", "Handicapped"));
   items.push(d3.select("#visitor-filter").attr("key", "Visitor Parking"));
-  items.forEach(item => appendEventHandlers(item, items));
+
+  items.forEach(item => registerCallbacks(item, items, callbacks));
 }
 
 /**
  * Adds a legend to the given element given keys, their colors, and
- * positioning.
+ * positioning, registering callbacks to that legend.
  * 
- * @param {*} el 
- * @param {String} title
- * @param {Array<String>} keys 
- * @param {object} color_map 
- * @param {number} x 
- * @param {number} y 
- * @param {number} y_offset 
+ * @param {*} el the element to add the legend to.
+ * @param {String} title the title of the legend.
+ * @param {Array<String>} keys the keys of the legend.
+ * @param {object} color_map the colors of the keys.
+ * @param {number} x the x offset of the legend.
+ * @param {number} y the y offset of the legend.
+ * @param {number} offset the offset of each legend item from each other.
+ * @param {*} callbacks the callbacks to attach to the legend.
  */
 function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offset=15, callbacks=[]) {
   const labelGroup = el.append('g')
     .attr('transform','translate(' + x +',' + y + ')');
-  
-  function appendEventHandlers(element, elements) {
-    element
-      .on('click', _ => {
-        element.classed("clicked", !element.classed("clicked"));
-        elements.forEach(c => c.classed("notClicked", !c.classed("clicked")));
-
-        keys = []
-        elements.forEach(c => {
-          if (c.classed("clicked")) {
-            keys.push(c.attr("id"));
-          }
-        });
-
-        if (keys.length == 0) {
-          elements.forEach(c => c.classed("notClicked", false));
-        }
-
-        callbacks.forEach(callback => callback(keys))
-      })
-      .on('mouseover', function(_) { d3.select(this).style("cursor", "pointer"); })
-      .on('mouseout', function(_) { d3.select(this).style("cursor", "default"); });
-  }
 
   labelGroup.append("text").attr("x", 0).attr("y", 0).text(title + ':').style("font-size", "15px").attr("alignment-baseline","middle");
 
   const circles = [];
   keys.forEach((key, idx) => {
-    let circle, text;
+    let circle;
     if (vertical) {
       labelY = (idx + 1) * offset;
 
@@ -172,7 +166,7 @@ function addLegend(el, title, keys, color_map={}, vertical=true, x=0, y=0, offse
     circles.push(circle);
   });
 
-  circles.forEach(circle => appendEventHandlers(circle, circles));
+  circles.forEach(circle => registerCallbacks(circle, circles, callbacks));
 }
 
 /**
@@ -186,7 +180,6 @@ function hourToInt(hour) {
 
 /**
  * Converts an int into an hour (e.g. '6:00 AM').
- * @param {*} hour 
  */
 function intToHour(intHour) {
   return TIMES.find(time => hourToInt(time) == intHour) || '11:00PM';
@@ -205,28 +198,38 @@ function setHeatmapTimeMarker(time) {
 
 /**
  * Processes the data into a map from regulation to a list of utilization rates during
- * each recorded time of the day.
+ * each recorded time of the day, optionally filtered by spot, time, or regulation.
+ * 
+ * @param data the data to derive the util rates from.
+ * @param spots if non-empty, the spots to filter by and include in the result.
+ * @param times if non-empty, the times to filter by and include in the result.
+ * @param regulations if non-empty, the regulations to filter by and include in the result.
  */
 function utilizationRateByGroup(data, spots=[], times=[], regulations=[]) {
   let grouped_data = {};
   const excluded = ['Construction', 'Blocked', ''];
 
+  // Preprocess data into a map from regulation to its data.
   for (row of data) {
-      if (spots.length > 0 && !spots.includes(row['Absolute Spot Number'])) {
+      const invalidSpot = spots.length > 0 && !spots.includes(row['Absolute Spot Number']);
+      if (invalidSpot) {
         continue;
       }
 
-      regulation = row['Regulation']
+      regulation = row['Regulation'];
       if (regulation === "Visitor") {
-        regulation = "Visitor Parking"
-      }
-      if (grouped_data[regulation] == undefined) {
-          grouped_data[regulation] = {}
-          grouped_data[regulation]['total_spots'] = 0
-          grouped_data[regulation]['spots'] = []
+        // Account for descrepencies in regulation naming in the parking data.
+        regulation = "Visitor Parking";
       }
 
-      if (regulations.length > 0 && !regulations.includes(regulation)) {
+      if (grouped_data[regulation] == undefined) {
+          grouped_data[regulation] = {};
+          grouped_data[regulation]['total_spots'] = 0;
+          grouped_data[regulation]['spots'] = [];
+      }
+
+      const invalidRegulation = regulations.length > 0 && !regulations.includes(regulation);
+      if (invalidRegulation) {
         continue;
       }
 
@@ -248,11 +251,13 @@ function utilizationRateByGroup(data, spots=[], times=[], regulations=[]) {
 
   data_by_regulation = {}
   const excluded_keys = ['total_spots', 'spots']
+  // Final processing of data, calculating util rates for each regulation.
   Object.keys(grouped_data).forEach(regulation => {
     data_by_regulation[regulation] = []
 
     Object.keys(grouped_data[regulation]).forEach(time => {
-      if (times.length > 0 && !times.includes(time)) {
+      const invalidTime = times.length > 0 && !times.includes(time);
+      if (invalidTime) {
         return;
       }
 
@@ -279,14 +284,19 @@ function utilizationRateByGroup(data, spots=[], times=[], regulations=[]) {
 /**
  * Process the data into a list of information for all spots at all recorded times,
  * optionally filtered by times.
+ * 
+ * @param data the data to derive the parking spot heatmap data from.
+ * @param times if non-empty, the times to filter-by and exclusively include in the result.
+ * @param regulations if non-empty, the regulations to filter-by and exclusively include in the result.
  */
 function parkingSpotTimeData(data, times=[], regulations=[]) {
   const parking_spot_time_data = [];
 
   for (row of data) {
-    const unselected_regulation = regulations.length > 0 && !regulations.includes(row['Regulation'] === "Visitor" ? "Visitor Parking" : row['Regulation']);
+    const unselected_regulation = regulations.length > 0 && 
+      !regulations.includes(row['Regulation'] === "Visitor" ? "Visitor Parking" : row['Regulation']);
 
-    let getTime = (i) => {
+    const getTime = (i) => {
       if (i < 6) {
         return `${6 + i}:00 AM`;
       } else if (i === 6) {
@@ -300,6 +310,7 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
       let start = getTime(i);
       let occupant = row[start];
       let j = 0;
+
       // count subsequent rows
       while (i + j < 15 && row[getTime(i + j + 1)] === occupant) {
         j++;
@@ -325,4 +336,34 @@ function parkingSpotTimeData(data, times=[], regulations=[]) {
   }
 
   return parking_spot_time_data.sort((a, b) => b['spot'] - a['spot']);
+}
+
+// Adds events to the element that makes it collapsable and
+// expandable
+function makeExpandable(element_selector) {
+  // Accordion
+  const acc = document.getElementsByClassName(element_selector);
+
+  if (!acc) {
+    return;
+  }
+
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+
+    if (!localStorage.getItem("visited")) {
+      acc[i].classList.toggle("active");
+      const panel = acc[i].nextElementSibling;
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      localStorage.setItem("visited", true);
+    }
+  }
 }

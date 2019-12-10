@@ -20,13 +20,13 @@ function heatmap() {
     yLabelOffsetPx = 0,
     xScale = d3.scaleBand(),
     yScale = d3.scaleBand(),
-    ourBrush = null,
     selectableElements = d3.select(null),
     dispatcher;;
   
   // Create the chart by adding an svg to the div with the id 
   // specified by the selector using the given data
   function chart(selector, data) {
+    // Add svg to the given container.
     let svg = d3.select(selector)
       .append("svg")
         .attr("preserveAspectRatio", "xMidYMid meet")
@@ -88,29 +88,7 @@ function heatmap() {
         .style("border-radius", "5px")
         .style("padding", "5px");
 
-    // Three functions that change the tooltip when user hover / move / leave a cell
-    function mouseover(d) {
-      tooltip.style("opacity", 1);
-
-      d3.select(this)
-        .style("stroke", "black")
-        .style("opacity", 1);
-    }
-
-    function mousemove(d) {
-      tooltip
-        .html(d.occupied || 'Unoccupied')
-        .style("position", "absolute");
-    }
-
-    function mouseleave(d) {
-      tooltip.style("opacity", 0);
-
-      d3.select(this)
-        .style("stroke", "none")
-        .style("opacity", 0.8);
-    }
-
+    // The color scales for the parking spots, by regulation and consecutive occupancy.
     colors = {
       'Resident Only': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#eff6ed', '#e0eddb', '#d1e4c9', '#c1dbb8', '#b2d2a7', '#a2c896', '#93bf85', '#83b674', '#73ad63', '#63a453', '#529b42', '#3f9231', '#29891d', '#008000'],
       'Unrestricted': ['#000000', '#161616', '#242424', '#333333', '#434343', '#545454', '#656565', '#777777', '#898989', '#9c9c9c', '#afafaf', '#c2c2c2', '#d6d6d6', '#eaeaea', '#fff9f1', '#fff3e3', '#ffedd4', '#ffe7c6', '#ffe1b7', '#ffdba8', '#ffd599', '#ffce8a', '#ffc879', '#ffc169', '#ffba57', '#ffb343', '#ffac2c', '#ffa500'],
@@ -121,18 +99,19 @@ function heatmap() {
       'Blocked': ['#fff3ef', '#ffe7de', '#ffdbce', '#ffcebe', '#ffc2ad', '#ffb59d', '#ffa78c', '#ff997c', '#ff8b6b', '#ff7b5a', '#ff6948', '#ff5535', '#ff3b20', '#ff0000']
     };
 
+    // Get the fill for the given data point.
     function fill(d) {
       if (d.occupied === "Blocked" || d.occupied === "Construction") {
         return colors.Blocked[d.timeRange.duration]; // Blocked spaces will count as occupied because our data format is weird
       }
 
-      // HACK, TODO, update colors
       if (d.timeRange.duration === 15) {
         return colors[d.regulation][27];
       }
       if (d.timeRange.duration === -15) {
         return colors[d.regulation][0];
       }
+
       return colors[d.regulation][d.timeRange.duration < 0 ? 14 + d.timeRange.duration : 13 + d.timeRange.duration];
     }
 
@@ -143,6 +122,7 @@ function heatmap() {
     rect_width = xScale.bandwidth();
     rect_height = yScale.bandwidth();
 
+    // Create parking spot squares.
     svg.selectAll()
       .data(data, d => X(d) + ':' + Y(d))
       .enter()
@@ -154,11 +134,9 @@ function heatmap() {
         .style("fill", d => fill(d))
         .style("stroke-width", 1)
         .style("stroke", d => fill(d))
-        .style("opacity", d => opacity(d))
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
+        .style("opacity", d => opacity(d));
     
+    // Create a time marker linked to the parking maps time slider.
     let timeMarker = svg.append("rect")
       .attr("id", "timeMarker")
       .attr("y", 0)
@@ -218,6 +196,7 @@ function heatmap() {
         }
       }
       
+      // Highlight selected squares and send dispatch event signal.
       function brushEnd() {
         // We don't want an infinite recursion
         if (d3.event.sourceEvent.type != "end") {
@@ -314,4 +293,28 @@ function heatmap() {
   };
 
   return chart;
+}
+
+/**
+ * Filter the heatmap in the given container with the given data by
+ * regulation and time.
+ * 
+ * @param {String} containerSelector selector for containing element of heatmap.
+ * @param {*} data the data to load into the heatmap.
+ * @param {*} regulations if non-empty, the regulations to filter by.
+ * @param {*} times if non-empty, the regulations to filter by.
+ */
+function filterHeatmap(containerSelector, data, regulations=[], times=[]) {
+  const heatmapSVG = d3.select(containerSelector).select('svg');
+  const rects = heatmapSVG.selectAll("rect").data(data);
+
+  function notSelectedRegulation(regulation) {
+    return regulations.length > 0 && !regulations.includes(regulation);
+  }
+
+  function notSelectedTime(time) {
+    return times.length > 0 && !times.includes(time);
+  }
+
+  rects.classed("filteredOut", d => notSelectedRegulation(d.regulation) || notSelectedTime(d.time));
 }

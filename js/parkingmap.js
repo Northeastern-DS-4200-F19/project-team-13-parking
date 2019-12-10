@@ -4,8 +4,8 @@ const rangeslider = document.getElementById("sliderRange");
 const output = document.getElementById("time"); 
 output.innerHTML = intToHour(rangeslider.value); 
   
-// read the data
-const mapData = {}
+const mapData = {};
+// Map csv data to separately generated parking map svg.
 d3.csv("./data/parking.csv").then (function(data) {
   for (let i = 0; i < data.length; i++) {
     if (data[i]['Regulation'] === "Visitor") {
@@ -32,11 +32,15 @@ d3.csv("./data/parking.csv").then (function(data) {
   }
 });
 
+// Register mouse events for parking spots.
 d3.selectAll("use")
   .on("mouseover", mouseover)
   .on("mouseout", mouseleave)
 
 
+/**
+ * Add tooltip on parking spot mouseover.
+ */
 function mouseover() {
     //convert the slider value to the correct index of time in mapData
     spot = d3.select(this);
@@ -49,17 +53,28 @@ function mouseover() {
     }
 }
 
+/**
+ * Hide tooltip on parking spot mouseleave.
+ */
 function mouseleave() {
   tooltip.style("opacity", 0);
   fillById(d3.select(this).attr("id"));
 }
 
+/**
+ * Color every parking spot on the map by their regulation.
+ */
 function updateParkingMap() {
   for (let j = 1; j <= PARKING_SPOTS; j++) {
     fillById("_" + j);
   }
 }
 
+/**
+ * Fill the parking spot with the given id by its regulation.
+ * 
+ * @param {String} id the id of the parking spot to fill.
+ */
 function fillById(id) {
   spotOccupancy = mapData[id][rangeslider.value - 5];
   if (spotOccupancy == "Construction" || spotOccupancy == "Blocked") {
@@ -71,6 +86,12 @@ function fillById(id) {
   }
 }
 
+/**
+ * Filter the parking map by spot and/or regulation.
+ * 
+ * @param {*} spots if non-empty, filter by and exclusively include these spots.
+ * @param {*} regulations if non-empty, filter by and exclusively include spots with these regulations.
+ */
 function filterParkingMap(spots=[], regulations=[]) {
   updateParkingMap();
 
@@ -81,13 +102,15 @@ function filterParkingMap(spots=[], regulations=[]) {
   }
 }
 
+// Update time-slider display, heatmap selected time, and parking map data on
+// time-slider input.
 rangeslider.oninput = function() { 
   output.innerHTML = intToHour(this.value);
   setHeatmapTimeMarker(intToHour(this.value));
   updateParkingMap();
 } 
 
-// create a tooltip
+// Create a tooltip.
 const tooltip = d3.select("#map-container")
   .append("div")
   .style("opacity", 0)

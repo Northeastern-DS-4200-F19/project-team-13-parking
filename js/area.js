@@ -20,13 +20,11 @@ function areachart() {
     yLabelOffsetPx = 0,
     xScale = d3.scalePoint(),
     yScale = d3.scaleLinear(),
-    ourBrush = null,
-    selectableElements = d3.select(null),
     legendCallbacks = [],
     dispatcher;
   
   // Create the chart by adding an svg to the div with the id 
-  // specified by the selector using the given data
+  // specified by the selector using the given data.
   function chart(selector, data) {
     let svg = d3.select(selector)
       .append("svg")
@@ -34,12 +32,13 @@ function areachart() {
         .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom].join(' '))
         .classed("svg-content", true);
     
+    // Connect the legend filters to the passed in callbacks.
     connectFilters(legendCallbacks);
     addTitle(svg, 'Chester Square Parking Spot Utilization by Regulation Type', x=margin.left, y=50, font_size=20);
 
+    // Create the area width scale legend
     scaleLegend = svg.append("g")
       .attr("transform", "translate(" + (width - 60) + ", " + 60 + ")");
-
     scaleLegend.append("rect")
       .attr("height", 20)
       .attr("width", 1)
@@ -57,6 +56,7 @@ function areachart() {
       .style("font-size", "12px")
       .text("# Occupied Spots");
 
+    // Create the base svg for the area chart.
     svg = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -106,7 +106,7 @@ function areachart() {
       .x(d => X(d))
       .y(d => Y(d));
 
-    // Create lines for each regulation
+    // Create lines and areas for each regulation
     Object.keys(data).forEach(regulation => {
       sorted_data = data[regulation].sort((d1, d2) => hourToInt(d1.time) - hourToInt(d2.time));
 
@@ -125,9 +125,9 @@ function areachart() {
     });
 
 
-    const all_points = []
+    const all_points = [];
+    // Create points for util rates for all regulations at all times, used for brushing.
     Object.keys(data).forEach(regulation => {
-      // Add the points
       let points = svg.append("g")
         .selectAll(".linePoint")
           .data(data[regulation]);
@@ -144,12 +144,11 @@ function areachart() {
       all_points.push(points);
     });
 
-    selectableElements = all_points;
-
     svg.call(brush);
 
     // Highlight points when brushed
     function brush(g) {
+      // Brush on the x-axis exlcusively.
       const brush = d3.brushX()
         .on("start brush", select)
         .on("end", brushEnd)
@@ -157,8 +156,6 @@ function areachart() {
           [-margin.left, -margin.bottom],
           [width + margin.right, height + margin.top]
         ]);
-
-      ourBrush = brush;
 
       g.call(brush); // Adds the brush to this element
 
@@ -241,6 +238,7 @@ function areachart() {
     return chart;
   };
 
+  // Registers a callback to this chart.
   chart.registerLegendCallback = function (_) {
     if (!arguments.length) return legendCallbacks;
     legendCallbacks.push(_);
